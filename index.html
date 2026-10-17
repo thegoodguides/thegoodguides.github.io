@@ -1,0 +1,1263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="We are a grassroots, black-led, not for profit organization." />
+    <link rel="icon" href="assets/logo.jpg" />
+    <title>The Good Guides — Inner City Youth Mentoring</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Black&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --green: #2D6B38;
+        --green-deep: #1E4A27;
+        --green-darkest: #173A1F;
+        --gold: #F5B921;
+        --gold-dark: #D99E0B;
+        --cream: #F5F1E6;
+        --ink: #1D1A15;
+        --bright: #57AB33;
+        --bg: #FFFFFF;
+        --surface: #FFFFFF;
+        --band: #F5F1E6;
+        --text: #1D1A15;
+        --muted: #55503F;
+        --line: #E4DFCE;
+        --card-line: #E7E2D2;
+        --header-bg: #FFFFFF;
+        --shadow: 0 10px 30px rgba(29, 26, 21, 0.08);
+        color-scheme: light;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #14120E;
+          --surface: #1E1B15;
+          --band: #1B2417;
+          --text: #F2EDDD;
+          --muted: #C9C2AC;
+          --line: #3A362A;
+          --card-line: #3A362A;
+          --header-bg: #1A1712;
+          --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+          color-scheme: dark;
+        }
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: "Archivo", "Segoe UI", Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        font-size: 17px;
+        -webkit-font-smoothing: antialiased;
+      }
+      img { max-width: 100%; display: block; }
+      a { color: var(--green); }
+      @media (prefers-color-scheme: dark) { a { color: var(--gold); } }
+      h1, h2, h3, h4 { line-height: 1.15; margin: 0 0 0.5em; font-weight: 800; letter-spacing: -0.01em; }
+      h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); }
+      h3 { font-size: 1.25rem; }
+      p { margin: 0 0 1em; }
+      .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+      :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; border-radius: 4px; }
+      .skip-link {
+        position: fixed; left: 16px; top: -90px; background: var(--gold); color: #1D1A15;
+        padding: 12px 18px; font-weight: 700; z-index: 300; border-radius: 0 0 8px 8px;
+        transition: top 0.15s ease;
+      }
+      .skip-link:focus { top: 84px; }
+      [data-focus]:focus { outline: none; }
+      .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+      /* ---------- Header ---------- */
+      .site-header {
+        position: sticky; top: 0; z-index: 100;
+        background: var(--header-bg);
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 2px 14px rgba(29,26,21,0.06);
+      }
+      .header-inner {
+        max-width: 1280px; margin: 0 auto; padding: 10px 20px;
+        display: flex; align-items: center; gap: 18px;
+      }
+      .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); flex-shrink: 0; }
+      .brand img { width: 54px; height: 54px; border-radius: 10px; object-fit: cover; }
+      .brand-text { font-weight: 900; font-size: 1.12rem; line-height: 1.05; letter-spacing: -0.01em; }
+      .brand-text small { display: block; font-weight: 600; font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); margin-top: 3px; }
+      @media (prefers-color-scheme: dark) { .brand-text small { color: var(--gold); } }
+      .main-nav { margin-left: auto; }
+      .main-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 2px; flex-wrap: nowrap; }
+      .main-nav a {
+        display: inline-block; padding: 12px 9px; text-decoration: none; color: var(--text);
+        font-weight: 600; font-size: 0.86rem; white-space: nowrap; border-radius: 8px;
+      }
+      .main-nav a:hover { color: var(--green); background: var(--band); }
+      @media (prefers-color-scheme: dark) { .main-nav a:hover { color: var(--gold); } }
+      .main-nav a[aria-current="page"] { color: var(--green); box-shadow: inset 0 -3px 0 var(--gold); border-radius: 8px 8px 0 0; }
+      @media (prefers-color-scheme: dark) { .main-nav a[aria-current="page"] { color: var(--gold); } }
+      .header-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+      .socials { display: flex; gap: 2px; }
+      .socials a {
+        width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center;
+        border-radius: 50%; color: var(--green); text-decoration: none;
+      }
+      .socials a:hover { background: var(--band); color: var(--green-deep); }
+      @media (prefers-color-scheme: dark) { .socials a { color: var(--gold); } .socials a:hover { color: var(--gold); } }
+      .socials svg { width: 19px; height: 19px; fill: currentColor; }
+      .btn {
+        display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+        padding: 13px 26px; border-radius: 999px; font-weight: 800; font-size: 0.95rem;
+        text-decoration: none; letter-spacing: 0.03em; text-transform: uppercase;
+        border: 2px solid transparent; cursor: pointer; min-height: 48px; text-align: center;
+        transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+      }
+      .btn:hover { transform: translateY(-1px); }
+      .btn-gold { background: var(--gold); color: #1D1A15; }
+      .btn-gold:hover { background: var(--gold-dark); color: #1D1A15; }
+      .btn-outline-light { border-color: #FFFFFF; color: #FFFFFF; background: transparent; }
+      .btn-outline-light:hover { background: rgba(255,255,255,0.14); color: #FFFFFF; }
+      .btn-green { background: var(--green); color: #FFFFFF; }
+      .btn-green:hover { background: var(--green-deep); color: #FFFFFF; }
+      .btn-outline-green { border-color: var(--green); color: var(--green); background: transparent; }
+      .btn-outline-green:hover { background: var(--green); color: #FFFFFF; }
+      @media (prefers-color-scheme: dark) { .btn-outline-green { border-color: var(--gold); color: var(--gold); } .btn-outline-green:hover { background: var(--gold); color: #1D1A15; } }
+      .btn-donate-header { padding: 11px 22px; min-height: 44px; }
+      .hamburger {
+        display: none; width: 48px; height: 48px; border: 1px solid var(--line); border-radius: 10px;
+        background: var(--surface); cursor: pointer; align-items: center; justify-content: center; flex-direction: column; gap: 5px;
+      }
+      .hamburger span { display: block; width: 22px; height: 2.5px; background: var(--text); border-radius: 2px; transition: transform 0.2s ease, opacity 0.2s ease; }
+      .hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+      .hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+      .hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+      .mobile-menu { display: none; border-top: 1px solid var(--line); background: var(--header-bg); }
+      .mobile-menu.open { display: block; }
+      .mobile-menu nav ul { list-style: none; margin: 0; padding: 10px 16px 6px; }
+      .mobile-menu nav a {
+        display: flex; align-items: center; min-height: 48px; padding: 10px 12px;
+        text-decoration: none; color: var(--text); font-weight: 700; font-size: 1.02rem;
+        border-bottom: 1px solid var(--line); border-radius: 4px;
+      }
+      .mobile-menu nav a[aria-current="page"] { color: var(--green); }
+      @media (prefers-color-scheme: dark) { .mobile-menu nav a[aria-current="page"] { color: var(--gold); } }
+      .mobile-menu .mobile-foot { padding: 14px 16px 20px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+      @media (max-width: 1180px) { .header-actions .socials { display: none; } }
+      @media (max-width: 1020px) {
+        .main-nav { display: none; }
+        .hamburger { display: inline-flex; }
+        .brand-text small { display: none; }
+      }
+      @media (max-width: 640px) {
+        .header-inner { padding: 10px 14px; gap: 10px; }
+        .brand { gap: 8px; min-width: 0; }
+        .brand img { width: 46px; height: 46px; }
+        .brand-text { display: none; }
+        .btn-donate-header { padding: 10px 16px; font-size: 0.85rem; }
+        .header-actions { gap: 6px; margin-left: auto; }
+      }
+
+      /* ---------- Views & bands ---------- */
+      .view { display: none; }
+      .view.active { display: block; }
+      .band { padding: 76px 0; }
+      .band-cream { background: var(--band); }
+      .band-green { background: var(--green); color: #FFFFFF; }
+      .band-green a { color: var(--gold); }
+      .section-head { max-width: 760px; margin-bottom: 40px; }
+      .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+      .kicker { display: inline-block; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.78rem; color: var(--green); margin-bottom: 12px; }
+      @media (prefers-color-scheme: dark) { .kicker { color: var(--gold); } }
+      .band-green .kicker { color: var(--gold); }
+      .lead { font-size: 1.18rem; }
+
+      /* ---------- Hero ---------- */
+      .hero { background: var(--green); color: #FFFFFF; overflow: hidden; }
+      .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 48px; align-items: center; padding: 72px 0; }
+      .hero-grid.solo { grid-template-columns: 1fr; max-width: 880px; margin: 0 auto; text-align: center; padding: 88px 0; }
+      .hero-grid.solo .subline { margin-left: auto; margin-right: auto; }
+      .hero-grid.solo .hero-actions { justify-content: center; }
+      .hero h1 { font-family: "Archivo Black", "Archivo", sans-serif; font-size: clamp(2.3rem, 5.2vw, 3.9rem); line-height: 1.1; margin-bottom: 20px; }
+      .hero h1 .hl { color: var(--gold); }
+      .hero .subline { font-size: clamp(1.08rem, 2vw, 1.3rem); color: #EAF2E4; max-width: 34em; margin-bottom: 32px; }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+      .hero-photo { border-radius: 18px; overflow: hidden; box-shadow: 0 24px 50px rgba(0,0,0,0.28); border: 4px solid rgba(255,255,255,0.16); }
+      .hero-photo img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+      @media (max-width: 860px) {
+        .hero-grid { grid-template-columns: 1fr; gap: 32px; padding: 52px 0; }
+        .hero-photo img { aspect-ratio: 16 / 10; }
+      }
+
+      /* ---------- Stats ---------- */
+      .stats { background: var(--band); padding: 44px 0; border-bottom: 1px solid var(--line); }
+      .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; max-width: 860px; margin: 0 auto; }
+      .stat .num { font-family: "Archivo Black", "Archivo", sans-serif; font-size: clamp(1.7rem, 3.4vw, 2.5rem); color: var(--green); line-height: 1; }
+      @media (prefers-color-scheme: dark) { .stat .num { color: var(--gold); } }
+      .stat .lbl { font-weight: 800; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
+      @media (max-width: 860px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } .stat:last-child { grid-column: span 2; } }
+      @media (max-width: 420px) { .stats-grid { grid-template-columns: 1fr 1fr; } }
+
+      /* ---------- Generic layouts ---------- */
+      .split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+      .split.imgs { grid-template-columns: 1fr 1fr; }
+      .photo-stack { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+      .photo-stack figure, .framed { margin: 0; border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); }
+      .photo-stack img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3 / 4; }
+      .framed img { width: 100%; height: auto; }
+      @media (max-width: 860px) { .split, .split.imgs { grid-template-columns: 1fr; gap: 30px; } }
+      .big-quote { font-size: clamp(1.3rem, 2.6vw, 1.7rem); font-weight: 700; line-height: 1.4; }
+      .cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+      .cards-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      @media (max-width: 920px) { .cards-3 { grid-template-columns: 1fr; } .cards-2 { grid-template-columns: 1fr; } }
+      .card {
+        background: var(--surface); border: 1px solid var(--card-line); border-radius: 16px;
+        padding: 30px 28px; box-shadow: var(--shadow);
+      }
+      .card .card-num {
+        display: inline-flex; width: 46px; height: 46px; border-radius: 12px; background: var(--green);
+        color: #fff; font-weight: 900; align-items: center; justify-content: center; font-size: 1.1rem; margin-bottom: 16px;
+      }
+      .card h3 { margin-bottom: 8px; }
+      .card p:last-child { margin-bottom: 0; }
+
+      .founder-quote { text-align: center; max-width: 820px; margin: 0 auto; }
+      .founder-quote blockquote { margin: 0; font-size: clamp(1.5rem, 3.4vw, 2.2rem); font-weight: 800; line-height: 1.3; }
+      .founder-quote blockquote::before { content: "\201C"; color: var(--gold); }
+      .founder-quote blockquote::after { content: "\201D"; color: var(--gold); }
+      .founder-quote figcaption { margin-top: 18px; color: var(--muted); font-weight: 700; font-size: 0.94rem; letter-spacing: 0.04em; }
+
+      .news-card .news-tag { display: inline-block; background: var(--surface); color: var(--green); font-weight: 800; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 12px; border-radius: 999px; margin-bottom: 14px; }
+      @media (prefers-color-scheme: dark) { .news-card .news-tag { color: var(--gold); } }
+      .news-card h3 { margin-bottom: 8px; }
+
+      /* Subscribe */
+      .subscribe { background: var(--green); color: #fff; border-radius: 20px; padding: 44px 40px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 36px; align-items: center; }
+      .subscribe h2 { margin-bottom: 8px; }
+      .subscribe p { color: #EAF2E4; margin: 0; }
+      .subscribe form { display: flex; gap: 12px; flex-wrap: wrap; }
+      .subscribe label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+      .subscribe input[type="email"] {
+        flex: 1 1 240px; padding: 14px 18px; border-radius: 999px; border: 2px solid transparent;
+        font: inherit; font-size: 1rem; min-height: 52px; color: #1D1A15; background: #fff;
+      }
+      .subscribe .thanks { font-size: 1.3rem; font-weight: 800; color: var(--gold); margin: 0; }
+      @media (max-width: 760px) { .subscribe { grid-template-columns: 1fr; padding: 34px 24px; } }
+
+      /* ---------- Page hero (inner pages) ---------- */
+      .page-hero { background: var(--green); color: #fff; padding: 64px 0 56px; }
+      .page-hero h1 { font-family: "Archivo Black", "Archivo", sans-serif; font-size: clamp(2rem, 4.6vw, 3.1rem); line-height: 1.1; margin-bottom: 12px; }
+      .page-hero p { color: #EAF2E4; font-size: 1.18rem; max-width: 46em; margin: 0; }
+
+      /* About */
+      .value-card .value-name { color: var(--green); }
+      @media (prefers-color-scheme: dark) { .value-card .value-name { color: var(--gold); } }
+      .values-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      @media (max-width: 760px) { .values-grid { grid-template-columns: 1fr; } }
+      .timeline { list-style: none; margin: 0; padding: 0; }
+      .timeline li { display: grid; grid-template-columns: 130px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+      .timeline li:last-child { border-bottom: none; }
+      .timeline .yr { font-family: "Archivo Black", "Archivo", sans-serif; color: var(--green); font-size: 1.15rem; }
+      @media (prefers-color-scheme: dark) { .timeline .yr { color: var(--gold); } }
+      .timeline p { margin: 0; }
+      @media (max-width: 560px) { .timeline li { grid-template-columns: 1fr; gap: 4px; } }
+      /* Take Action */
+      .proverb { text-align: center; padding: 48px 0 8px; }
+      .proverb blockquote { margin: 0; font-size: clamp(1.5rem, 3.4vw, 2.2rem); font-weight: 800; line-height: 1.3; }
+      .proverb figcaption { margin-top: 12px; color: var(--muted); font-weight: 700; letter-spacing: 0.04em; font-size: 0.94rem; }
+      .action-card { text-align: left; }
+      .action-card .btn { margin-top: 8px; }
+      .mail-note { margin-top: 18px; font-size: 0.94rem; color: var(--muted); }
+      .banner-photo { border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); margin-bottom: 44px; }
+      .banner-photo img { width: 100%; height: auto; max-height: 420px; object-fit: cover; }
+
+      /* Programs */
+      .program-block { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; padding: 56px 0; }
+      .program-block + .program-block { border-top: 1px solid var(--line); }
+      .program-block.flip .program-media { order: 2; }
+      .program-media { border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); margin: 0; }
+      .program-media img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+      .program-tag { display: inline-block; background: var(--gold); color: #1D1A15; font-weight: 800; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 12px; border-radius: 999px; margin-bottom: 14px; }
+      .program-block.text-only { grid-template-columns: 1fr; max-width: 820px; }
+      @media (max-width: 860px) { .program-block { grid-template-columns: 1fr; gap: 26px; } .program-block.flip .program-media { order: 0; } }
+      .cta-band { background: var(--green); color: #fff; border-radius: 20px; padding: 44px 40px; text-align: center; }
+      .cta-band p { max-width: 44em; margin: 0 auto 24px; font-size: 1.18rem; color: #EAF2E4; }
+      .cta-band h2 { color: #fff; }
+
+      /* Programs — premise hero, core band, wider record */
+      .premise-hero { text-align: center; padding: 84px 0 72px; }
+      .premise-hero .kicker { color: var(--gold); }
+      .premise-hero h1 { max-width: 22em; margin-left: auto; margin-right: auto; }
+      .premise-hero h1 .hl { color: var(--gold); }
+      .premise-hero p { margin: 0 auto; }
+      .core-band { background: var(--green-deep); color: #fff; }
+      .core-band .kicker { color: var(--gold); }
+      .core-band .section-head { margin-bottom: 34px; }
+      .core-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+      .core-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.24); border-radius: 18px; padding: 34px 30px; }
+      .core-card h3 { color: #fff; }
+      .core-card p { color: #EAF2E4; }
+      .core-card p:last-child { margin-bottom: 0; }
+      .core-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+      @media (max-width: 860px) { .core-grid { grid-template-columns: 1fr; } .premise-hero { padding: 60px 0 52px; } }
+      .record-card { margin-bottom: 8px; }
+      .record-lead { margin-bottom: 0; }
+      .roster-block { padding-top: 8px; }
+      .roster { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+      .roster li { background: var(--surface); border: 1px solid var(--card-line); border-radius: 999px; padding: 9px 18px; font-weight: 700; font-size: 0.95rem; box-shadow: var(--shadow); }
+      .programs-cta { padding-top: 56px; }
+
+      /* Team */
+      .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+      @media (max-width: 980px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 620px) { .team-grid { grid-template-columns: 1fr; } }
+      .member { background: var(--surface); border: 1px solid var(--card-line); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+      .member .photo { aspect-ratio: 1 / 1; overflow: hidden; background: var(--band); }
+      .member .photo img { width: 100%; height: 100%; object-fit: cover; }
+      .member .monogram {
+        aspect-ratio: 1 / 1; background: var(--green); color: #fff; display: flex; align-items: center; justify-content: center;
+        font-family: "Archivo Black", "Archivo", sans-serif; font-size: 4rem; letter-spacing: 0.04em;
+      }
+      .member .monogram span { border: 3px solid var(--gold); border-radius: 50%; width: 130px; height: 130px; display: flex; align-items: center; justify-content: center; }
+      .member .body { padding: 24px 24px 26px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+      .member h3 { margin: 0; }
+      .member .title { color: var(--green); font-weight: 800; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em; }
+      @media (prefers-color-scheme: dark) { .member .title { color: var(--gold); } }
+      .member .bio { color: var(--text); margin: 6px 0 10px; }
+      .member .contact-line { margin-top: auto; display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 0.94rem; font-weight: 700; }
+      .member .contact-line a { word-break: break-all; }
+
+      /* Partners */
+      .partner-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+      @media (max-width: 980px) { .partner-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 520px) { .partner-grid { grid-template-columns: 1fr; } }
+      .partner-tile {
+        background: var(--surface); border: 1px solid var(--card-line); border-radius: 16px; padding: 28px 22px;
+        display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; text-align: center;
+        text-decoration: none; color: var(--text); box-shadow: var(--shadow); min-height: 190px;
+      }
+      .partner-tile img { max-height: 92px; width: auto; max-width: 100%; object-fit: contain; }
+      .partner-tile .tile-name { font-weight: 800; font-size: 1.25rem; line-height: 1.15; letter-spacing: -0.01em; }
+      .partner-tile .tile-sub { font-size: 0.94rem; color: var(--muted); font-weight: 600; margin-top: -10px; }
+      .partner-tile.text-tile .tile-name { color: var(--green); }
+      @media (prefers-color-scheme: dark) { .partner-tile.text-tile .tile-name { color: var(--gold); } }
+      .logo-bg { background: #fff; border-radius: 10px; padding: 12px; }
+      .pgallery { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+      @media (max-width: 700px) { .pgallery { grid-template-columns: 1fr; } }
+      .pgallery figure { margin: 0; border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); }
+      .pgallery img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+
+      /* Forms */
+      .form-card { background: var(--surface); border: 1px solid var(--card-line); border-radius: 16px; padding: 34px 30px; box-shadow: var(--shadow); }
+      .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+      @media (max-width: 640px) { .form-grid { grid-template-columns: 1fr; } }
+      .field { display: flex; flex-direction: column; gap: 6px; }
+      .field.full { grid-column: 1 / -1; }
+      .field label { font-weight: 700; font-size: 0.94rem; }
+      .field input, .field textarea {
+        font: inherit; font-size: 1rem; padding: 13px 15px; border: 1.5px solid var(--line); border-radius: 10px;
+        background: var(--bg); color: var(--text); min-height: 48px;
+      }
+      .field textarea { min-height: 130px; resize: vertical; }
+      .field input:focus, .field textarea:focus { border-color: var(--green); outline: 3px solid rgba(245,185,33,0.5); }
+
+      /* Gallery */
+      .event { padding: 52px 0; border-bottom: 1px solid var(--line); }
+      .event:last-of-type { border-bottom: none; }
+      .event.text-only { background: var(--band); border: 1px solid var(--card-line); border-radius: 16px; box-shadow: var(--shadow); padding: 38px 34px; margin: 44px 0 8px; }
+      .event.text-only p:last-child { margin-bottom: 0; }
+      @media (max-width: 560px) { .event.text-only { padding: 30px 22px; } }
+      .event-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 18px; margin-bottom: 6px; }
+      .event-head h2 { margin: 0; }
+      .event-date { background: var(--green); color: #fff; font-weight: 800; font-size: 0.78rem; letter-spacing: 0.12em; padding: 5px 13px; border-radius: 999px; text-transform: uppercase; }
+      .event .thanks { font-weight: 700; }
+      .event .thanks b { color: var(--green); }
+      @media (prefers-color-scheme: dark) { .event .thanks b { color: var(--gold); } }
+      .hashtags { color: var(--green); font-weight: 700; font-size: 0.94rem; line-height: 1.6; }
+      @media (prefers-color-scheme: dark) { .hashtags { color: var(--bright); } }
+      .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 22px; }
+      .photo-grid.four { grid-template-columns: repeat(4, 1fr); }
+      .photo-grid figure { margin: 0; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+      .photo-grid img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+      @media (max-width: 860px) { .photo-grid, .photo-grid.four { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 460px) { .photo-grid, .photo-grid.four { grid-template-columns: 1fr; } }
+
+      /* Contact */
+      .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+      @media (max-width: 760px) { .contact-grid { grid-template-columns: 1fr; } }
+      .contact-card h3 { display: flex; align-items: center; gap: 10px; }
+      .contact-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+      .contact-list .role { font-weight: 800; display: block; margin-bottom: 2px; }
+      .contact-list a { font-weight: 600; word-break: break-all; }
+
+      /* Footer */
+      .site-footer { background: var(--green-darkest); color: #DCE8D2; margin-top: 0; }
+      .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 44px; padding: 60px 0 40px; }
+      .footer-brand img { width: 76px; height: 76px; border-radius: 14px; object-fit: cover; margin-bottom: 18px; }
+      .footer-brand .org-name { font-weight: 900; font-size: 1.25rem; color: #fff; line-height: 1.3; }
+      .footer-brand p { margin: 6px 0 0; color: #B9CDA9; }
+      .footer-brand a { color: var(--gold); font-weight: 700; }
+      .site-footer h3 { color: #fff; font-size: 0.95rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px; }
+      .footer-nav { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+      .footer-nav a { color: #DCE8D2; text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; }
+      .footer-nav a:hover { color: var(--gold); }
+      .footer-socials { display: flex; gap: 8px; margin-top: 6px; }
+      .footer-socials a { width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.1); display: inline-flex; align-items: center; justify-content: center; color: #fff; }
+      .footer-socials a:hover { background: var(--gold); color: #1D1A15; }
+      .footer-socials svg { width: 20px; height: 20px; fill: currentColor; }
+      .footer-bottom { border-top: 1px solid rgba(255,255,255,0.16); padding: 20px 0 26px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; font-size: 0.94rem; color: #B9CDA9; }
+      @media (max-width: 760px) { .footer-grid { grid-template-columns: 1fr; gap: 34px; padding: 44px 0 30px; } }
+      @media (max-width: 480px) { .band { padding: 54px 0; } body { font-size: 16px; } }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#/" aria-label="The Good Guides — Home">
+          <img src="assets/logo.jpg" alt="The Good Guides logo" width="54" height="54" />
+          <span class="brand-text">The Good Guides<small>Inner City Youth Mentoring</small></span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <ul>
+            <li><a href="#/" data-nav="/">Home</a></li>
+            <li><a href="#/about-us" data-nav="/about-us">About Us</a></li>
+            <li><a href="#/take-action" data-nav="/take-action">Take Action</a></li>
+            <li><a href="#/our-programs" data-nav="/our-programs">Our Programs</a></li>
+            <li><a href="#/our-team" data-nav="/our-team">Our Team</a></li>
+            <li><a href="#/partners" data-nav="/partners">Partners</a></li>
+            <li><a href="#/gallery" data-nav="/gallery">Gallery</a></li>
+            <li><a href="#/contact-us" data-nav="/contact-us">Contact Us</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <div class="socials">
+            <a href="https://www.instagram.com/thegoodguidesofficial" target="_blank" rel="noopener" aria-label="The Good Guides on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1s-3.6 0-4.9-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 4 4 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7C8.3 24 8.7 24 12 24s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.9A6.1 6.1 0 1 0 18.1 12 6.1 6.1 0 0 0 12 5.9zm0 10A4 4 0 1 1 16 12a4 4 0 0 1-4 3.9zm7.9-10.4a1.4 1.4 0 1 1-1.4-1.4 1.4 1.4 0 0 1 1.4 1.4z"/></svg></a>
+            <a href="https://www.facebook.com/thegoodguidesicym" target="_blank" rel="noopener" aria-label="The Good Guides on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4h-3v-3.5h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 1-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></svg></a>
+            <a href="https://x.com/thegoodguidesTO" target="_blank" rel="noopener" aria-label="The Good Guides on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 1.2h3.7l-8.1 9.2L24 22.8h-7.5l-5.9-7.7-6.7 7.7H.2l8.6-9.9L0 1.2h7.7l5.3 7 5.9-7zm-1.3 19.4h2L6.6 3.3H4.4l13.2 17.3z"/></svg></a>
+          </div>
+          <a class="btn btn-gold btn-donate-header" href="#/take-action">Donate</a>
+          <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobileMenu">
+        <nav aria-label="Mobile navigation">
+          <ul>
+            <li><a href="#/" data-nav="/">Home</a></li>
+            <li><a href="#/about-us" data-nav="/about-us">About Us</a></li>
+            <li><a href="#/take-action" data-nav="/take-action">Take Action</a></li>
+            <li><a href="#/our-programs" data-nav="/our-programs">Our Programs</a></li>
+            <li><a href="#/our-team" data-nav="/our-team">Our Team</a></li>
+            <li><a href="#/partners" data-nav="/partners">Partners</a></li>
+            <li><a href="#/gallery" data-nav="/gallery">Gallery</a></li>
+            <li><a href="#/contact-us" data-nav="/contact-us">Contact Us</a></li>
+          </ul>
+        </nav>
+        <div class="mobile-foot">
+          <a class="btn btn-gold" href="#/take-action">Donate</a>
+          <div class="socials" style="display:flex">
+            <a href="https://www.instagram.com/thegoodguidesofficial" target="_blank" rel="noopener" aria-label="The Good Guides on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1s-3.6 0-4.9-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 4 4 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7C8.3 24 8.7 24 12 24s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.9A6.1 6.1 0 1 0 18.1 12 6.1 6.1 0 0 0 12 5.9zm0 10A4 4 0 1 1 16 12a4 4 0 0 1-4 3.9zm7.9-10.4a1.4 1.4 0 1 1-1.4-1.4 1.4 1.4 0 0 1 1.4 1.4z"/></svg></a>
+            <a href="https://www.facebook.com/thegoodguidesicym" target="_blank" rel="noopener" aria-label="The Good Guides on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4h-3v-3.5h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 1-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></svg></a>
+            <a href="https://x.com/thegoodguidesTO" target="_blank" rel="noopener" aria-label="The Good Guides on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 1.2h3.7l-8.1 9.2L24 22.8h-7.5l-5.9-7.7-6.7 7.7H.2l8.6-9.9L0 1.2h7.7l5.3 7 5.9-7zm-1.3 19.4h2L6.6 3.3H4.4l13.2 17.3z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ================= HOME ================= -->
+      <section class="view" id="view-home" aria-label="Home">
+        <div class="hero">
+          <div class="wrap">
+            <div class="hero-grid solo">
+              <div>
+                <h1 tabindex="-1" data-focus>Putting Youth on the <span class="hl">Front Lines</span> of Change</h1>
+                <p class="subline">Youth-led mentoring for inner-city youth in Scarborough, Toronto.</p>
+                <div class="hero-actions">
+                  <a class="btn btn-gold" href="https://docs.google.com/forms/d/e/1FAIpQLSduLWh-M4CYEuGnOVAiLQhqm06BAzJ3-AGqz7_l6rRx8J-FkA/viewform" target="_blank" rel="noopener">Become a Mentor</a>
+                  <a class="btn btn-outline-light" href="#/take-action">Donate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats" aria-label="The Good Guides at a glance">
+          <div class="wrap">
+            <div class="stats-grid">
+              <div class="stat"><div class="num">2020</div><div class="lbl">Founded</div></div>
+              <div class="stat"><div class="num">20</div><div class="lbl">Core team &amp; volunteers</div></div>
+              <div class="stat"><div class="num">10,000+</div><div class="lbl">Youth mentored</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band">
+          <div class="wrap">
+            <div class="split">
+              <div>
+                <span class="kicker">Our Philosophy</span>
+                <h2>Youth in charge of creating change</h2>
+                <p class="lead">We are a grassroots non-profit organization with a straightforward philosophy of putting youth in charge of creating change!</p>
+                <p>The Good Guides believes that the youth should be on the front lines of repairing our communities.</p>
+                <p>We empower, educate, and encourage the youth we mentor to <strong>BECOME</strong> the change they want to see in their local communities.</p>
+              </div>
+              <div class="photo-stack">
+                <figure><img src="assets/philosophy-1.jpg" alt="Good Guides youth and mentors gathered together outdoors in Scarborough" loading="lazy" /></figure>
+                <figure><img src="assets/philosophy-2.jpg" alt="Good Guides mentors spending time with youth in the community" loading="lazy" /></figure>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band band-cream">
+          <div class="wrap">
+            <div class="split">
+              <div>
+                <span class="kicker">Our Organization</span>
+                <h2>Make a difference in your community</h2>
+                <p class="lead">Want to make a difference within your community in a meaningful way? Find out how you can volunteer and contribute to the betterment of our community today!</p>
+                <a class="btn btn-green" href="https://docs.google.com/forms/d/e/1FAIpQLSduLWh-M4CYEuGnOVAiLQhqm06BAzJ3-AGqz7_l6rRx8J-FkA/viewform" target="_blank" rel="noopener">Volunteer With Us</a>
+              </div>
+              <div>
+                <span class="kicker">What We Do</span>
+                <div style="display:grid; gap:16px">
+                  <div class="card" style="padding:22px 24px">
+                    <h3>Mentoring</h3>
+                    <p>Youth-led mentoring that puts young people in charge of creating change in their own communities.</p>
+                  </div>
+                  <div class="card" style="padding:22px 24px">
+                    <h3>Violence Prevention</h3>
+                    <p>De-escalation and prevention programming delivered in Eglinton East, Woburn, and Cedarbrae — The Good Guides is a City of Toronto Youth Violence Prevention Grant recipient.</p>
+                  </div>
+                  <div class="card" style="padding:22px 24px">
+                    <h3>Co-op &amp; Leadership</h3>
+                    <p>Co-op placements and leadership development that open doors school alone doesn't.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band">
+          <div class="wrap">
+            <figure class="founder-quote">
+              <blockquote>To change the starting line for young people — not just cheer them on from it.</blockquote>
+              <figcaption>— Swabir Shariff · Founder &amp; Executive Director</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="band band-cream">
+          <div class="wrap">
+            <div class="section-head">
+              <span class="kicker">Latest</span>
+              <h2>The latest from The Good Guides</h2>
+            </div>
+            <div class="cards-3">
+              <article class="card news-card">
+                <span class="news-tag">London · October 2026</span>
+                <h3>London, October 2026</h3>
+                <p>Our founder received the QECT 100 Young Leaders Awards 2026 honour at Asprey and was received at a reception at St James's Palace.</p>
+              </article>
+              <article class="card news-card">
+                <span class="news-tag">Coming Up · Jan 30, 2027</span>
+                <h3>Youth Sports Day — Jan 30, 2027</h3>
+                <p>Free sports day and shoe fitting for 300 Scarborough middle-school students. Partners welcome.</p>
+              </article>
+              <article class="card news-card">
+                <span class="news-tag">City of Toronto</span>
+                <h3>City of Toronto Partnership</h3>
+                <p>Youth Violence Prevention Grant recipient, delivering programming in priority communities.</p>
+              </article>
+            </div>
+
+            <div class="subscribe" style="margin-top:56px">
+              <div>
+                <h2>Highlights</h2>
+                <p>We respect your privacy.</p>
+              </div>
+              <div id="subscribeZone">
+                <form id="subscribeForm" novalidate>
+                  <label for="subscribeEmail">Email Address</label>
+                  <input type="email" id="subscribeEmail" name="email" placeholder="Email Address" autocomplete="email" required />
+                  <button class="btn btn-gold" type="submit">Sign Up</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= ABOUT US ================= -->
+      <section class="view" id="view-about-us" aria-label="About Us">
+        <div class="page-hero">
+          <div class="wrap">
+            <h1 tabindex="-1" data-focus>About Us</h1>
+            <p>We are a non-profit organization with a passion for making positive changes in our communities.</p>
+          </div>
+        </div>
+        <div class="band">
+          <div class="wrap">
+            <div class="cards-2">
+              <article class="card">
+                <span class="kicker">Our Vision</span>
+                <h2>Our Vision</h2>
+                <p>The Good Guides' vision is to work with GTA's vulnerable populations and empower these individuals to make positive lifestyle changes themselves. Our approach will improve our social environment and strengthen the communities we live in as we work towards improving our current youth and promoting the development of a self-reliant youth population.</p>
+              </article>
+              <article class="card">
+                <span class="kicker">Our Mission</span>
+                <h2>Our Mission</h2>
+                <p>The Good Guides seeks to develop a positive relationship with at-risk communities by connecting with youth and their families by engaging in social activities. The Good Guides aims to serve our local community by becoming leaders and working with at-risk youth to become self-motivated, empowered, and develop strong social skills to encourage them to reach their full potential. We also aim to foster a therapeutic relationship with these children with a holistic approach to transforming the lives of the communities in which the youth work from within.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+        <div class="band band-cream">
+          <div class="wrap">
+            <div class="section-head">
+              <span class="kicker">What We Stand For</span>
+              <h2>Our Core Values</h2>
+            </div>
+            <div class="values-grid">
+              <article class="card value-card">
+                <h3 class="value-name">INCLUSIVITY</h3>
+                <p>We believe ALL individuals should have equal opportunity - no youth left behind!</p>
+              </article>
+              <article class="card value-card">
+                <h3 class="value-name">RESPECT</h3>
+                <p>We believe young people must be in a caring and inclusive environment that promotes individuality and reinforces self, social and most importantly, communal respect</p>
+              </article>
+              <article class="card value-card">
+                <h3 class="value-name">EMPOWERMENT</h3>
+                <p>Through mentorship, we aim to empower youth and their families to make positive lifestyle changes</p>
+              </article>
+              <article class="card value-card">
+                <h3 class="value-name">CREATIVITY</h3>
+                <p>We are constantly readjusting our approach within the community in order to be as effective as possible. Society is always evolving and changing, in order to create meaningful change, we will continue to evolve as well</p>
+              </article>
+            </div>
+          </div>
+        </div>
+        <div class="band">
+          <div class="wrap">
+            <div class="section-head center">
+              <span class="kicker">Our Philosophy</span>
+              <h2>Youth on the front lines</h2>
+            </div>
+            <div style="max-width:820px; margin:0 auto">
+              <p>The Good Guides believes that the youth should be on the front lines of repairing our communities. No one else can truly understand the trials and tribulations that our children today face than the youth themselves. We believe in placing our youngsters in the driver's seat and providing them with the opportunity and resources to develop new, vibrant, and relevant resources for their communities. Allocating these resources directly back to our community members only increases the effectiveness of our programs and initiatives. This coincidingly provides youth with the opportunity to have a co-op or volunteer placement to gain volunteer hours, school credits, and/or compensation for their work.</p>
+            </div>
+          </div>
+        </div>
+        <div class="band band-cream">
+          <div class="wrap">
+            <div class="section-head">
+              <span class="kicker">Milestones</span>
+              <h2>Our Story So Far</h2>
+            </div>
+            <ol class="timeline">
+              <li><span class="yr">2020</span><p>Founded in Scarborough in 2020.</p></li>
+              <li><span class="yr">2021</span><p>In 2021, founder Swabir Shariff won CharityVillage's Best Individual Contribution to Youth Engagement.</p></li>
+              <li><span class="yr">December 2021</span><p>In December 2021, Swabir was featured on Global News' 'Making a Difference,' interviewed by Susan Hay.</p></li>
+              <li><span class="yr">2023</span><p>In 2023, The Good Guides became a City of Toronto Youth Violence Prevention Grant recipient.</p></li>
+              <li><span class="yr">April 2024</span><p>In April 2024, Swabir was inducted into the Scarborough Walk of Fame as a Rising Star.</p></li>
+              <li><span class="yr">October 2026</span><p>In October 2026, he was named a QECT 100 Young Leaders Awardee 2026 in London.</p></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TAKE ACTION ================= -->
+      <section class="view" id="view-take-action" aria-label="Take Action">
+        <div class="page-hero">
+          <div class="wrap">
+            <h1 tabindex="-1" data-focus>Take Action</h1>
+            <p>Donate or volunteer — and help open doors for youth across Scarborough.</p>
+          </div>
+        </div>
+        <div class="wrap">
+          <figure class="proverb">
+            <blockquote>&ldquo;It takes a village to raise a child&rdquo;</blockquote>
+            <figcaption>— African Proverb</figcaption>
+          </figure>
+        </div>
+        <div class="band" style="padding-top:36px">
+          <div class="wrap">
+            <figure class="banner-photo">
+              <img src="assets/take-action-banner.jpg" alt="Good Guides mentors and youth together at a community event" />
+            </figure>
+            <div class="cards-2">
+              <article class="card action-card">
+                <span class="kicker">Donate</span>
+                <h2>Donate</h2>
+                <p>We are a registered non-profit in the province of Ontario. Your donation allows us to connect with youth and help open doors that would otherwise remain closed. Please help us and become a monthly donor now!</p>
+                <a class="btn btn-gold" data-donate href="https://donorbox.org/good-guides-donations" target="_blank" rel="noopener">Donate</a>
+                <p class="mail-note">In-kind donations &amp; cheques can be mailed to PO Box: 2967 Dundas St. W. #1011, Toronto, ON M6P 1Z2</p>
+              </article>
+              <article class="card action-card">
+                <span class="kicker">Volunteer</span>
+                <h2>Volunteer</h2>
+                <p>Are you interested in making an impact in your local community? Do you have a passion for social change? Sign up to become a Good Guide today!</p>
+                <a class="btn btn-green" href="https://docs.google.com/forms/d/e/1FAIpQLSduLWh-M4CYEuGnOVAiLQhqm06BAzJ3-AGqz7_l6rRx8J-FkA/viewform" target="_blank" rel="noopener">Sign Up to Volunteer</a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= OUR PROGRAMS ================= -->
+      <section class="view" id="view-our-programs" aria-label="Our Programs">
+        <div class="page-hero premise-hero">
+          <div class="wrap">
+            <span class="kicker">Our Programs</span>
+            <h1 tabindex="-1" data-focus>Not just a chair at the table — <span class="hl">the keys to the entire program.</span></h1>
+            <p>The Good Guides doesn't invite youth in to watch. We build in tandem: young people create the programs, run the events, and shape the supports — for youth, and for their community. Everything on this page runs on that premise.</p>
+          </div>
+        </div>
+
+        <div class="band core-band">
+          <div class="wrap">
+            <div class="section-head">
+              <span class="kicker">The Core Program</span>
+              <h2>Co-op &amp; after-school: the engine everything runs on</h2>
+              <p class="lead">Our core program is delivered two ways — through co-op placements and after-school programming. This is where Good Guide Ambassadors come from, and every program, event and support below runs on it.</p>
+            </div>
+            <div class="core-grid">
+              <article class="core-card">
+                <span class="program-tag">Co-op &amp; Volunteer Pathway</span>
+                <h3>Co-op Placements — Good Guide Ambassadors</h3>
+                <p>We actively recruit co-op and placement students from both the secondary and post-secondary levels. They join our team as the Good Guide Ambassadors for their respective areas — earning credits toward graduation while they create, develop, and execute real initiatives and events in their own communities.</p>
+                <p>Ambassadors have the full backing of our organization and access to direct funding, and placements can earn volunteer hours, school credits, and compensation for their work. If you are a student interested in joining our team, don't hesitate to contact us for more information.</p>
+              </article>
+              <article class="core-card">
+                <span class="program-tag">Ages 11–18</span>
+                <h3>After-School Programming</h3>
+                <p>After-school programming for young people ages 11–18 — mentoring and support after the school day ends, in the neighbourhoods our youth call home.</p>
+                <p>And it is built the same way as everything at The Good Guides: in tandem. Not programming done to young people, but programming built with them — for youth, and for the community around them.</p>
+              </article>
+            </div>
+            <div class="core-actions">
+              <a class="btn btn-gold" href="#/contact-us">Contact Us About a Placement</a>
+              <a class="btn btn-outline-light" href="#/gallery">See Ambassador Events in the Gallery</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="band band-cream">
+          <div class="wrap">
+            <div class="section-head">
+              <span class="kicker">How It Works</span>
+              <h2>Built in tandem</h2>
+              <p class="lead">Holding the keys means building, not just attending. With The Good Guides, youth co-build in three strands — for youth and their community:</p>
+            </div>
+            <div class="cards-3">
+              <article class="card">
+                <h3>Programs</h3>
+                <p>Ambassadors don't just join programs — they create, develop, and execute them. The Good Guides does not limit our youth to what they can or cannot do throughout the community: we support the individuality, creativity, and passions of youth throughout the GTA, and put the organization's full backing — and direct funding — behind their ideas.</p>
+              </article>
+              <article class="card">
+                <h3>Events</h3>
+                <p>The events in our Gallery were organized by our placement students — Funday With Cops, the Toronto Sports Festival, Woburn Basketball Day, Community Graduation 2K21. Next up: Youth Sports Day on January 30, 2027 — a free sports day and shoe fitting for 300 Scarborough middle-school students.</p>
+              </article>
+              <article class="card">
+                <h3>Supports</h3>
+                <p>Supports built for the whole community, not just the youth in the room: #CareforaHEART hot-meal delivery to neighbours living in homeless encampments, gifts and treat bags handed out in the community, relief for single parents on excursion days — supports our youth identify, organize, and deliver themselves.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="band">
+          <div class="wrap">
+            <div class="section-head">
+              <span class="kicker">The Wider Record</span>
+              <h2>What runs on the core</h2>
+              <p class="lead">Built on the co-op and after-school core, the same premise carries into every program we run.</p>
+            </div>
+
+            <article class="card record-card">
+              <span class="kicker">City of Toronto Grant Recipient</span>
+              <h3>Youth Violence Prevention</h3>
+              <p class="lead record-lead">The Good Guides is a recipient of the City of Toronto's Youth Violence Prevention Grant (2023), delivering de-escalation and violence-prevention programming for youth in priority Scarborough communities, including Eglinton East, Woburn, and Cedarbrae.</p>
+            </article>
+
+            <div class="program-block flip">
+              <div>
+                <h2>Community Engagement</h2>
+                <p>The Good Guides believe that you must always be present to consistently and effectively serve the community. Reliable, innovative, and meaningful engagement will help rebuild trust and relationships between community members and the organization. The Good Guides actively works with many stakeholders to provide community-based engagement, support, and initiatives across the GTA. Our organization strives to deliver the most equitable based care to some of the most neglected parts of the city. Don't hesitate to contact us today if you are interested in supporting a community near you!</p>
+                <a class="btn btn-outline-green" href="#/contact-us">Contact Us</a>
+              </div>
+              <figure class="program-media">
+                <img src="assets/programs-engagement.jpg" alt="The Good Guides engaging with community members at a neighbourhood event" loading="lazy" />
+              </figure>
+            </div>
+
+            <div class="program-block">
+              <div>
+                <h2>Perspective Excursions</h2>
+                <p>The Good Guides works with our youth ambassadors to create, organize and execute various trips. This unique approach will enable our youngsters to witness that anything is possible. Finding an excursion, mapping out the necessary steps and executing will instill vitally essential traits that will translate into all aspects of life. Youth are losing their sense of perspective and forget that the sky is truly the limit regardless of who you are and where you came from. We have told this to youth for ages, but The Good Guides are here to show them!</p>
+              </div>
+              <figure class="program-media">
+                <img src="assets/programs-excursions.jpg" alt="Good Guides youth ambassadors on a perspective excursion trip" loading="lazy" />
+              </figure>
+            </div>
+
+            <div class="roster-block">
+              <h3>More initiatives, built in tandem</h3>
+              <p>From 2023–2025, Ambassadors also built and ran initiatives across Scarborough and the GTA:</p>
+              <ul class="roster">
+                <li>Guided by Giving</li>
+                <li>Back to School BBQ</li>
+                <li>Financial Literacy</li>
+                <li>CPR &amp; First Aid</li>
+                <li>Job-Prep Workshops</li>
+                <li>March Break Kickoff</li>
+                <li>Ice Fishing</li>
+                <li>Aviation-Career Talk</li>
+                <li>Community Resource Fair</li>
+              </ul>
+            </div>
+
+            <div class="programs-cta">
+              <div class="cta-band">
+                <h2>More to come…</h2>
+                <p>The Good Guides are continually looking to readjust our community approach to be as effective as possible. None of this is possible without our generous donors. Please donate now to make a difference in your community.</p>
+                <a class="btn btn-gold" href="#/take-action">Donate</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= OUR TEAM ================= -->
+      <section class="view" id="view-our-team" aria-label="Our Team">
+        <div class="page-hero">
+          <div class="wrap">
+            <h1 tabindex="-1" data-focus>Our Team</h1>
+            <p>Our team consists of strong leaders who are passionate about positively impacting the lives of the youth in our communities.</p>
+          </div>
+        </div>
+        <div class="band">
+          <div class="wrap">
+            <figure class="banner-photo">
+              <img src="assets/team-banner.jpg" alt="The Good Guides team together at a community event" />
+            </figure>
+            <div class="team-grid">
+              <article class="member">
+                <div class="photo"><img src="assets/team-swabir.jpg" alt="Swabir Shariff, Executive Director/Founder" loading="lazy" /></div>
+                <div class="body">
+                  <h3>SWABIR SHARIFF</h3>
+                  <span class="title">Executive Director/Founder</span>
+                  <p class="bio">Swabir was born and raised on the east side of Scarborough, and his passion for youth mentoring led to the creation of The Good Guides. As an outgoing activist, Swabir previously served on the steering committee of the East Scarborough Storefront and as a Youth Advisory Committee member for the Chief of the Toronto Police Service. He enjoys hiking, travelling and working with youth to become productive members of society.</p>
+                  <div class="contact-line">
+                    <a href="mailto:swabir.shariff@thegoodguides.org">swabir.shariff@thegoodguides.org</a>
+                    <a href="https://www.linkedin.com/in/swabir" target="_blank" rel="noopener">LinkedIn</a>
+                  </div>
+                </div>
+              </article>
+              <article class="member">
+                <div class="photo"><img src="assets/team-daye.jpg" alt="Christopher Daye, Operations Manager" loading="lazy" /></div>
+                <div class="body">
+                  <h3>CHRISTOPHER DAYE</h3>
+                  <span class="title">Operations Manager</span>
+                  <p class="bio">Chris has been living and working in the Scarborough community for the majority of his life and has seen the negative changes firsthand. He enjoys camping, fishing and trips with the youth.</p>
+                  <div class="contact-line"><a href="mailto:christopher.daye@thegoodguides.org">christopher.daye@thegoodguides.org</a></div>
+                </div>
+              </article>
+              <article class="member">
+                <div class="photo"><img src="assets/team-chaz.jpg" alt="Chaz Mais, Project Manager" loading="lazy" /></div>
+                <div class="body">
+                  <h3>CHAZ MAIS</h3>
+                  <span class="title">Project Manager</span>
+                  <p class="bio">Chaz is a resident of the Scarborough community and his experiences within has made him an advocate for the youth. He enjoys music, meditating and spreading positive vibes.</p>
+                  <div class="contact-line"><a href="mailto:chaz.mais@thegoodguides.org">chaz.mais@thegoodguides.org</a></div>
+                </div>
+              </article>
+              <article class="member">
+                <div class="photo"><img src="assets/team-farhan.jpg" alt="Farhan Khalid, Project Director" loading="lazy" /></div>
+                <div class="body">
+                  <h3>FARHAN KHALID</h3>
+                  <span class="title">Project Director</span>
+                  <p class="bio">Farhan is a lifelong resident of the east-Scarborough neighbourhood. His passion for youth empowerment and experience in community work allows him to take initiative to try and impact youth in his community.</p>
+                  <div class="contact-line"><a href="mailto:farhan.khalid@thegoodguides.org">farhan.khalid@thegoodguides.org</a></div>
+                </div>
+              </article>
+              <article class="member">
+                <div class="photo"><img src="assets/team-alex.jpg" alt="Alex Ionita, Marketing Specialist" loading="lazy" /></div>
+                <div class="body">
+                  <h3>ALEX IONITA</h3>
+                  <span class="title">Marketing Specialist</span>
+                  <p class="bio">Alex is a University of Toronto Graduate with a Bachelor's Degree in Business Administration. His passion for basketball and other sports makes him believe that kids can learn a lot about who they are and necessary life skills.</p>
+                  <div class="contact-line"><a href="mailto:alex.ionita@thegoodguides.org">alex.ionita@thegoodguides.org</a></div>
+                </div>
+              </article>
+              <article class="member">
+                <div class="monogram" aria-hidden="true"><span>AA</span></div>
+                <div class="body">
+                  <h3>ABDI AHMED</h3>
+                  <span class="title">Youth Leader</span>
+                  <p class="bio">Abdi Ahmed is a passionate youth leader in his community, he has made it his life mission to empower youth and provide them with the facilities to allow them to be successful. "Your breakthrough comes from your sacrifice" - Abdi Ahmed</p>
+                  <div class="contact-line"><a href="mailto:abdi.ahmed@thegoodguides.org">abdi.ahmed@thegoodguides.org</a></div>
+                </div>
+              </article>
+              <article class="member">
+                <div class="photo"><img src="assets/team-emmanuel.jpg" alt="Emmanuel Akingbola, Development Coordinator" loading="lazy" /></div>
+                <div class="body">
+                  <h3>EMMANUEL AKINGBOLA</h3>
+                  <span class="title">Development Coordinator</span>
+                  <p class="bio">Emmanuel Akingbola holds a Bachelor of Commerce from Toronto Metropolitan University and is currently pursuing a Master of Science in Management. Outside of work, Emmanuel enjoys music, sports, spending time outdoors, and connecting with his community.</p>
+                  <div class="contact-line"><a href="mailto:emmanuel.akingbola@thegoodguides.org">emmanuel.akingbola@thegoodguides.org</a></div>
+                </div>
+              </article>
+              <article class="member">
+                <div class="monogram" aria-hidden="true"><span>SS</span></div>
+                <div class="body">
+                  <h3>SABRINA SHARIFF, RN</h3>
+                  <span class="title">Development &amp; Safety Coordinator</span>
+                  <p class="bio">Sabrina Shariff is a Public Health Nurse who graduated from a Bachelor of Science in Nursing program and is currently a Master of Education candidate. She has a passion for community health nursing and is eager to give back to her community by providing health education and promoting healthy lifestyles for youth and their families.</p>
+                  <div class="contact-line"><a href="mailto:sabrina.shariff@thegoodguides.org">sabrina.shariff@thegoodguides.org</a></div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PARTNERS ================= -->
+      <section class="view" id="view-partners" aria-label="Partners">
+        <div class="page-hero">
+          <div class="wrap">
+            <h1 tabindex="-1" data-focus>Partners</h1>
+            <p>Our partners are extremely important and help us accomplish our goals.</p>
+          </div>
+        </div>
+        <div class="band">
+          <div class="wrap">
+            <div style="max-width:820px">
+              <p class="lead">Are you interested in partnering with us or making a contribution to our organization? Let us know!</p>
+              <p>We are looking forward to making visits to schools and community centres in the GTA. We will be developing engaging workshops aimed to empower youth in vulnerable communities to fulfil their potential!</p>
+              <p>Do you want to make a contribution to our organization? We are always looking for donations such as sports gear, items for auction, sporting event tickets, snacks/drinks, etc.</p>
+              <p>Let us know if you would like to contribute to enabling The Good Guides to put on great activities &amp; events for our youth!</p>
+              <p>If you are an institution, please fill out the form to discuss co-op and volunteer opportunities.</p>
+            </div>
+
+            <div class="section-head" style="margin-top:56px">
+              <span class="kicker">Our Partners</span>
+              <h2>The organizations behind the work</h2>
+            </div>
+            <div class="partner-grid">
+              <a class="partner-tile" href="https://www.torontopolice.on.ca" target="_blank" rel="noopener">
+                <span class="logo-bg"><img src="assets/partner-tps.png" alt="Toronto Police Service logo" loading="lazy" /></span>
+                <span class="tile-name">Toronto Police Service</span>
+              </a>
+              <a class="partner-tile" href="https://www.tdsb.on.ca" target="_blank" rel="noopener">
+                <span class="logo-bg"><img src="assets/partner-tdsb.png" alt="Toronto District School Board logo" loading="lazy" /></span>
+                <span class="tile-name">Toronto District School Board</span>
+              </a>
+              <a class="partner-tile text-tile" href="https://www.toronto.ca" target="_blank" rel="noopener">
+                <span class="tile-name">City of Toronto</span>
+                <span class="tile-sub">Youth Violence Prevention Grant</span>
+              </a>
+              <a class="partner-tile text-tile" href="https://www.letsroam.com" target="_blank" rel="noopener">
+                <span class="tile-name">Scavenger Hunts by Let's Roam</span>
+                <span class="tile-sub">letsroam.com</span>
+              </a>
+            </div>
+
+            <div class="section-head" style="margin-top:64px">
+              <span class="kicker">In the Community</span>
+              <h2>Partnership gallery</h2>
+            </div>
+            <div class="pgallery">
+              <figure><img src="assets/partnership-1.jpg" alt="Good Guides partners and youth at a community partnership event" loading="lazy" /></figure>
+              <figure><img src="assets/partnership-2.jpg" alt="Community partners gathered with Good Guides youth for a group photo" loading="lazy" /></figure>
+            </div>
+
+            <div class="section-head" style="margin-top:64px">
+              <span class="kicker">Get Involved</span>
+              <h2>Let us know!</h2>
+              <p>If you would like to partner with us or make a contribution, fill out the form below and one of our staff members will get back to you.</p>
+            </div>
+            <div class="form-card">
+              <a class="btn btn-green" href="https://docs.google.com/forms/d/e/1FAIpQLSf4_fO1dhzDchVRbb4TYMU_iSWfSNtPjGg-PWY_yFbIHYlXQw/viewform" target="_blank" rel="noopener">Start a Partnership</a>
+              <p class="mail-note">Prefer email? You can also reach us at <a href="mailto:swabir.shariff@thegoodguides.org">swabir.shariff@thegoodguides.org</a>.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= GALLERY ================= -->
+      <section class="view" id="view-gallery" aria-label="Gallery">
+        <div class="page-hero">
+          <div class="wrap">
+            <h1 tabindex="-1" data-focus>Gallery</h1>
+            <p>Events and initiatives from The Good Guides — youth playing sports, cleaning trails, celebrating graduations and giving back across Scarborough.</p>
+          </div>
+        </div>
+        <div class="wrap">
+          <article class="event">
+            <div class="event-head"><h2>FUNDAY WITH COPS</h2><span class="event-date">July 23rd, 2022</span></div>
+            <p>Youth of all ages were invited to play various sports with local 42nd division neighbourhood community officers at a local school park. Families in the area came out and spent the day with other community members and officers playing friendly sporting games.</p>
+            <p class="thanks"><b>Special Thanks to:</b> PRO ACTION Cops and Kids</p>
+            <p class="hashtags">#Community #Youth #ScarbTO #Partnership #InTOtheRavines #TORavines #CityofTO</p>
+            <div class="photo-grid">
+              <figure><img src="assets/g-funday-1.jpg" alt="Youth playing sports with neighbourhood officers at Funday With Cops" loading="lazy" /></figure>
+              <figure><img src="assets/g-funday-2.jpg" alt="Families and community members at the Funday With Cops school park event" loading="lazy" /></figure>
+              <figure><img src="assets/g-funday-3.jpg" alt="Friendly sporting games at Funday With Cops, July 2022" loading="lazy" /></figure>
+            </div>
+          </article>
+
+          <article class="event">
+            <div class="event-head"><h2>Toronto Sports Festival</h2><span class="event-date">June 12th, 2022</span></div>
+            <p>The Toronto Sports Festival brought Scarborough youth and families together for a community day of sport — young people playing, families out together, and neighbours connecting through sport.</p>
+            <p class="thanks"><b>Special Thanks to:</b> PRO ACTION Cops and Kids &amp; The Toronto Police Chief's Youth Advisory Committee</p>
+            <p class="hashtags">#Community #Youth #ScarbTO #Sports #Festival #TheGoodGuides</p>
+            <div class="photo-grid four">
+              <figure><img src="assets/g-sportsfest-1.jpg" alt="Youth and officers playing sports at the Toronto Sports Festival" loading="lazy" /></figure>
+              <figure><img src="assets/g-sportsfest-2.jpg" alt="Community members gathered at the Toronto Sports Festival" loading="lazy" /></figure>
+              <figure><img src="assets/g-sportsfest-3.jpg" alt="Sports and activities at the Toronto Sports Festival, June 2022" loading="lazy" /></figure>
+              <figure><img src="assets/g-sportsfest-4.jpg" alt="Families enjoying the Toronto Sports Festival" loading="lazy" /></figure>
+            </div>
+          </article>
+
+          <article class="event">
+            <div class="event-head"><h2>Woburn Basketball Day</h2><span class="event-date">April 30th, 2022</span></div>
+            <p>This past Saturday, The Good Guides were happy to support the first annual Woburn Basketball Day. Youths from across Scarborough were selected for a fun day of basketball at Centennial College. Thank you to PC Amanda from 43 Division for organizing the event and all other partners for making it a huge success.</p>
+            <p class="hashtags">#ScarbTO #Youth #Basketball #Engagement #Partnership #TheGoodGuides</p>
+            <div class="photo-grid">
+              <figure><img src="assets/g-woburn-1.jpg" alt="Youth playing basketball at Woburn Basketball Day at Centennial College" loading="lazy" /></figure>
+              <figure><img src="assets/g-woburn-2.jpg" alt="Woburn Basketball Day participants on the court" loading="lazy" /></figure>
+              <figure><img src="assets/g-woburn-3.jpg" alt="First annual Woburn Basketball Day, April 2022" loading="lazy" /></figure>
+            </div>
+          </article>
+
+          <article class="event">
+            <div class="event-head"><h2>Doris McCarthy Trail - Cleanup</h2><span class="event-date">October 26th, 2021</span></div>
+            <p>The Good Guides were able to spend this past Saturday cleaning up the Doris McCarthy Trail. Alongside our friends from 43 Division and over 25 community volunteer members, we were able to remove a truckload of garbage from the ravine trail and waterfront! Thank you to all who participated, and we look forward to seeing you at the next one.</p>
+            <p class="hashtags">#Community #Youth #ScarbTO #Partnership #InTOtheRavines #TORavines #CityofTO</p>
+            <div class="photo-grid">
+              <figure><img src="assets/g-trail-1.jpg" alt="Volunteers cleaning up the Doris McCarthy Trail ravine" loading="lazy" /></figure>
+              <figure><img src="assets/g-trail-2.jpg" alt="Good Guides and 43 Division members at the trail cleanup" loading="lazy" /></figure>
+              <figure><img src="assets/g-trail-3.jpg" alt="Community volunteers removing garbage from the waterfront trail" loading="lazy" /></figure>
+            </div>
+          </article>
+
+          <article class="event">
+            <div class="event-head"><h2>Community Graduation 2K21</h2><span class="event-date">July 24th, 2021</span></div>
+            <p>We are happy to announce that our Community Graduation was a huge success! The Good Guides were able to celebrate the accomplishments of students from all grades. Our event would not have been possible without our dedicated partners and supporters. We want to give a big thank you to everyone who helped out to make this day possible.</p>
+            <p class="hashtags">#Community #Graduation #Youth #ScarbTO #Partnership</p>
+            <div class="photo-grid four">
+              <figure><img src="assets/g-grad-1.jpg" alt="Students celebrating at the Community Graduation 2K21" loading="lazy" /></figure>
+              <figure><img src="assets/g-grad-2.jpg" alt="Graduates and families at the Community Graduation celebration" loading="lazy" /></figure>
+              <figure><img src="assets/g-grad-3.jpg" alt="Community Graduation 2K21 ceremony, July 2021" loading="lazy" /></figure>
+              <figure><img src="assets/g-grad-4.jpg" alt="Celebrating student accomplishments at Community Graduation 2K21" loading="lazy" /></figure>
+            </div>
+          </article>
+
+          <article class="event text-only">
+            <div class="event-head"><h2>#CareforaHEART 2021 — Without Shelter Meal Delivery</h2><span class="event-date">January 2nd, 2021</span></div>
+            <span class="program-tag">Community Support</span>
+            <p>The Good Guides partnered with KxngsTable and delivered hot meals to our neighbours living in homeless encampments. Special thanks to our guest chef for his amazing contributions.</p>
+            <p class="hashtags">#CareforaHEART #Community #Youth #ScarbTO #TheGoodGuides</p>
+          </article>
+
+          <article class="event">
+            <div class="event-head"><h2>Delivering Presents 2K20</h2><span class="event-date">November 29th, 2020</span></div>
+            <p>Check out our Project Manager Chaz, as he spends the weekend handing out gifts and treats bags to members of our community.</p>
+            <p>Without the support of individuals like yourself, nothing we do is possible. Donate now, to make a difference to a child near you.</p>
+            <div class="photo-grid">
+              <figure><img src="assets/g-presents-1.jpg" alt="Project Manager Chaz handing out gifts and treat bags in the community" loading="lazy" /></figure>
+            </div>
+          </article>
+
+          <article class="event">
+            <div class="event-head"><h2>Brooks Farms - Field Trip</h2><span class="event-date">September 27th, 2020</span></div>
+            <p>We travelled to Brooks Farm in Mount Albert, Ontario. The youth spent the day socially distanced in the outdoors hiking, zip-lining, apple picking and much more! We provided necessary relief to single parents while giving youth a first-time opportunity to explore a real, operational farm.</p>
+            <div class="photo-grid">
+              <figure><img src="assets/g-farm-1.jpg" alt="Good Guides youth exploring Brooks Farm in Mount Albert" loading="lazy" /></figure>
+              <figure><img src="assets/g-farm-2.jpg" alt="Youth enjoying outdoor activities on the Brooks Farms field trip" loading="lazy" /></figure>
+              <figure><img src="assets/g-farm-3.jpg" alt="Apple picking and hiking at Brooks Farm, September 2020" loading="lazy" /></figure>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================= CONTACT US ================= -->
+      <section class="view" id="view-contact-us" aria-label="Contact Us">
+        <div class="page-hero">
+          <div class="wrap">
+            <h1 tabindex="-1" data-focus>Contact Us</h1>
+            <p>Connect with us today.</p>
+          </div>
+        </div>
+        <div class="band">
+          <div class="wrap">
+            <figure class="banner-photo">
+              <img src="assets/contact-banner.jpg" alt="The Good Guides connecting with youth and families in Scarborough" />
+            </figure>
+            <div style="max-width:820px">
+              <p class="lead">We are a provincially registered non-profit organization based in Scarborough and are looking to connect with vulnerable neighbourhoods throughout the GTA.</p>
+              <p>Whether you are a parent seeking mentorship for your child or a local business willing to support us - please do not hesitate to contact us for any further information or to connect with The Good Guides today!</p>
+            </div>
+            <div class="contact-grid" style="margin-top:40px">
+              <article class="card contact-card">
+                <span class="kicker">Visit Us</span>
+                <h3>Office Address</h3>
+                <p>2229 Kingston Rd, Unit B<br />Scarborough, ON M1N 1T8</p>
+                <h3 style="margin-top:22px">Phone Number</h3>
+                <p><a href="tel:18005162818">1-800-516-2818</a></p>
+              </article>
+              <article class="card contact-card">
+                <span class="kicker">Email Us</span>
+                <h3>Contact Information</h3>
+                <ul class="contact-list">
+                  <li><span class="role">General Inquiries</span><a href="mailto:service@thegoodguides.org">service@thegoodguides.org</a></li>
+                  <li><span class="role">Partnerships</span><a href="mailto:swabir.shariff@thegoodguides.org">swabir.shariff@thegoodguides.org</a></li>
+                  <li><span class="role">COOP &amp; Student Placements</span><a href="mailto:ambassador@thegoodguides.org">ambassador@thegoodguides.org</a></li>
+                </ul>
+                <p style="margin:26px 0 0"><a class="btn btn-green" href="https://docs.google.com/forms/d/e/1FAIpQLSesdMDa_zVWDmYiz4SykFRYnBSest8HbVTFtaQMrp6MVkC4Pw/viewform" target="_blank" rel="noopener">Send Us a Message</a></p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img src="assets/logo.jpg" alt="The Good Guides logo" width="76" height="76" />
+            <div class="org-name">The Good Guides - Inner City Youth Mentoring</div>
+            <p>Toronto, Ontario</p>
+            <p><a href="mailto:service@thegoodguides.org">service@thegoodguides.org</a></p>
+          </div>
+          <nav aria-label="Footer navigation">
+            <h3>Explore</h3>
+            <ul class="footer-nav">
+              <li><a href="#/" data-nav="/">Home</a></li>
+              <li><a href="#/about-us" data-nav="/about-us">About Us</a></li>
+              <li><a href="#/take-action" data-nav="/take-action">Take Action</a></li>
+              <li><a href="#/our-programs" data-nav="/our-programs">Our Programs</a></li>
+              <li><a href="#/our-team" data-nav="/our-team">Our Team</a></li>
+              <li><a href="#/partners" data-nav="/partners">Partners</a></li>
+              <li><a href="#/gallery" data-nav="/gallery">Gallery</a></li>
+              <li><a href="#/contact-us" data-nav="/contact-us">Contact Us</a></li>
+            </ul>
+          </nav>
+          <div>
+            <h3>Follow Us</h3>
+            <div class="footer-socials">
+              <a href="https://www.instagram.com/thegoodguidesofficial" target="_blank" rel="noopener" aria-label="The Good Guides on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1s-3.6 0-4.9-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 4 4 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7C8.3 24 8.7 24 12 24s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.9A6.1 6.1 0 1 0 18.1 12 6.1 6.1 0 0 0 12 5.9zm0 10A4 4 0 1 1 16 12a4 4 0 0 1-4 3.9zm7.9-10.4a1.4 1.4 0 1 1-1.4-1.4 1.4 1.4 0 0 1 1.4 1.4z"/></svg></a>
+              <a href="https://www.facebook.com/thegoodguidesicym" target="_blank" rel="noopener" aria-label="The Good Guides on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4h-3v-3.5h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 1-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></svg></a>
+              <a href="https://x.com/thegoodguidesTO" target="_blank" rel="noopener" aria-label="The Good Guides on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 1.2h3.7l-8.1 9.2L24 22.8h-7.5l-5.9-7.7-6.7 7.7H.2l8.6-9.9L0 1.2h7.7l5.3 7 5.9-7zm-1.3 19.4h2L6.6 3.3H4.4l13.2 17.3z"/></svg></a>
+            </div>
+            <p style="margin-top:18px"><a class="btn btn-gold" href="#/take-action">Donate</a></p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 The Good Guides</span>
+          <span>The Good Guides - Inner City Youth Mentoring · Toronto, Ontario</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      var DONATE_URL = "https://donorbox.org/good-guides-donations";
+      var VOLUNTEER_URL = "https://docs.google.com/forms/d/e/1FAIpQLSduLWh-M4CYEuGnOVAiLQhqm06BAzJ3-AGqz7_l6rRx8J-FkA/viewform";
+
+      var ROUTES = {
+        "/":            { view: "view-home",         title: "The Good Guides — Inner City Youth Mentoring",            description: "We are a grassroots, black-led, not for profit organization." },
+        "/about-us":    { view: "view-about-us",     title: "About Us | The Good Guides",                               description: "The Good Guides' vision is to work with GTA's vulnerable populations and empower these individuals to make positive lifestyle changes themselves." },
+        "/take-action": { view: "view-take-action",  title: "Take Action | The Good Guides",                            description: "It takes a village to raise a child — donate or volunteer with The Good Guides, and sign up to become a Good Guide today." },
+        "/our-programs":{ view: "view-our-programs", title: "Our Programs | The Good Guides",                           description: "Not just a chair at the table — the keys to the entire program. The Good Guides' core program runs through co-op placements and after-school programming, built in tandem with youth." },
+        "/our-team":    { view: "view-our-team",     title: "Our Team | The Good Guides",                               description: "Our team consists of strong leaders who are passionate about positively impacting the lives of the youth in our communities." },
+        "/partners":    { view: "view-partners",     title: "Partners | The Good Guides",                               description: "Our partners are extremely important and help us accomplish our goals." },
+        "/gallery":     { view: "view-gallery",      title: "Gallery | The Good Guides",                                description: "Events and initiatives from The Good Guides — youth playing sports, cleaning trails, celebrating graduations and giving back across Scarborough." },
+        "/contact-us":  { view: "view-contact-us",   title: "Contact Us | The Good Guides",                             description: "Connect with The Good Guides today — a provincially registered non-profit organization based in Scarborough." }
+      };
+
+      function currentPath() {
+        var h = window.location.hash.replace(/^#/, "");
+        if (!h || h === "/") return "/";
+        if (h.charAt(0) !== "/") h = "/" + h;
+        if (h.length > 1 && h.charAt(h.length - 1) === "/") h = h.slice(0, -1);
+        return ROUTES.hasOwnProperty(h) ? h : "/";
+      }
+
+      function render() {
+        var path = currentPath();
+        var route = ROUTES[path];
+        var views = document.querySelectorAll(".view");
+        for (var i = 0; i < views.length; i++) {
+          views[i].classList.toggle("active", views[i].id === route.view);
+        }
+        document.title = route.title;
+        var meta = document.querySelector('meta[name="description"]');
+        if (meta) meta.setAttribute("content", route.description);
+        var links = document.querySelectorAll("[data-nav]");
+        for (var j = 0; j < links.length; j++) {
+          if (links[j].getAttribute("data-nav") === path) links[j].setAttribute("aria-current", "page");
+          else links[j].removeAttribute("aria-current");
+        }
+        closeMenu();
+        window.scrollTo(0, 0);
+        var active = document.getElementById(route.view);
+        var focusTarget = active ? active.querySelector("[data-focus]") : null;
+        if (focusTarget) focusTarget.focus({ preventScroll: true });
+      }
+
+      var hamburger = document.getElementById("hamburger");
+      var mobileMenu = document.getElementById("mobileMenu");
+      function closeMenu() {
+        mobileMenu.classList.remove("open");
+        hamburger.setAttribute("aria-expanded", "false");
+        hamburger.setAttribute("aria-label", "Open menu");
+      }
+      hamburger.addEventListener("click", function () {
+        var open = mobileMenu.classList.toggle("open");
+        hamburger.setAttribute("aria-expanded", open ? "true" : "false");
+        hamburger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      });
+
+      window.addEventListener("hashchange", render);
+
+      /* Donate buttons use the single documented Donorbox path. */
+      var donateLinks = document.querySelectorAll("[data-donate]");
+      for (var d = 0; d < donateLinks.length; d++) donateLinks[d].setAttribute("href", DONATE_URL);
+
+      /* Subscribe block: hand off to the subscribe Google Form (opens in a new tab). */
+      var subscribeForm = document.getElementById("subscribeForm");
+      if (subscribeForm) {
+        subscribeForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var email = document.getElementById("subscribeEmail");
+          if (!email.value || email.value.indexOf("@") === -1) { email.focus(); return; }
+          window.open("https://docs.google.com/forms/d/e/1FAIpQLSfQH7Me7mqL4xQEAt1yzsMiLyFNrIqe87RdvUiWCWIE7vlOpg/viewform", "_blank", "noopener");
+          document.getElementById("subscribeZone").innerHTML = '<p class="thanks" role="status">Opening the subscribe form\u2026</p>';
+        });
+      }
+
+      /* Partner CTA: a plain link in the Partners view opens the partnership Google Form in a new tab. */
+
+      /* If any image fails to load, remove it gracefully — no broken-image icons. */
+      document.addEventListener("error", function (e) {
+        var t = e.target;
+        if (t && t.tagName === "IMG") {
+          var fig = t.closest("figure") || t.parentElement;
+          if (fig && fig !== document.body) fig.style.display = "none";
+          t.style.display = "none";
+        }
+      }, true);
+
+      render();
+    </script>
+  </body>
+</html>
