@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://thegoodguides.org/sitemap.xml
