@@ -238,6 +238,10 @@
       .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
       .hero-photo { border-radius: 18px; overflow: hidden; box-shadow: 0 24px 50px rgba(0,0,0,0.28); border: 4px solid rgba(255,255,255,0.16); }
       .hero-photo img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+      .hero-join { margin: 20px 0 0; font-size: 1rem; }
+      .hero-join a { color: #FFFFFF; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+      .hero-join a:hover { color: var(--gold); }
+      #join, #role-contacts { scroll-margin-top: 96px; }
       @media (max-width: 860px) {
         .hero-grid { grid-template-columns: 1fr; gap: 32px; padding: 52px 0; }
         .hero-photo img { aspect-ratio: 16 / 10; }
@@ -284,6 +288,10 @@
       .news-card .news-tag { display: inline-block; background: var(--surface); color: var(--green); font-weight: 800; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 12px; border-radius: 999px; margin-bottom: 14px; }
       @media (prefers-color-scheme: dark) { .news-card .news-tag { color: var(--gold); } }
       .news-card h3 { margin-bottom: 8px; }
+      a.news-card { display: block; text-decoration: none; color: var(--text); }
+      a.news-card:hover h3 { text-decoration: underline; text-underline-offset: 3px; }
+      .news-card .card-go { display: inline-block; margin-top: 2px; font-weight: 800; font-size: 1.15rem; line-height: 1; color: var(--green); }
+      @media (prefers-color-scheme: dark) { .news-card .card-go { color: var(--gold); } }
 
       /* Subscribe */
       .subscribe { background: var(--green); color: #fff; border-radius: 20px; padding: 44px 40px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 36px; align-items: center; }
@@ -297,6 +305,7 @@
       }
       .subscribe .thanks { font-size: 1.3rem; font-weight: 800; color: var(--gold); margin: 0; }
       .subscribe .form-error { flex-basis: 100%; margin: 2px 0 0; color: #FFFFFF; font-weight: 700; }
+      .subscribe .subscribe-note { margin: 12px 0 0; color: #EAF2E4; font-size: 0.95rem; }
       @media (max-width: 760px) { .subscribe { grid-template-columns: 1fr; padding: 34px 24px; } }
 
       /* ---------- Page hero (inner pages) ---------- */
@@ -545,9 +554,10 @@
                 <h1 tabindex="-1" data-focus>Putting Youth on the <span class="hl">Front Lines</span> of Change</h1>
                 <p class="subline">Youth-led mentoring for inner-city youth in Scarborough, Toronto.</p>
                 <div class="hero-actions">
-                  <a class="btn btn-gold" href="https://docs.google.com/forms/d/e/1FAIpQLSduLWh-M4CYEuGnOVAiLQhqm06BAzJ3-AGqz7_l6rRx8J-FkA/viewform" target="_blank" rel="noopener">Become a Mentor</a>
+                  <a class="btn btn-gold" href="https://docs.google.com/forms/d/e/1FAIpQLSduLWh-M4CYEuGnOVAiLQhqm06BAzJ3-AGqz7_l6rRx8J-FkA/viewform" target="_blank" rel="noopener">Volunteer With Us</a>
                   <a class="btn btn-outline-light" data-donate href="https://donorbox.org/good-guides-donations" target="_blank" rel="noopener">Donate</a>
                 </div>
+                <p class="hero-join"><a href="#/our-programs?anchor=join">For youth &amp; parents: joining is free for ages 11–18 →</a></p>
               </div>
               <figure class="hero-photo">
                 <img src="assets/philosophy-1.jpg" alt="Good Guides mentors beside the organization's green banner at an outdoor community event in Scarborough" />
@@ -613,7 +623,7 @@
             </div>
             <div class="card" style="margin-top:28px; display:flex; flex-wrap:wrap; gap:14px 22px; align-items:center; justify-content:space-between">
               <p style="margin:0"><strong>For youth &amp; parents:</strong> joining is free for youth ages 11–18. Reach out, tell us your neighbourhood, and we'll match you with what's running near you.</p>
-              <a class="btn btn-outline-green" href="#/our-programs">How to Join</a>
+              <a class="btn btn-outline-green" href="#/our-programs?anchor=join">How to Join</a>
             </div>
           </div>
         </div>
@@ -639,16 +649,18 @@
                 <h3>London, October 2026</h3>
                 <p>Our founder, Swabir Shariff, was named a QECT 100 Young Leaders Awardee 2026. The award was presented at Asprey in London, and he was received at a reception at St James's Palace.</p>
               </article>
-              <article class="card news-card">
+              <a class="card news-card" href="#/partners">
                 <span class="news-tag">Coming Up · Jan 30, 2027</span>
                 <h3>Youth Sports Day — Jan 30, 2027</h3>
                 <p>A free sports day and shoe fitting for Scarborough middle-school students. Partners welcome.</p>
-              </article>
-              <article class="card news-card">
+                <span class="card-go" aria-hidden="true">→</span>
+              </a>
+              <a class="card news-card" href="#/partners">
                 <span class="news-tag">City of Toronto</span>
                 <h3>City of Toronto Partnership</h3>
                 <p>Youth Violence Prevention Grant recipient, delivering programming in Scarborough neighbourhoods.</p>
-              </article>
+                <span class="card-go" aria-hidden="true">→</span>
+              </a>
             </div>
 
             <div class="subscribe" style="margin-top:56px">
@@ -660,9 +672,10 @@
                 <form id="subscribeForm" novalidate>
                   <label for="subscribeEmail">Email Address</label>
                   <input type="email" id="subscribeEmail" name="email" placeholder="Email Address" autocomplete="email" required aria-describedby="subscribeError" />
-                  <button class="btn btn-gold" type="submit">Sign Up</button>
+                  <button class="btn btn-gold" type="submit">Continue</button>
                   <p class="form-error" id="subscribeError" role="alert" hidden>Please enter a valid email address.</p>
                 </form>
+                <p class="subscribe-note">Opens a short form — it will ask for your email there.</p>
               </div>
             </div>
           </div>
@@ -887,13 +900,13 @@
               </article>
             </div>
             <div class="core-actions">
-              <a class="btn btn-gold" href="#/contact-us">Contact Us About a Placement</a>
+              <a class="btn btn-gold" href="#/contact-us?anchor=role-contacts">Contact Us About a Placement</a>
               <a class="btn btn-outline-light" href="#/gallery">See Ambassador Events in the Gallery</a>
             </div>
           </div>
         </div>
 
-        <div class="band">
+        <div class="band" id="join">
           <div class="wrap">
             <div class="split">
               <div>
@@ -1109,7 +1122,9 @@
           <div class="wrap">
             <div style="max-width:820px">
               <p class="lead">Want to work with us? We visit schools and community centres across the GTA, and we build workshops with our partners — practical sessions youth help run, on things like résumés, opening a bank account, and understanding OSAP funding.</p>
-              <p>Partner contributions go straight to work, too — sports gear, event tickets, and snacks and drinks for program days. Institutions: use the form below to talk co-op and volunteer opportunities.</p>
+              <p>Partner contributions go straight to work, too — sports gear, event tickets, and snacks and drinks for program days. Institutions: start with the Start a Partnership button — it opens our partnership form.</p>
+              <p><a class="btn btn-green" href="https://docs.google.com/forms/d/e/1FAIpQLSf4_fO1dhzDchVRbb4TYMU_iSWfSNtPjGg-PWY_yFbIHYlXQw/viewform" target="_blank" rel="noopener">Start a Partnership</a></p>
+              <p>Teachers asking about co-op placements: see <a href="#/contact-us">Contact Us</a>.</p>
             </div>
 
             <div class="section-head" style="margin-top:56px">
@@ -1285,7 +1300,7 @@
                 <h2 style="margin-top:22px">Phone Number</h2>
                 <p><a href="tel:18005162818">1-800-516-2818</a></p>
               </article>
-              <article class="card contact-card">
+              <article class="card contact-card" id="role-contacts">
                 <span class="kicker">Email Us</span>
                 <h2>Contact Information</h2>
                 <ul class="contact-list">
@@ -1354,16 +1369,47 @@
         "/contact-us":  { view: "view-contact-us",   title: "Contact Us | The Good Guides",                             description: "Connect with The Good Guides today — an incorporated non-profit in Ontario, based in Scarborough." }
       };
 
-      function currentPath() {
+      /* Hash routes may carry an anchor target, e.g. #/our-programs?anchor=join.
+         After the view activates, the router scrolls to the element with that id
+         inside the active view; an unknown or missing target degrades to the
+         top of the view. */
+      function parseHash() {
         var h = window.location.hash.replace(/^#/, "");
-        if (!h || h === "/") return "/";
+        var anchor = "";
+        var q = h.indexOf("?");
+        if (q !== -1) {
+          var params = h.slice(q + 1).split("&");
+          h = h.slice(0, q);
+          for (var i = 0; i < params.length; i++) {
+            var kv = params[i].split("=");
+            if (kv[0] === "anchor" && kv.length > 1 && kv[1]) {
+              try { anchor = decodeURIComponent(kv[1]); } catch (e) { anchor = kv[1]; }
+            }
+          }
+        }
+        if (!h || h === "/") return { path: "/", anchor: anchor };
         if (h.charAt(0) !== "/") h = "/" + h;
         if (h.length > 1 && h.charAt(h.length - 1) === "/") h = h.slice(0, -1);
-        return ROUTES.hasOwnProperty(h) ? h : "/";
+        return { path: ROUTES.hasOwnProperty(h) ? h : "/", anchor: anchor };
+      }
+
+      function currentPath() {
+        return parseHash().path;
+      }
+
+      function scrollToAnchor(anchor) {
+        if (!anchor) return;
+        var active = document.querySelector(".view.active");
+        if (!active) return;
+        var target = active.querySelector('[id="' + anchor + '"]');
+        if (!target) return;
+        var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
       }
 
       function render() {
-        var path = currentPath();
+        var parsed = parseHash();
+        var path = parsed.path;
         var route = ROUTES[path];
         var views = document.querySelectorAll(".view");
         for (var i = 0; i < views.length; i++) {
@@ -1382,6 +1428,11 @@
         var active = document.getElementById(route.view);
         var focusTarget = active ? active.querySelector("[data-focus]") : null;
         if (focusTarget) focusTarget.focus({ preventScroll: true });
+        if (parsed.anchor) {
+          scrollToAnchor(parsed.anchor);
+          /* Retry once images settle, so the target lands in the same place. */
+          window.setTimeout(function () { scrollToAnchor(parsed.anchor); }, 450);
+        }
       }
 
       var hamburger = document.getElementById("hamburger");
