@@ -10,11 +10,14 @@
     <meta property="og:title" content="The Good Guides — Inner City Youth Mentoring" />
     <meta property="og:description" content="Youth-led mentoring in Scarborough, Toronto. Young people build the programs, run the events, and shape the help in their own neighbourhoods — with mentors from those same streets standing behind them." />
     <meta property="og:url" content="https://thegoodguides.org/" />
-    <meta property="og:image" content="https://thegoodguides.org/assets/philosophy-1.jpg" />
+    <meta property="og:image" content="https://thegoodguides.org/assets/hero-serving.jpg" />
+    <meta property="og:image:width" content="1290" />
+    <meta property="og:image:height" content="937" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="The Good Guides — Inner City Youth Mentoring" />
     <meta name="twitter:description" content="Youth-led mentoring in Scarborough, Toronto. Young people build the programs, run the events, and shape the help in their own neighbourhoods — with mentors from those same streets standing behind them." />
-    <meta name="twitter:image" content="https://thegoodguides.org/assets/philosophy-1.jpg" />
+    <meta name="twitter:image" content="https://thegoodguides.org/assets/hero-serving.jpg" />
     <link rel="icon" href="assets/logo.jpg" />
     <title>The Good Guides — Inner City Youth Mentoring</title>
     <link rel="canonical" href="https://thegoodguides.org/" />
@@ -35,7 +38,6 @@
         "foundingDate": "2020",
         "url": "https://thegoodguides.org/",
         "email": "service@thegoodguides.org",
-        "telephone": "1-800-516-2818",
         "logo": "https://thegoodguides.org/assets/logo.jpg",
         "address": {
           "@type": "PostalAddress",
@@ -58,7 +60,7 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Black&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
     <style>
       :root {
         --green: #2D6B38;
@@ -66,29 +68,35 @@
         --green-darkest: #173A1F;
         --gold: #F5B921;
         --gold-dark: #D99E0B;
+        --gold-on-green: #FFD34D;
         --cream: #F5F1E6;
         --ink: #1D1A15;
-        --bright: #57AB33;
+        --on-green: #EAF2E4;
+        --footer-text: #DCE8D2;
+        --footer-muted: #B9CDA9;
+        --field-border: #8A8471;
         --bg: #FFFFFF;
         --surface: #FFFFFF;
         --band: #F5F1E6;
         --text: #1D1A15;
         --muted: #55503F;
         --line: #E4DFCE;
-        --card-line: #E7E2D2;
+        --card-line: #E4DFCE;
         --header-bg: #FFFFFF;
         --shadow: 0 10px 30px rgba(29, 26, 21, 0.08);
+        --font-display: "Bricolage Grotesque", "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+        --font-body: "Source Sans 3", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
         color-scheme: light;
       }
       @media (prefers-color-scheme: dark) {
         :root {
           --bg: #14120E;
-          --surface: #1E1B15;
-          --band: #1B2417;
+          --surface: #26221A;
+          --band: #211D15;
           --text: #F2EDDD;
           --muted: #C9C2AC;
           --line: #3A362A;
-          --card-line: #3A362A;
+          --card-line: #4A4433;
           --header-bg: #1A1712;
           --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
           color-scheme: dark;
@@ -99,20 +107,23 @@
       html, body { overflow-x: clip; }
       body {
         margin: 0;
-        font-family: "Archivo", "Segoe UI", Arial, sans-serif;
+        font-family: var(--font-body);
         background: var(--bg);
         color: var(--text);
-        line-height: 1.6;
-        font-size: 17px;
+        line-height: 1.7;
+        font-size: 18px;
         -webkit-font-smoothing: antialiased;
       }
       img { max-width: 100%; display: block; }
       a { color: var(--green); }
       @media (prefers-color-scheme: dark) { a { color: var(--gold); } }
-      h1, h2, h3, h4 { line-height: 1.15; margin: 0 0 0.5em; font-weight: 800; letter-spacing: -0.01em; }
-      h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); }
-      h3 { font-size: 1.25rem; }
-      p { margin: 0 0 1em; }
+      h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; margin: 0 0 0.5em; font-weight: 700; letter-spacing: -0.015em; }
+      h1, h2 { font-weight: 800; }
+      h2 { font-size: clamp(1.85rem, 3.6vw, 2.6rem); }
+      h3 { font-size: 1.3rem; }
+      h4 { font-size: 1.08rem; }
+      p { margin: 0 0 1em; text-wrap: pretty; max-width: 66ch; }
+      h1, h2 { text-wrap: balance; }
       .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
       :focus-visible { outline: 3px solid var(--green); outline-offset: 2px; border-radius: 4px; }
       .hero :focus-visible, .page-hero :focus-visible, .band-green :focus-visible, .core-band :focus-visible, .cta-band :focus-visible, .subscribe :focus-visible, .site-footer :focus-visible { outline-color: var(--gold); }
@@ -134,13 +145,13 @@
         box-shadow: 0 2px 14px rgba(29,26,21,0.06);
       }
       .header-inner {
-        max-width: 1280px; margin: 0 auto; padding: 10px 20px;
+        max-width: 1180px; margin: 0 auto; padding: 10px 24px;
         display: flex; align-items: center; gap: 18px;
       }
       .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); flex-shrink: 0; }
       .brand img { width: 54px; height: 54px; border-radius: 10px; object-fit: cover; background: #FFFFFF; padding: 3px; border: 1px solid var(--line); }
-      .brand-text { font-weight: 900; font-size: 1.12rem; line-height: 1.05; letter-spacing: -0.01em; }
-      .brand-text small { display: block; font-weight: 600; font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); margin-top: 3px; }
+      .brand-text { font-family: var(--font-display); font-weight: 800; font-size: 1.14rem; line-height: 1.05; letter-spacing: -0.01em; }
+      .brand-text small { display: block; font-weight: 600; font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); margin-top: 3px; }
       @media (prefers-color-scheme: dark) { .brand-text small { color: var(--gold); } }
       .main-nav { margin-left: auto; }
       .main-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 2px; flex-wrap: nowrap; }
@@ -163,12 +174,16 @@
       .socials svg { width: 19px; height: 19px; fill: currentColor; }
       .btn {
         display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-        padding: 13px 26px; border-radius: 999px; font-weight: 800; font-size: 0.95rem;
+        font-family: var(--font-body);
+        padding: 13px 26px; border-radius: 999px; font-weight: 700; font-size: 0.94rem;
         text-decoration: none; letter-spacing: 0.03em; text-transform: uppercase;
         border: 2px solid transparent; cursor: pointer; min-height: 48px; text-align: center;
-        transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+        transition: transform 0.18s ease, background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
       }
-      .btn:hover { transform: translateY(-1px); }
+      @media (hover: hover) and (pointer: fine) {
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(29, 26, 21, 0.18); }
+      }
+      .btn:active { transform: translateY(0); }
       .btn-gold { background: var(--gold); color: #1D1A15; }
       .btn-gold:hover { background: var(--gold-dark); color: #1D1A15; }
       .btn-outline-light { border-color: #FFFFFF; color: #FFFFFF; background: transparent; }
@@ -205,7 +220,7 @@
         .brand-text small { display: none; }
       }
       @media (max-width: 640px) {
-        .header-inner { padding: 10px 14px; gap: 10px; }
+        .header-inner { padding: 10px 24px; gap: 10px; }
         .brand { gap: 8px; min-width: 0; }
         .brand img { width: 46px; height: 46px; }
         .brand-text { font-size: 0.98rem; }
@@ -216,16 +231,16 @@
       /* ---------- Views & bands ---------- */
       .view { display: none; }
       .view.active { display: block; }
-      .band { padding: 76px 0; }
+      .band { padding: 72px 0; }
       .band-cream { background: var(--band); }
       .band-green { background: var(--green); color: #FFFFFF; }
       .band-green a { color: #F5F1E6; }
       .section-head { max-width: 760px; margin-bottom: 40px; }
       .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
-      .kicker { display: inline-block; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.78rem; color: var(--green); margin-bottom: 12px; }
+      .kicker { display: inline-block; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; font-size: 0.8rem; color: var(--green); margin-bottom: 12px; }
       @media (prefers-color-scheme: dark) { .kicker { color: var(--gold); } }
       .band-green .kicker { color: #F5F1E6; }
-      .lead { font-size: 1.18rem; }
+      .lead { font-size: 1.25rem; line-height: 1.6; font-weight: 600; }
 
       /* ---------- Hero ---------- */
       .hero { background: var(--green); color: #FFFFFF; overflow: hidden; }
@@ -233,15 +248,15 @@
       .hero-grid.solo { grid-template-columns: 1fr; max-width: 880px; margin: 0 auto; text-align: center; padding: 88px 0; }
       .hero-grid.solo .subline { margin-left: auto; margin-right: auto; }
       .hero-grid.solo .hero-actions { justify-content: center; }
-      .hero h1 { font-family: "Archivo Black", "Archivo", sans-serif; font-size: clamp(2.3rem, 5.2vw, 3.9rem); line-height: 1.1; margin-bottom: 20px; }
-      .hero h1 .hl { color: var(--gold); }
-      .hero .subline { font-size: clamp(1.08rem, 2vw, 1.3rem); color: #EAF2E4; max-width: 34em; margin-bottom: 32px; }
+      .hero h1 { font-family: var(--font-display); font-size: clamp(2.3rem, 5.2vw, 3.9rem); line-height: 1.1; margin-bottom: 20px; }
+      .hero h1 .hl { color: var(--gold-on-green); }
+      .hero .subline { font-size: clamp(1.08rem, 2vw, 1.3rem); color: var(--on-green); max-width: 34em; margin-bottom: 32px; }
       .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
-      .hero-photo { border-radius: 18px; overflow: hidden; box-shadow: 0 24px 50px rgba(0,0,0,0.28); border: 4px solid rgba(255,255,255,0.16); }
+      .hero-photo { border-radius: 14px; overflow: hidden; box-shadow: 0 24px 50px rgba(0,0,0,0.28); border: 4px solid rgba(255,255,255,0.16); }
       .hero-photo img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
       .hero-join { margin: 20px 0 0; font-size: 1rem; }
       .hero-join a { color: #FFFFFF; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
-      .hero-join a:hover { color: var(--gold); }
+      .hero-join a:hover { color: var(--gold-on-green); }
       #join, #role-contacts { scroll-margin-top: 96px; }
       @media (max-width: 860px) {
         .hero-grid { grid-template-columns: 1fr; gap: 32px; padding: 52px 0; }
@@ -251,7 +266,7 @@
       /* ---------- Stats ---------- */
       .stats { background: var(--band); padding: 44px 0; border-bottom: 1px solid var(--line); }
       .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; text-align: center; max-width: 640px; margin: 0 auto; }
-      .stat .num { font-family: "Archivo Black", "Archivo", sans-serif; font-size: clamp(1.7rem, 3.4vw, 2.5rem); color: var(--green); line-height: 1; }
+      .stat .num { font-family: var(--font-display); font-size: clamp(1.7rem, 3.4vw, 2.5rem); color: var(--green); line-height: 1; }
       @media (prefers-color-scheme: dark) { .stat .num { color: var(--gold); } }
       .stat .lbl { font-weight: 800; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
       @media (max-width: 860px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -268,22 +283,24 @@
       .big-quote { font-size: clamp(1.3rem, 2.6vw, 1.7rem); font-weight: 700; line-height: 1.4; }
       .cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
       .cards-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-      @media (max-width: 920px) { .cards-3 { grid-template-columns: 1fr; } .cards-2 { grid-template-columns: 1fr; } }
+      /* Home "Latest": a deliberate two-column row for its two stories. */
+      .news-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      @media (max-width: 920px) { .cards-3 { grid-template-columns: 1fr; } .cards-2 { grid-template-columns: 1fr; } .news-grid { grid-template-columns: 1fr; } }
       .card {
         background: var(--surface); border: 1px solid var(--card-line); border-radius: 16px;
-        padding: 30px 28px; box-shadow: var(--shadow);
+        padding: 28px; box-shadow: var(--shadow);
       }
       .card .card-num {
         display: inline-flex; width: 46px; height: 46px; border-radius: 12px; background: var(--green);
-        color: #fff; font-weight: 900; align-items: center; justify-content: center; font-size: 1.1rem; margin-bottom: 16px;
+        color: #fff; font-weight: 900; align-items: center; justify-content: center; font-size: 1.12rem; margin-bottom: 16px;
       }
       .card h3 { margin-bottom: 8px; }
       .card p:last-child { margin-bottom: 0; }
 
       .founder-quote { text-align: center; max-width: 820px; margin: 0 auto; }
-      .founder-quote blockquote { margin: 0; font-size: clamp(1.5rem, 3.4vw, 2.2rem); font-weight: 800; line-height: 1.3; }
-      .founder-quote blockquote::before { content: "\201C"; color: var(--gold); }
-      .founder-quote blockquote::after { content: "\201D"; color: var(--gold); }
+      .founder-quote blockquote { margin: 0; font-family: var(--font-display); font-size: clamp(1.5rem, 3.4vw, 2.2rem); font-weight: 700; line-height: 1.3; }
+      .founder-quote blockquote::before { content: "\201C"; color: var(--green); }
+      .founder-quote blockquote::after { content: "\201D"; color: var(--green); }
       .founder-quote figcaption { margin-top: 18px; color: var(--muted); font-weight: 700; font-size: 0.94rem; letter-spacing: 0.04em; }
 
       .news-card .news-tag { display: inline-block; background: var(--surface); color: var(--green); font-weight: 800; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 12px; border-radius: 999px; margin-bottom: 14px; }
@@ -291,13 +308,13 @@
       .news-card h3 { margin-bottom: 8px; }
       a.news-card { display: block; text-decoration: none; color: var(--text); }
       a.news-card:hover h3 { text-decoration: underline; text-underline-offset: 3px; }
-      .news-card .card-go { display: inline-block; margin-top: 2px; font-weight: 800; font-size: 1.15rem; line-height: 1; color: var(--green); }
+      .news-card .card-go { display: inline-block; margin-top: 2px; font-weight: 800; font-size: 1.18rem; line-height: 1; color: var(--green); }
       @media (prefers-color-scheme: dark) { .news-card .card-go { color: var(--gold); } }
 
       /* Subscribe */
       .subscribe { background: var(--green); color: #fff; border-radius: 20px; padding: 44px 40px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 36px; align-items: center; }
       .subscribe h2 { margin-bottom: 8px; }
-      .subscribe p { color: #EAF2E4; margin: 0; }
+      .subscribe p { color: var(--on-green); margin: 0; }
       .subscribe form { display: flex; gap: 12px; flex-wrap: wrap; }
       .subscribe label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
       .subscribe input[type="email"] {
@@ -306,84 +323,85 @@
       }
       .subscribe .thanks { font-size: 1.3rem; font-weight: 800; color: var(--gold); margin: 0; }
       .subscribe .form-error { flex-basis: 100%; margin: 2px 0 0; color: #FFFFFF; font-weight: 700; }
-      .subscribe .subscribe-note { margin: 12px 0 0; color: #EAF2E4; font-size: 0.95rem; }
-      @media (max-width: 760px) { .subscribe { grid-template-columns: 1fr; padding: 34px 24px; } }
+      .subscribe .subscribe-note { margin: 12px 0 0; color: var(--on-green); font-size: 0.94rem; }
+      @media (max-width: 760px) { .subscribe { grid-template-columns: 1fr; padding: 34px 24px; } .cta-band { padding: 34px 24px; } }
 
       /* ---------- Page hero (inner pages) ---------- */
-      .page-hero { background: var(--green); color: #fff; padding: 64px 0 56px; }
-      .page-hero h1 { font-family: "Archivo Black", "Archivo", sans-serif; font-size: clamp(2rem, 4.6vw, 3.1rem); line-height: 1.1; margin-bottom: 12px; }
-      .page-hero p { color: #EAF2E4; font-size: 1.18rem; max-width: 46em; margin: 0; }
+      .page-hero { background: var(--green); color: #fff; padding: 72px 0; }
+      .page-hero h1 { font-family: var(--font-display); font-size: clamp(2rem, 4.6vw, 3.1rem); line-height: 1.1; margin-bottom: 12px; }
+      .page-hero p { color: var(--on-green); font-size: 1.2rem; line-height: 1.6; max-width: 36em; margin: 0; }
 
       /* About — reusable patterns: statement pair, value rows, photo bands */
       .hero .kicker { color: #F5F1E6; }
       .vm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-      .vm-item { background: var(--surface); border: 1px solid var(--card-line); border-radius: 16px; padding: 34px 32px; box-shadow: var(--shadow); }
+      .vm-item { background: var(--surface); border: 1px solid var(--card-line); border-radius: 16px; padding: 28px; box-shadow: var(--shadow); }
       .vm-item .kicker { margin-bottom: 14px; }
-      .vm-statement { font-size: clamp(1.28rem, 2.4vw, 1.58rem); font-weight: 700; line-height: 1.42; margin: 0; }
+      .vm-statement { font-family: var(--font-display); font-size: clamp(1.3rem, 2.4vw, 1.6rem); font-weight: 600; line-height: 1.42; margin: 0; max-width: none; }
       @media (max-width: 760px) { .vm-grid { grid-template-columns: 1fr; } .vm-item { padding: 28px 24px; } }
       .value-rows { border-top: 1px solid var(--line); }
       .value-row { display: grid; grid-template-columns: 290px 1fr; gap: 6px 40px; align-items: baseline; padding: 26px 0; border-bottom: 1px solid var(--line); }
-      .value-row .value-name { font-family: "Archivo Black", "Archivo", sans-serif; font-size: 1.3rem; letter-spacing: 0.02em; color: var(--green); margin: 0; }
+      .value-row .value-name { font-family: var(--font-display); font-size: 1.3rem; letter-spacing: 0.02em; color: var(--green); margin: 0; }
       @media (prefers-color-scheme: dark) { .value-row .value-name { color: var(--gold); } }
-      .value-row p { margin: 0; font-size: 1.08rem; }
+      .value-row p { margin: 0; font-size: 1.06rem; }
       @media (max-width: 760px) { .value-row { grid-template-columns: 1fr; padding: 20px 0; } }
       .band-green .photo-stack figure { box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25); }
       .timeline { list-style: none; margin: 0; padding: 0; }
       .timeline li { display: grid; grid-template-columns: 130px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--line); }
       .timeline li:last-child { border-bottom: none; }
-      .timeline .yr { font-family: "Archivo Black", "Archivo", sans-serif; color: var(--green); font-size: 1.15rem; }
+      .timeline .yr { font-family: var(--font-display); color: var(--green); font-size: 1.18rem; }
       @media (prefers-color-scheme: dark) { .timeline .yr { color: var(--gold); } }
       .timeline p { margin: 0; }
       @media (max-width: 560px) { .timeline li { grid-template-columns: 1fr; gap: 4px; } }
       /* Take Action */
-      .proverb { text-align: center; padding: 48px 0 8px; }
-      .proverb blockquote { margin: 0; font-size: clamp(1.5rem, 3.4vw, 2.2rem); font-weight: 800; line-height: 1.3; }
+      .proverb { text-align: center; padding: 56px 0; }
+      .proverb blockquote { margin: 0; font-family: var(--font-display); font-size: clamp(1.5rem, 3.4vw, 2.2rem); font-weight: 700; line-height: 1.3; }
       .proverb figcaption { margin-top: 12px; color: var(--muted); font-weight: 700; letter-spacing: 0.04em; font-size: 0.94rem; }
       .action-card { text-align: left; }
       .action-card .btn { margin-top: 8px; }
       .mail-note { margin-top: 18px; font-size: 0.94rem; color: var(--muted); }
-      .banner-photo { border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); margin-bottom: 44px; }
+      .banner-photo { border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); margin-bottom: 44px; }
       .banner-photo img { width: 100%; height: auto; max-height: 420px; object-fit: cover; aspect-ratio: 21 / 9; }
 
       /* Programs */
-      .program-block { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; padding: 56px 0; }
+      .program-block { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; padding: 72px 0; }
       .program-block + .program-block { border-top: 1px solid var(--line); }
       .program-block.flip .program-media { order: 2; }
-      .program-media { border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); margin: 0; }
+      .program-media { border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); margin: 0; }
       .program-media img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
       .program-tag { display: inline-block; background: var(--gold); color: #1D1A15; font-weight: 800; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 12px; border-radius: 999px; margin-bottom: 14px; }
       .program-block.text-only { grid-template-columns: 1fr; max-width: 820px; }
       @media (max-width: 860px) { .program-block { grid-template-columns: 1fr; gap: 26px; } .program-block.flip .program-media { order: 0; } }
       .cta-band { background: var(--green); color: #fff; border-radius: 20px; padding: 44px 40px; text-align: center; }
-      .cta-band p { max-width: 44em; margin: 0 auto 24px; font-size: 1.18rem; color: #EAF2E4; }
+      .cta-band p { max-width: 44em; margin: 0 auto 24px; font-size: 1.18rem; color: var(--on-green); }
       .cta-band h2 { color: #fff; }
       .cta-band .cta-title { font-size: clamp(1.7rem, 3.4vw, 2.4rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.01em; color: #fff; margin: 0 0 0.5em; }
 
       /* Programs — premise hero, core band, wider record */
-      .premise-hero { text-align: center; padding: 84px 0 72px; }
+      .premise-hero { text-align: center; padding: 72px 0; background: var(--green-deep); }
       .premise-hero .kicker { color: #F5F1E6; }
       .premise-hero h1 { max-width: 22em; margin-left: auto; margin-right: auto; }
-      .premise-hero h1 .hl { color: var(--gold); }
+      .premise-hero h1 .hl { color: var(--gold-on-green); }
       .premise-hero p { margin: 0 auto; }
       .core-band { background: var(--green-deep); color: #fff; }
       .core-band .kicker { color: #F5F1E6; }
-      .core-band .section-head { margin-bottom: 34px; }
+      .core-band .section-head { margin-bottom: 40px; }
       .core-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-      .core-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.24); border-radius: 18px; padding: 34px 30px; }
+      .core-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.24); border-radius: 16px; padding: 28px; }
       .core-card h3 { color: #fff; }
-      .core-card p { color: #EAF2E4; }
+      .core-card p { color: var(--on-green); }
       .core-card p:last-child { margin-bottom: 0; }
       .core-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
-      @media (max-width: 860px) { .core-grid { grid-template-columns: 1fr; } .premise-hero { padding: 60px 0 52px; } }
+      @media (max-width: 860px) { .core-grid { grid-template-columns: 1fr; } }
       .record-card { margin-bottom: 8px; }
       .record-lead { margin-bottom: 0; }
       .roster-block { padding-top: 8px; }
-      .roster { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
-      .roster li { background: var(--surface); border: 1px solid var(--card-line); border-radius: 999px; padding: 9px 18px; font-weight: 700; font-size: 0.95rem; box-shadow: var(--shadow); }
-      .programs-cta { padding-top: 56px; }
+      .roster { list-style: none; margin: 18px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; grid-auto-rows: 1fr; }
+      .roster li { background: var(--surface); border: 1px solid var(--card-line); border-radius: 999px; padding: 14px 18px; font-weight: 700; font-size: 0.94rem; box-shadow: var(--shadow); display: flex; align-items: center; justify-content: center; text-align: center; }
+      @media (max-width: 640px) { .roster { grid-template-columns: repeat(2, 1fr); gap: 10px; } .roster li { padding: 12px 12px; } }
+      .programs-cta { padding-top: 56px; padding-bottom: 72px; }
 
       /* Team */
-      .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+      .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
       @media (max-width: 980px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
       @media (max-width: 620px) { .team-grid { grid-template-columns: 1fr; } }
       .member { background: var(--surface); border: 1px solid var(--card-line); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; }
@@ -391,68 +409,85 @@
       .member .photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
       .member .monogram {
         aspect-ratio: 1 / 1; background: var(--green); color: #fff; display: flex; align-items: center; justify-content: center;
-        font-family: "Archivo Black", "Archivo", sans-serif; font-size: 4rem; letter-spacing: 0.04em;
+        font-family: var(--font-display); font-size: 4rem; letter-spacing: 0.04em;
       }
       .member .monogram span { border: 3px solid var(--gold); border-radius: 50%; width: 130px; height: 130px; display: flex; align-items: center; justify-content: center; }
-      .member .body { padding: 24px 24px 26px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+      .member .body { padding: 24px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
       .member h3 { margin: 0; }
       .member .title { color: var(--green); font-weight: 800; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em; }
       @media (prefers-color-scheme: dark) { .member .title { color: var(--gold); } }
       .member .bio { color: var(--text); margin: 6px 0 10px; }
       .member .contact-line { margin-top: auto; display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 0.94rem; font-weight: 700; }
-      .member .contact-line a { word-break: break-all; }
+      .member .contact-line a { overflow-wrap: break-word; }
+      /* Long addresses sit a step smaller so each fits its card on one line
+         instead of wrapping mid-character and orphaning a letter. */
+      .member .contact-line a[href^="mailto:"] { font-size: 0.84rem; letter-spacing: -0.01em; }
 
       /* Partners */
-      .partner-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-      @media (max-width: 980px) { .partner-grid { grid-template-columns: repeat(2, 1fr); } }
-      @media (max-width: 520px) { .partner-grid { grid-template-columns: 1fr; } }
+      .partner-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+      @media (max-width: 980px) { .partner-grid { grid-template-columns: repeat(2, 1fr); } .partner-grid .partner-tile:last-child { grid-column: 1 / -1; } }
+      @media (max-width: 520px) { .partner-grid { grid-template-columns: 1fr; } .partner-grid .partner-tile:last-child { grid-column: auto; } }
       .partner-tile {
-        background: var(--surface); border: 1px solid var(--card-line); border-radius: 16px; padding: 28px 22px;
-        display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; text-align: center;
+        background: var(--surface); border: 1px solid var(--card-line); border-radius: 16px; padding: 28px;
+        display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center;
         text-decoration: none; color: var(--text); box-shadow: var(--shadow); min-height: 190px;
       }
       .partner-tile img { max-height: 92px; width: auto; max-width: 100%; object-fit: contain; }
-      .partner-tile .tile-name { font-weight: 800; font-size: 1.25rem; line-height: 1.15; letter-spacing: -0.01em; }
-      .partner-tile .tile-sub { font-size: 0.94rem; color: var(--muted); font-weight: 600; margin-top: -10px; }
+      .partner-tile .tile-name { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; line-height: 1.15; letter-spacing: -0.01em; }
+      .partner-tile .tile-sub { font-size: 0.94rem; color: var(--muted); font-weight: 600; }
       .partner-tile.text-tile .tile-name { color: var(--green); }
       @media (prefers-color-scheme: dark) { .partner-tile.text-tile .tile-name { color: var(--gold); } }
       .logo-bg { background: #fff; border-radius: 10px; padding: 12px; }
-      .pgallery { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+      /* Capped at 984px so the 480px-wide trail-cleanup photo displays at its
+         native width instead of being upscaled; the pair keeps equal tiles. */
+      .pgallery { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 984px; margin-left: auto; margin-right: auto; }
       @media (max-width: 700px) { .pgallery { grid-template-columns: 1fr; } }
       .pgallery figure { margin: 0; border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); }
       .pgallery img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; aspect-ratio: 4 / 3; }
 
       /* Forms */
-      .form-card { background: var(--surface); border: 1px solid var(--card-line); border-radius: 16px; padding: 34px 30px; box-shadow: var(--shadow); }
+      .form-card { background: var(--surface); border: 1px solid var(--card-line); border-radius: 16px; padding: 28px; box-shadow: var(--shadow); }
       .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
       @media (max-width: 640px) { .form-grid { grid-template-columns: 1fr; } }
       .field { display: flex; flex-direction: column; gap: 6px; }
       .field.full { grid-column: 1 / -1; }
       .field label { font-weight: 700; font-size: 0.94rem; }
       .field input, .field textarea {
-        font: inherit; font-size: 1rem; padding: 13px 15px; border: 1.5px solid #8A8471; border-radius: 10px;
+        font: inherit; font-size: 1rem; padding: 13px 15px; border: 1.5px solid var(--field-border); border-radius: 10px;
         background: var(--bg); color: var(--text); min-height: 48px;
       }
       ::placeholder { color: #55503F; opacity: 1; }
       .field textarea { min-height: 130px; resize: vertical; }
-      .field input:focus, .field textarea:focus { border-color: var(--green); outline: 3px solid rgba(245,185,33,0.5); }
+      .field input:focus, .field textarea:focus { border-color: var(--green); outline: 3px solid var(--green); outline-offset: 2px; box-shadow: 0 0 0 6px rgba(245,185,33,0.25); }
 
       /* Gallery */
-      .event { padding: 52px 0; border-bottom: 1px solid var(--line); }
+      .event { padding: 36px 0; border-bottom: 1px solid var(--line); }
       .event:last-of-type { border-bottom: none; }
-      .event.text-only { background: var(--band); border: 1px solid var(--card-line); border-radius: 16px; box-shadow: var(--shadow); padding: 38px 34px; margin: 44px 0 8px; }
-      .event.text-only p:last-child { margin-bottom: 0; }
-      @media (max-width: 560px) { .event.text-only { padding: 30px 22px; } }
+      .event.text-only { background: var(--surface); border: 1px solid var(--card-line); border-top: 5px solid var(--gold); border-radius: 16px; box-shadow: var(--shadow); padding: 48px 44px; margin: 36px 0; }
+      .event.text-only .event-head { margin-bottom: 0; }
+      .event.text-only .panel-date { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.1rem, 5vw, 3.4rem); line-height: 1.05; letter-spacing: -0.01em; color: var(--green); margin: 14px 0 20px; }
+      @media (prefers-color-scheme: dark) { .event.text-only .panel-date { color: var(--gold-on-green); } }
+      .event.text-only .panel-body { font-size: 1.16rem; line-height: 1.65; max-width: 58ch; }
+      .event.text-only .thanks { border-top: 1px solid var(--line); padding-top: 20px; margin-top: 28px; margin-bottom: 0; color: var(--muted); max-width: none; }
+      @media (max-width: 560px) { .event.text-only { padding: 34px 24px; margin: 28px 0; } }
       .event-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 18px; margin-bottom: 6px; }
       .event-head h2 { margin: 0; }
-      .event-date { background: var(--green); color: #fff; font-weight: 800; font-size: 0.78rem; letter-spacing: 0.12em; padding: 5px 13px; border-radius: 999px; text-transform: uppercase; }
+      .event-date { background: var(--green); color: #fff; font-weight: 800; font-size: 0.78rem; letter-spacing: 0.12em; padding: 5px 12px; border-radius: 999px; text-transform: uppercase; }
       .event .thanks { font-weight: 700; }
       .event .thanks b { color: var(--green); }
       @media (prefers-color-scheme: dark) { .event .thanks b { color: var(--gold); } }
       .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 22px; }
       .photo-grid.four { grid-template-columns: repeat(4, 1fr); }
-      .photo-grid figure { margin: 0; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+      .photo-grid figure { margin: 0; border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); }
       .photo-grid img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; aspect-ratio: 4 / 3; }
+      /* One-tile poster treatment: the "Care for a Heart" poster (Community
+         Graduation) is a tall framed poster, not a photo — show it whole,
+         never cropped. Contain on a ground matched to the poster's own
+         near-white (#FBFDFA at its edges); the tile box stays 4 / 3 like
+         every other gallery tile, and the hover zoom is off for this tile
+         so the frame is never clipped. */
+      .photo-grid img.poster-fit { object-fit: contain; object-position: center; background: #FCFDFC; }
+      .photo-grid figure:hover img.poster-fit { transform: none; }
       @media (max-width: 860px) { .photo-grid, .photo-grid.four { grid-template-columns: repeat(2, 1fr); } }
       @media (max-width: 340px) { .photo-grid, .photo-grid.four { grid-template-columns: 1fr; } }
 
@@ -462,30 +497,176 @@
       .contact-card h2 { display: flex; align-items: center; gap: 10px; font-size: 1.25rem; }
       .contact-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
       .contact-list .role { font-weight: 800; display: block; margin-bottom: 2px; }
-      .contact-list a { font-weight: 600; word-break: break-all; }
+      .contact-list a { font-weight: 600; font-size: 0.92rem; overflow-wrap: break-word; }
 
       /* Footer */
-      .site-footer { background: var(--green-darkest); color: #DCE8D2; margin-top: 0; }
+      .site-footer { background: var(--green-darkest); color: var(--footer-text); margin-top: 0; }
       .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 44px; padding: 60px 0 40px; }
       .footer-brand img { width: 76px; height: 76px; border-radius: 14px; object-fit: cover; margin-bottom: 18px; background: #FFFFFF; padding: 6px; }
-      .footer-brand .org-name { font-weight: 900; font-size: 1.25rem; color: #fff; line-height: 1.3; }
-      .footer-brand p { margin: 6px 0 0; color: #B9CDA9; }
+      .footer-brand .org-name { font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; color: #fff; line-height: 1.3; }
+      .footer-brand p { margin: 6px 0 0; color: var(--footer-muted); }
       .footer-brand a { color: var(--gold); font-weight: 700; }
-      .site-footer h3 { color: #fff; font-size: 0.95rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px; }
+      .site-footer h3 { color: #fff; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px; }
       .footer-nav { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
-      .footer-nav a { color: #DCE8D2; text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; }
+      .footer-nav a { color: var(--footer-text); text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; }
       .footer-nav a:hover { color: var(--gold); }
       .footer-socials { display: flex; gap: 8px; margin-top: 6px; }
       .footer-socials a { width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.1); display: inline-flex; align-items: center; justify-content: center; color: #fff; }
       .footer-socials a:hover { background: var(--gold); color: #1D1A15; }
       .footer-socials svg { width: 20px; height: 20px; fill: currentColor; }
-      .footer-bottom { border-top: 1px solid rgba(255,255,255,0.16); padding: 20px 0 26px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; font-size: 0.94rem; color: #B9CDA9; }
+      .footer-bottom { border-top: 1px solid rgba(255,255,255,0.16); padding: 20px 0 26px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; font-size: 0.94rem; color: var(--footer-muted); }
       @media (max-width: 760px) { .footer-grid { grid-template-columns: 1fr; gap: 34px; padding: 44px 0 30px; } }
-      @media (max-width: 480px) { .band { padding: 54px 0; } body { font-size: 16px; } }
+      @media (max-width: 640px) { .band { padding: 52px 0; } .page-hero { padding: 52px 0; } }
+      @media (max-width: 480px) { body { font-size: 17px; } }
+
+      /* ---------- Typography overhaul: flagship philosophy, listen-first flow, contact routes ---------- */
+      .phil-band { padding: 104px 0; }
+      .phil-head { max-width: 900px; margin-bottom: 48px; }
+      .phil-title { font-size: clamp(2.5rem, 5.6vw, 3.8rem); line-height: 1.04; margin-bottom: 0; }
+      .phil-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
+      .phil-copy p { font-size: 1.13rem; }
+      .phil-copy .lead { font-size: 1.32rem; }
+      .phil-copy p:last-child { margin-bottom: 0; }
+      .phil-quote {
+        margin: 72px 0 0; padding-top: 44px; border-top: 3px solid var(--gold);
+        font-family: var(--font-display); font-weight: 700;
+        font-size: clamp(1.65rem, 3.6vw, 2.5rem); line-height: 1.28; letter-spacing: -0.01em;
+        max-width: 24em;
+      }
+      .phil-quote em { font-style: normal; color: var(--green); }
+      @media (prefers-color-scheme: dark) { .phil-quote em { color: var(--gold-on-green); } }
+      @media (max-width: 860px) {
+        .phil-band { padding: 64px 0; }
+        .phil-grid { grid-template-columns: 1fr; gap: 32px; }
+        .phil-quote { margin-top: 52px; padding-top: 34px; }
+      }
+
+      /* Programs — listen-first flow */
+      .flow { list-style: none; margin: 0; padding: 0; display: grid; gap: 26px; }
+      .flow-step {
+        display: grid; grid-template-columns: 64px 1fr; gap: 26px;
+        background: var(--surface); border: 1px solid var(--card-line); border-radius: 16px;
+        padding: 34px; box-shadow: var(--shadow);
+      }
+      .flow-num {
+        width: 58px; height: 58px; border-radius: 50%; background: var(--green); color: #fff;
+        font-family: var(--font-display); font-weight: 800; font-size: 1.55rem;
+        display: flex; align-items: center; justify-content: center;
+      }
+      .flow-step h3 { font-size: 1.5rem; margin-bottom: 10px; }
+      /* Text-only steps (1 and 3) are capped to a width that matches their
+         content, so they don't stretch full-width beside step 2's full panel
+         with the capped text measure leaving the right half void. */
+      .flow-step.text-step { max-width: 900px; }
+      .flow-step .lead { font-size: 1.2rem; }
+      .flow-groups { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 24px; }
+      .flow-card { background: var(--band); box-shadow: none; padding: 24px; }
+      .flow-card h4 { margin-bottom: 8px; }
+      .flow-card p { font-size: 1rem; }
+      .flow-card p:last-child { margin-bottom: 0; }
+      .flow-photo { margin-top: 24px; }
+      .flow-photo img { width: 100%; height: auto; max-height: 400px; object-fit: cover; aspect-ratio: 21 / 9; }
+      @media (max-width: 920px) {
+        .flow-groups { grid-template-columns: 1fr; }
+        .flow-step { grid-template-columns: 1fr; gap: 18px; padding: 28px 24px; }
+      }
+
+      /* Contact — who-writes routes + balanced cards */
+      .route-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px; }
+      .route-item { border-top: 3px solid var(--gold); padding-top: 16px; }
+      .route-item h3 { font-size: 1.1rem; margin-bottom: 6px; }
+      .route-item p { margin: 0; color: var(--muted); }
+      @media (max-width: 760px) { .route-grid { grid-template-columns: 1fr; } }
+      .contact-card { display: flex; flex-direction: column; }
+      .contact-card .address { font-size: 1.32rem; font-weight: 600; line-height: 1.5; }
+      .contact-card .card-action { margin-top: auto; padding-top: 26px; }
+      .contact-card .card-action p { margin: 0; }
+
+      /* Partners — intro note line */
+      .note-line { margin-top: 26px; font-size: 1.05rem; }
+
+      /* ---------- Motion: micro-interactions, view transitions, hero entrance, scroll reveals ---------- */
+      /* Only transform and opacity are animated; hover effects apply only where a
+         pointer can truly hover, so nothing sticks on touch. */
+      .main-nav a { transition: color 0.18s ease, background-color 0.18s ease; }
+      .socials a, .footer-socials a { transition: color 0.18s ease, background-color 0.18s ease; }
+      .footer-nav a { transition: color 0.18s ease; }
+      .field input, .field textarea, .subscribe input[type="email"] { transition: border-color 0.18s ease, box-shadow 0.18s ease; }
+      .roster li { transition: background-color 0.2s ease, border-color 0.2s ease; }
+      .card, .vm-item, .core-card, .member, .partner-tile, .form-card { transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
+      .member .photo img, .photo-grid figure img, .pgallery figure img, .photo-stack figure img, .program-media img, .banner-photo img { transition: transform 0.45s ease; }
+      @media (hover: hover) and (pointer: fine) {
+        .card:hover, .vm-item:hover, .core-card:hover, .member:hover, .partner-tile:hover, .form-card:hover { transform: translateY(-3px); box-shadow: 0 18px 38px rgba(29, 26, 21, 0.13); }
+        .member:hover .photo img, .photo-grid figure:hover img, .pgallery figure:hover img, .photo-stack figure:hover img, .program-media:hover img, .banner-photo:hover img { transform: scale(1.03); }
+        .roster li:hover { background: var(--band); }
+      }
+      @media (hover: hover) and (pointer: fine) and (prefers-color-scheme: dark) {
+        .btn:hover { box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); }
+        .card:hover, .vm-item:hover, .core-card:hover, .member:hover, .partner-tile:hover, .form-card:hover { box-shadow: 0 18px 38px rgba(0, 0, 0, 0.55); }
+      }
+
+      /* View transitions: true crossfade — during a change the outgoing and
+         incoming views stack in the same grid cell of <main>, so the incoming
+         view's fade/rise overlaps the outgoing fade and the content area is
+         never blank. */
+      main.crossfading { display: grid; }
+      main.crossfading > .view { grid-area: 1 / 1; min-width: 0; }
+      .view-leaving { opacity: 0; transform: translateY(-8px); transition: opacity 0.16s ease-in, transform 0.16s ease-in; }
+      .view-enter-start { opacity: 0; transform: translateY(12px); }
+      .view-enter-active { transition: opacity 0.32s ease-out, transform 0.32s ease-out; z-index: 1; }
+
+      /* Mobile menu entrance */
+      .mobile-menu.open { animation: gg-menu 0.22s ease-out; }
+      @keyframes gg-menu { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+
+      /* Hero entrance: staggered fade/rise, ease-out, no bounce or overshoot.
+         Animations restart each time a view becomes active (display none -> block). */
+      @keyframes gg-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+      .hero .kicker, .hero h1, .hero .subline, .hero .hero-actions, .hero .hero-photo,
+      .page-hero h1, .page-hero p, .premise-hero .kicker { animation: gg-rise 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) both; }
+      .hero .kicker { animation-delay: 0.02s; }
+      .hero h1 { animation-delay: 0.07s; }
+      .hero .subline { animation-delay: 0.15s; }
+      .hero .hero-actions { animation-delay: 0.23s; }
+      .hero .hero-photo { animation-delay: 0.12s; }
+      .page-hero h1 { animation-delay: 0.05s; }
+      .page-hero p { animation-delay: 0.14s; }
+      .premise-hero .kicker { animation-delay: 0s; }
+
+      /* Scroll reveals: the .reveal class is added from JS only (and never under
+         reduced motion), so content is never hidden when motion is unavailable.
+         The classes are removed again once the reveal completes, handing the
+         element back to its hover transitions. */
+      .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.55s ease-out var(--reveal-delay, 0ms), transform 0.55s ease-out var(--reveal-delay, 0ms); }
+      .reveal.revealed { opacity: 1; transform: translateY(0); }
+
+      /* ---------- Sticky mobile action bar (<=860px only) ---------- */
+      .mobile-action-bar { display: none; }
+      @media (max-width: 860px) {
+        body { padding-bottom: calc(56px + env(safe-area-inset-bottom, 0px)); }
+        .mobile-action-bar {
+          display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 120;
+          background: var(--green-darkest); padding-bottom: env(safe-area-inset-bottom, 0px);
+          box-shadow: 0 -4px 18px rgba(29, 26, 21, 0.22);
+          animation: gg-bar-in 0.35s ease-out 0.25s both;
+        }
+        .mobile-action-bar .mab-action {
+          flex: 1 1 0; display: flex; align-items: center; justify-content: center;
+          min-height: 56px; padding: 8px 6px; text-align: center;
+          color: #F5F1E6; text-decoration: none; font-weight: 800; font-size: 0.88rem;
+          letter-spacing: 0.05em; text-transform: uppercase;
+          transition: background-color 0.18s ease, color 0.18s ease;
+        }
+        .mobile-action-bar .mab-action + .mab-action { border-left: 1px solid rgba(245, 241, 230, 0.18); }
+        .mobile-action-bar .mab-donate { background: var(--gold); color: #1D1A15; }
+      }
+      @keyframes gg-bar-in { from { transform: translateY(100%); } to { transform: translateY(0); } }
+
       @media (prefers-reduced-motion: reduce) {
         html { scroll-behavior: auto; }
         *, *::before, *::after { transition-duration: 0.01ms !important; transition-delay: 0ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
         .btn:hover { transform: none; }
+        .reveal, .view-enter-start, .view-leaving { opacity: 1 !important; transform: none !important; }
       }
     </style>
   </head>
@@ -545,14 +726,14 @@
       </div>
     </header>
 
-    <main id="main">
+    <main id="main" tabindex="-1">
       <!-- ================= HOME ================= -->
       <section class="view" id="view-home" aria-label="Home">
         <div class="hero">
           <div class="wrap">
             <div class="hero-grid">
               <div>
-                <h1 tabindex="-1" data-focus>Putting Youth on the <span class="hl">Front Lines</span> of Change</h1>
+                <h1 tabindex="-1" data-focus>Putting the <span class="hl">Keys</span> in Young People's Hands</h1>
                 <p class="subline">Youth-led mentoring for inner-city youth in Scarborough, Toronto.</p>
                 <div class="hero-actions">
                   <a class="btn btn-gold" href="https://docs.google.com/forms/d/e/1FAIpQLSduLWh-M4CYEuGnOVAiLQhqm06BAzJ3-AGqz7_l6rRx8J-FkA/viewform" target="_blank" rel="noopener">Volunteer With Us</a>
@@ -560,7 +741,7 @@
                 </div>
               </div>
               <figure class="hero-photo">
-                <img src="assets/philosophy-1.jpg" alt="Good Guides mentors beside the organization's green banner at an outdoor community event in Scarborough" />
+                <img src="assets/hero-serving.jpg" width="1290" height="937" alt="Good Guide Ambassadors in gloves serving food under a canopy at a community barbecue in Scarborough" />
               </figure>
             </div>
           </div>
@@ -570,26 +751,29 @@
           <div class="wrap">
             <div class="stats-grid">
               <div class="stat"><div class="num">2020</div><div class="lbl">Founded</div></div>
-              <div class="stat"><div class="num">10,000+</div><div class="lbl">Youth mentored since 2020</div></div>
+              <div class="stat"><div class="num" data-count-up="10000">10,000+</div><div class="lbl">Youth mentored since 2020</div></div>
             </div>
           </div>
         </div>
 
-        <div class="band">
+        <div class="band phil-band">
           <div class="wrap">
-            <div class="split">
-              <div>
-                <span class="kicker">Our Philosophy</span>
-                <h2>The keys are in their hands</h2>
-                <p class="lead">Young people already run the culture. Nobody handed them the music, the businesses, the fashion, or the art — they built all of it themselves. What heals their own neighbourhoods should be theirs to run, too.</p>
-                <p>So here, young people do the repairing themselves. They build the programs, run the events, and decide what help their streets actually need. Holding the keys never means working alone, though — behind every young leader stands real backup, starting with mentors from their own blocks. Along the way, they pick up skills that stay with them long after any single program ends.</p>
-                <p>We empower, educate, and encourage — but encouragement was never the job. The point is that they <strong>BECOME</strong> the change their communities have been waiting for.</p>
+            <div class="phil-head">
+              <span class="kicker">Our Philosophy</span>
+              <h2 class="phil-title">The keys are in their hands</h2>
+            </div>
+            <div class="phil-grid">
+              <div class="phil-copy">
+                <p class="lead">Young people already run the culture. Nobody handed them the music, the businesses, the fashion, or the art — they built all of it themselves. The work in their own neighbourhoods should be theirs to run, too.</p>
+                <p>They build the programs, run the events, and decide what help their streets actually need. Holding the keys never means working alone, though — behind every young leader stands backup they can count on, starting with mentors from their own blocks. Along the way, they pick up skills that stay with them long after any single program ends.</p>
+                <p>Encouragement alone was never the job.</p>
               </div>
               <div class="photo-stack">
-                <figure><img src="assets/g-woburn-2.jpg" alt="Woburn Basketball Day participants on the court" loading="lazy" /></figure>
-                <figure><img src="assets/g-grad-1.jpg" alt="Students celebrating at the Community Graduation 2K21" loading="lazy" /></figure>
+                <figure><img src="assets/g-carnival-1.jpg" width="1280" height="1599" alt="Children gathered around a superhero inflatable at an outdoor school carnival" loading="lazy" /></figure>
+                <figure><img src="assets/g-grad-1.jpg" width="1600" height="1200" alt="Students celebrating at the Community Graduation 2K21" loading="lazy" /></figure>
               </div>
             </div>
+            <blockquote class="phil-quote">The point is that young people <em>become the change</em> themselves — running the programs their neighbourhoods need.</blockquote>
           </div>
         </div>
 
@@ -599,23 +783,23 @@
               <div>
                 <span class="kicker">Our Organization</span>
                 <h2>Make a difference in your community</h2>
-                <p class="lead">Our volunteers mentor youth after school and back the work young people create and run themselves — things like résumé nights, bank-account sign-ups, OSAP (Ontario student aid) sessions, sports days, and meal deliveries. Whatever you can do, there's a place for it here.</p>
+                <p class="lead">Our volunteers mentor youth after school and back the work young people create and run themselves. Whatever time you have, there is a way to help.</p>
                 <a class="btn btn-green" href="https://docs.google.com/forms/d/e/1FAIpQLSduLWh-M4CYEuGnOVAiLQhqm06BAzJ3-AGqz7_l6rRx8J-FkA/viewform" target="_blank" rel="noopener">Volunteer With Us</a>
               </div>
               <div>
                 <span class="kicker">What We Do</span>
                 <div style="display:grid; gap:16px">
-                  <div class="card" style="padding:22px 24px">
+                  <div class="card">
                     <h3>Mentoring</h3>
                     <p>After-school mentoring for ages 11–18, built on mentors who come back week in, week out.</p>
                   </div>
-                  <div class="card" style="padding:22px 24px">
+                  <div class="card">
                     <h3>Violence Prevention</h3>
-                    <p>Violence prevention and conflict-calming workshops delivered across Scarborough — The Good Guides is a recipient of the City of Toronto's Youth Violence Prevention Grant (2023).</p>
+                    <p>Workshops on preventing violence and settling conflict, delivered across Scarborough. The Good Guides received the City of Toronto's Youth Violence Prevention Grant for this work in 2023.</p>
                   </div>
-                  <div class="card" style="padding:22px 24px">
+                  <div class="card">
                     <h3>Co-op &amp; Leadership</h3>
-                    <p>Co-op students join as Good Guide Ambassadors and build events of their own — résumé creation nights, bank-account sign-ups with local banks, and OSAP (Ontario student aid) sessions that explain how student funding works.</p>
+                    <p>Co-op students join as Good Guide Ambassadors and build events of their own — résumé nights, bank-account sign-ups with local banks, and OSAP sessions that explain how student funding works.</p>
                   </div>
                 </div>
               </div>
@@ -639,19 +823,18 @@
         <div class="band band-cream">
           <div class="wrap">
             <div class="section-head">
-              <span class="kicker">Latest</span>
               <h2>The latest from The Good Guides</h2>
             </div>
-            <div class="cards-3">
+            <div class="news-grid">
               <article class="card news-card">
-                <span class="news-tag">London · October 2026</span>
-                <h3>London, October 2026</h3>
-                <p>Our founder, Swabir Shariff, was honoured as one of the QECT 100 Young Leaders for 2026. The award was presented at Asprey in London, and he attended a reception at St James's Palace.</p>
+                <span class="news-tag">October 2026</span>
+                <h3>Founder honoured in London</h3>
+                <p>Swabir Shariff was named one of the QECT 100 Young Leaders for 2026. He received the award at Asprey in London and attended a reception at St James's Palace.</p>
               </article>
               <a class="card news-card" href="#/partners">
                 <span class="news-tag">Partnership</span>
                 <h3>City of Toronto Partnership</h3>
-                <p>Youth Violence Prevention Grant recipient (2023), delivering programming in Scarborough neighbourhoods.</p>
+                <p>Our partnership with the City of Toronto funds workshops across Scarborough.</p>
                 <span class="card-go" aria-hidden="true">→</span>
               </a>
             </div>
@@ -665,10 +848,9 @@
                 <form id="subscribeForm" novalidate>
                   <label for="subscribeEmail">Email Address</label>
                   <input type="email" id="subscribeEmail" name="email" placeholder="Email Address" autocomplete="email" required aria-describedby="subscribeError" />
-                  <button class="btn btn-gold" type="submit">Continue</button>
+                  <button class="btn btn-gold" type="submit">Subscribe</button>
                   <p class="form-error" id="subscribeError" role="alert" hidden>Please enter a valid email address.</p>
                 </form>
-                <p class="subscribe-note">Tap Continue and a short form will ask for your email.</p>
               </div>
             </div>
           </div>
@@ -683,14 +865,14 @@
               <div>
                 <span class="kicker">About Us</span>
                 <h1 tabindex="-1" data-focus>Built in Scarborough. <span class="hl">Led by the youth it serves.</span></h1>
-                <p class="subline">The Good Guides is a grassroots, Black-led non-profit putting inner-city youth in charge of change — in their own neighbourhoods.</p>
+                <p class="subline">The Good Guides is a grassroots, Black-led non-profit in Scarborough. Here, inner-city youth run the programs and events in their own neighbourhoods — with experienced mentors behind them.</p>
                 <div class="hero-actions">
                   <a class="btn btn-gold" href="#/our-programs">See Our Programs</a>
                   <a class="btn btn-outline-light" href="#/take-action">Take Action</a>
                 </div>
               </div>
               <figure class="hero-photo">
-                <img src="assets/g-woburn-1.jpg" alt="Youth gathered on the court at Woburn Basketball Day at Centennial College" />
+                <img src="assets/event-handshake.jpg" width="1290" height="794" alt="Toronto Police officers smiling as one shakes a young child's hand on a grass field at a community event" />
               </figure>
             </div>
           </div>
@@ -707,8 +889,8 @@
                 <p>So they built their own: mentors from those same neighbourhoods, people young people could recognize as their own. It still runs the way it grew — mentors showing up week after week, and young people stepping up to lead alongside them.</p>
               </div>
               <div class="photo-stack">
-                <figure><img src="assets/partnership-2.jpg" alt="Good Guides youth and a partner staffer packing meal boxes and bottled water for a community distribution" loading="lazy" /></figure>
-                <figure><img src="assets/g-trail-1.jpg" alt="Volunteers cleaning up the Doris McCarthy Trail ravine" loading="lazy" /></figure>
+                <figure><img src="assets/partnership-2.jpg" width="1600" height="1200" alt="Good Guides youth and a partner staffer packing meal boxes and bottled water for a community distribution" loading="lazy" /></figure>
+                <figure><img src="assets/event-backpacks.jpg" width="1290" height="826" style="object-position:40% center" alt="Children carrying new backpacks across the grass at a Back to School event in Scarborough" loading="lazy" /></figure>
               </div>
             </div>
           </div>
@@ -723,11 +905,11 @@
             <div class="vm-grid">
               <article class="vm-item">
                 <span class="kicker">Our Vision</span>
-                <p class="vm-statement">A generation of young people across the GTA (Greater Toronto Area) who can stand on their own — changing their own lives for the better, and making their neighbourhoods stronger.</p>
+                <p class="vm-statement">A generation of young people in Scarborough who lead in their own neighbourhoods — building skills, running programs, and making their streets stronger, with mentors behind them.</p>
               </article>
               <article class="vm-item">
                 <span class="kicker">Our Mission</span>
-                <p class="vm-statement">We build real relationships with young people and their families, and mentor youth as they grow into leaders in their own neighbourhoods.</p>
+                <p class="vm-statement">We mentor youth in Scarborough and work with their families, week after week, as young people grow into leaders.</p>
               </article>
             </div>
           </div>
@@ -741,19 +923,19 @@
             <div class="value-rows">
               <div class="value-row">
                 <h3 class="value-name">Inclusivity</h3>
-                <p>Every young person belongs here — no youth left behind.</p>
+                <p>Every young person belongs here.</p>
               </div>
               <div class="value-row">
                 <h3 class="value-name">Respect</h3>
-                <p>A caring space where young people are respected for who they are — and where respect runs in every direction: for yourself, for others, for your community.</p>
+                <p>A caring space where young people are treated with respect — and expected to show it: to themselves, to others, and to their community.</p>
               </div>
               <div class="value-row">
                 <h3 class="value-name">Empowerment</h3>
-                <p>Mentoring that helps youth and their families take charge of their own lives.</p>
+                <p>Mentoring that puts youth and their families in charge of the decisions that shape their lives.</p>
               </div>
               <div class="value-row">
                 <h3 class="value-name">Creativity</h3>
-                <p>Communities keep changing, so we keep adjusting — new ideas, new approaches, whatever works.</p>
+                <p>Communities keep changing, so we keep adjusting — trying new ideas and keeping what works.</p>
               </div>
             </div>
           </div>
@@ -763,15 +945,13 @@
           <div class="wrap">
             <div class="split phil-split">
               <div class="photo-stack">
-                <figure><img src="assets/philosophy-1.jpg" alt="Good Guides mentors beside the organization's green banner at an outdoor community event in Scarborough" loading="lazy" /></figure>
-                <figure><img src="assets/philosophy-2.jpg" alt="Good Guides mentors and community members gathered at an ice-cream truck with Share-a-Meal bags at an outdoor event in Scarborough" loading="lazy" /></figure>
+                <figure><img src="assets/bbq-line.jpg" width="1290" height="825" style="object-position:45% center" alt="Volunteers serving food to youth at an outdoor barbecue beside a grill" loading="lazy" /></figure>
+                <figure><img src="assets/philosophy-2.jpg" width="1600" height="1200" alt="Good Guides mentors and community members gathered at an ice-cream truck with Share-a-Meal bags at an outdoor event in Scarborough" loading="lazy" /></figure>
               </div>
               <div>
                 <span class="kicker">Our Philosophy</span>
                 <h2>Led by youth, backed by adults</h2>
-                <p class="lead">Nobody understands what young people face better than young people themselves. So here, they don't just advise the work — they run it. They decide what gets built, they host the events, and they shape the help their neighbourhoods ask for.</p>
-                <p>Running it is not the same as being left on your own. Every young leader here has the organization behind them — experienced mentors, real resources, and adults who are there every week. Youth set the direction; we make sure they have what they need to carry it through.</p>
-                <p>And the resources their work brings flow straight back into the community they came from. Young people leave with skills, and proof of what they can do.</p>
+                <p class="lead">Adults here have a specific job: show up every week, bring the experience and the resources, and stand behind the young people running the work. Youth set the direction. We make sure they have what they need to carry it through — and what their work earns goes back into the neighbourhoods it came from.</p>
               </div>
             </div>
           </div>
@@ -781,7 +961,7 @@
           <div class="wrap">
             <div class="stats-grid">
               <div class="stat"><div class="num">2020</div><div class="lbl">Founded</div></div>
-              <div class="stat"><div class="num">10,000+</div><div class="lbl">Youth mentored since 2020</div></div>
+              <div class="stat"><div class="num" data-count-up="10000">10,000+</div><div class="lbl">Youth mentored since 2020</div></div>
             </div>
           </div>
         </div>
@@ -793,20 +973,20 @@
               <h2>Our Story So Far</h2>
             </div>
             <ol class="timeline">
-              <li><span class="yr">2020</span><p>Founded in Scarborough.</p></li>
+              <li><span class="yr">2020</span><p>The Good Guides was founded in Scarborough.</p></li>
               <li><span class="yr">2021</span><p>Founder Swabir Shariff won CharityVillage's Best Individual Contribution to Youth Engagement.</p></li>
-              <li><span class="yr">December 2021</span><p>Swabir was featured on Global News' 'Making a Difference,' interviewed by Susan Hay.</p></li>
-              <li><span class="yr">2023</span><p>The Good Guides became a City of Toronto Youth Violence Prevention Grant recipient.</p></li>
+              <li><span class="yr">December 2021</span><p>Swabir was featured on Global News' 'Making A Difference,' interviewed by Susan Hay.</p></li>
+              <li><span class="yr">2023</span><p>The Good Guides received the City of Toronto's Youth Violence Prevention Grant.</p></li>
               <li><span class="yr">April 2024</span><p>Swabir was inducted into the Scarborough Walk of Fame as a Rising Star.</p></li>
-              <li><span class="yr">October 2026</span><p>Swabir was named a QECT 100 Young Leaders Awardee 2026 in London.</p></li>
+              <li><span class="yr">October 2026</span><p>Swabir Shariff was named a QECT 100 Young Leaders Awardee for 2026 and received the award in London.</p></li>
             </ol>
           </div>
         </div>
         <div class="band" style="padding-top:0">
           <div class="wrap">
             <div class="cta-band">
-              <h2>Be part of what comes next</h2>
-              <p>Donate, volunteer, or partner with us — and help the next group of Scarborough youth step up.</p>
+              <h2>Help the next group get started</h2>
+              <p>Donate, volunteer, or partner with us — every season of programs is planned and run by Scarborough youth, and it needs backing.</p>
               <div class="hero-actions" style="justify-content:center">
                 <a class="btn btn-gold" href="#/take-action">Take Action</a>
                 <a class="btn btn-outline-light" href="https://docs.google.com/forms/d/e/1FAIpQLSf4_fO1dhzDchVRbb4TYMU_iSWfSNtPjGg-PWY_yFbIHYlXQw/viewform" target="_blank" rel="noopener">Partner With Us</a>
@@ -821,7 +1001,7 @@
         <div class="page-hero">
           <div class="wrap">
             <h1 tabindex="-1" data-focus>Take Action</h1>
-            <p>Donate or volunteer — and help open doors for youth across Scarborough.</p>
+            <p>Donate or volunteer — and back the work Scarborough youth are already leading.</p>
           </div>
         </div>
         <div class="wrap">
@@ -833,27 +1013,27 @@
         <div class="band" style="padding-top:36px">
           <div class="wrap">
             <figure class="banner-photo">
-              <img src="assets/philosophy-2.jpg" alt="Good Guides mentors and community members gathered at an ice-cream truck with Share-a-Meal bags at an outdoor event in Scarborough" />
+              <img src="assets/event-cottoncandy.jpg" width="1290" height="913" style="object-position:center 55%" alt="Children watching a cotton-candy machine spin at an outdoor community event, a girl in a pink shirt in the foreground" />
             </figure>
             <div class="cards-2">
               <article class="card action-card">
-                <span class="kicker">Donate</span>
                 <h2>Donate</h2>
-                <p>The Good Guides is an incorporated non-profit in Ontario. We're not a registered charity, so we can't give you a tax receipt for your donation. Your donation keeps real things running — after-school mentoring and virtual hangouts. Violence prevention workshops. Hot meals delivered to neighbours in local homeless encampments. Relief for single parents on excursion days, so their kids never miss out. And days like these. Monthly donors keep all of it going — become one today.</p>
+                <p>The Good Guides is an incorporated non-profit in Ontario. We're not a registered charity, so we can't give you a tax receipt for your donation.</p>
+                <p>Your donation keeps the weekly work running: after-school mentoring and virtual hangouts, violence prevention workshops, and hot meals delivered to neighbours living in encampments. It also covers excursion days — a day out for youth, and a day of relief for single parents.</p>
+                <p>Monthly donors keep all of it going.</p>
                 <a class="btn btn-gold" data-donate href="https://donorbox.org/good-guides-donations" target="_blank" rel="noopener">Donate</a>
               </article>
               <article class="card action-card">
-                <span class="kicker">Volunteer</span>
                 <h2>Volunteer</h2>
-                <p>Good Guides volunteers mentor youth after school, help run youth-created events like Funday With Cops and the Back to School BBQ, and bring hot meals to neighbours in local homeless encampments. Sign up to become a Good Guide today!</p>
-                <p>Students: your door is a co-op placement — earn hours and credits as a Good Guide Ambassador. See <a href="#/our-programs">Our Programs</a> for how placements work.</p>
+                <p>Good Guides volunteers mentor youth after school and help run youth-created events like Funday With Cops and the Back to School BBQ. Sign up to become a Good Guide.</p>
+                <p>Students: start with a co-op placement and earn school credits as a Good Guide Ambassador. See <a href="#/our-programs">Our Programs</a> for how placements work.</p>
                 <a class="btn btn-green" href="https://docs.google.com/forms/d/e/1FAIpQLSduLWh-M4CYEuGnOVAiLQhqm06BAzJ3-AGqz7_l6rRx8J-FkA/viewform" target="_blank" rel="noopener">Sign Up to Volunteer</a>
               </article>
             </div>
             <div class="photo-grid" style="margin-top:28px">
-              <figure><img src="assets/g-presents-1.jpg" alt="Project Manager Chaz handing out gifts and treat bags in the community" loading="lazy" /></figure>
-              <figure><img src="assets/g-sportsfest-1.jpg" alt="Youth and officers playing sports at the Toronto Sports Festival" loading="lazy" /></figure>
-              <figure><img src="assets/g-farm-1.jpg" alt="Good Guides youth exploring Brooks Farms in Mount Albert" loading="lazy" /></figure>
+              <figure><img src="assets/g-presents-1.jpg" width="1200" height="1600" alt="Project Manager Chaz handing out gifts and treat bags in the community" loading="lazy" /></figure>
+              <figure><img src="assets/g-sportsfest-1.jpg" width="1440" height="1086" alt="Youth and officers playing sports at the Toronto Sports Festival" loading="lazy" /></figure>
+              <figure><img src="assets/g-farm-1.jpg" width="800" height="533" alt="Good Guides youth exploring Brooks Farms in Mount Albert" loading="lazy" /></figure>
             </div>
           </div>
         </div>
@@ -864,9 +1044,8 @@
         <div class="page-hero premise-hero">
           <div class="wrap">
             <span class="kicker">Our Programs</span>
-            <h1 tabindex="-1" data-focus>Not just a chair at the table — <span class="hl">the keys to the entire program.</span></h1>
-            <p>The Good Guides doesn't invite youth in to watch. Young people create the programs, run the events, and shape the help — control in their hands, support at their backs, with experienced adults and the full backing of the organization behind them.</p>
-            <p>Everything on this page works that way.</p>
+            <h1 tabindex="-1" data-focus>Not just a chair at the table — <span class="hl">the keys to the whole program.</span></h1>
+            <p>The Good Guides doesn't invite youth in to watch. Young people create the programs, run the events, and shape the help their neighbourhoods need — with experienced mentors and the full backing of the organization behind them.</p>
           </div>
         </div>
 
@@ -874,21 +1053,20 @@
           <div class="wrap">
             <div class="section-head">
               <span class="kicker">The Core Program</span>
-              <h2>Co-op &amp; after-school: the engine everything runs on</h2>
-              <p class="lead">Our core program runs two ways: co-op placements for students, and after-school programming for youth ages 11–18. It's where Good Guide Ambassadors come from — and it's the starting point for every event, workshop, and community help project on this page.</p>
+              <h2>Co-op &amp; after-school: where every Ambassador starts</h2>
+              <p class="lead">Our core program runs two ways: co-op placements for students, and after-school programming for youth ages 11–18. Every event, workshop, and community help project on this page starts here.</p>
             </div>
             <div class="core-grid">
               <article class="core-card">
-                <span class="program-tag">Co-op &amp; Volunteer Pathway</span>
+                <span class="program-tag">Co-op Placements</span>
                 <h3>Co-op Placements — Good Guide Ambassadors</h3>
-                <p>We take co-op and placement students from high schools and post-secondary schools. They join the team as Good Guide Ambassadors for their own neighbourhoods — earning credits toward graduation while they plan and run initiatives and events back home.</p>
-                <p>From there, Ambassadors plan and run work — the workshops, events, and community help projects below — and students earn volunteer hours and school credits through their placements. If you're a student — or a teacher placing one — get in touch.</p>
+                <p>We take co-op students from high schools and post-secondary schools. They join the team as Good Guide Ambassadors, earn credits toward graduation, and plan and run the workshops, events, and community help projects below — in their own neighbourhoods. If you're a student, or a teacher placing one, get in touch.</p>
               </article>
               <article class="core-card">
                 <span class="program-tag">Ages 11–18</span>
                 <h3>After-School Programming</h3>
-                <p>After-school programming for young people ages 11–18, in the Scarborough neighbourhoods our youth call home. It's mentoring after the school day ends, plus virtual hangouts that keep everyone connected between sessions.</p>
-                <p>New faces are welcome, and joining is free — just come as you are, and we'll take it from there. Parents and youth: start with "For Youth &amp; Parents" below — tell us your neighbourhood, and we'll match you with what's running near you.</p>
+                <p>Mentoring for young people ages 11–18, after the school day ends, in the Scarborough neighbourhoods they call home — plus virtual hangouts between sessions.</p>
+                <p>New faces are welcome, and joining is free. Parents and youth: see "For Youth &amp; Parents" below — tell us your neighbourhood, and we'll match you with what's running near you.</p>
               </article>
             </div>
             <div class="core-actions">
@@ -904,16 +1082,15 @@
               <div>
                 <span class="kicker">For Youth &amp; Parents</span>
                 <h2>Want in? Joining is free.</h2>
-                <p class="lead">After-school mentoring and programming are free for youth ages 11–18 — no fees and no long application. The door is a conversation, not paperwork to wrestle with.</p>
+                <p class="lead">After-school mentoring and programming are free for youth ages 11–18. There is no long application — joining starts with a conversation.</p>
                 <p>Parents and youth: reach out and tell us your neighbourhood. We'll find what's running closest to you and talk through the details together.</p>
-                <p>Every program also runs with experienced adult staff and mentors alongside the youth leaders — nobody is left to carry it alone. One named person is in charge of safety: Sabrina Shariff, our Development &amp; Safety Coordinator, is a public-health nurse.</p>
+                <p>Every program runs with experienced adult staff and mentors alongside the youth leaders. Safety has a named lead: Sabrina Shariff, our Development &amp; Safety Coordinator and a Public Health Nurse.</p>
               </div>
               <div class="form-card">
                 <h3 style="margin-bottom:10px">Start with a message</h3>
-                <p>Use the contact form, call us, or email — whichever is easiest. Parents and youth start with General Inquiries, and we'll take it from there.</p>
+                <p>Use the contact form or email — whichever is easiest. Parents and youth: choose General Inquiries.</p>
                 <p><a class="btn btn-green" href="https://docs.google.com/forms/d/e/1FAIpQLSesdMDa_zVWDmYiz4SykFRYnBSest8HbVTFtaQMrp6MVkC4Pw/viewform" target="_blank" rel="noopener">Send Us a Message</a></p>
                 <ul class="contact-list" style="margin-top:22px">
-                  <li><span class="role">Phone</span><a href="tel:18005162818">1-800-516-2818</a></li>
                   <li><span class="role">General Inquiries</span><a href="mailto:service@thegoodguides.org">service@thegoodguides.org</a></li>
                 </ul>
               </div>
@@ -925,23 +1102,51 @@
           <div class="wrap">
             <div class="section-head">
               <span class="kicker">How It Works</span>
-              <h2>Three parts</h2>
-              <p class="lead">Everything Ambassadors build falls into three parts:</p>
+              <h2>It starts with listening</h2>
+              <p class="lead">Everything starts with working with the youth to hear their needs and wants. And we go from there.</p>
             </div>
-            <div class="cards-3">
-              <article class="card">
-                <h3>Programs</h3>
-                <p>Ambassadors created the virtual hangouts that keep young people in touch with their mentors between sessions — and they run them. This part also carries our workshops on preventing violence and calming conflict, delivered across Scarborough. The funding behind them is a City of Toronto grant — the Youth Violence Prevention Grant, awarded in 2023. The learning happens by doing: résumé writing, financial literacy, CPR &amp; first aid, and job prep are skills young people pick up through the work itself.</p>
-              </article>
-              <article class="card">
-                <h3>Events</h3>
-                <p>Our youth created and hosted these events: résumé nights that sent young people out with a finished résumé, bank sign-up events where youth could open their own bank accounts, and OSAP (Ontario student aid) sessions that broke down how student funding works. Youth also organized Funday With Cops and the Toronto Sports Festival together with community partners, created Community Graduation 2K21, and supported Woburn Basketball Day.</p>
-              </article>
-              <article class="card">
-                <h3>Helping the wider community</h3>
-                <p>Our youth spot the needs, plan the work, and deliver it themselves — for the whole community, not just the youth in the room. That means hot meals carried to neighbours living in encampments, gifts and treat bags handed out close to home, a day of relief for single parents on excursion days, and a Community Resource Fair connecting families to the help around them.</p>
-              </article>
-            </div>
+            <ol class="flow">
+              <li class="flow-step text-step">
+                <span class="flow-num" aria-hidden="true">1</span>
+                <div class="flow-body">
+                  <h3>Listen first</h3>
+                  <p class="lead">Before anything is planned, we work with the youth to hear their needs and wants.</p>
+                  <p>They know their streets, their schools, and their lives — so what gets built begins with what they say they need. Nothing here is designed somewhere else and handed down.</p>
+                </div>
+              </li>
+              <li class="flow-step">
+                <span class="flow-num" aria-hidden="true">2</span>
+                <div class="flow-body">
+                  <h3>The youth build from there</h3>
+                  <p class="lead">Ambassadors plan and run what the listening produces — with experienced mentors and the full backing of the organization behind them.</p>
+                  <div class="flow-groups">
+                    <article class="card flow-card">
+                      <h4>Programs &amp; workshops</h4>
+                      <p>Ambassadors created the virtual hangouts that keep young people in touch with their mentors between sessions — and they run them. This step also carries our workshops on preventing violence and settling conflict, delivered across Scarborough — the funding behind them is a City of Toronto grant, the Youth Violence Prevention Grant, awarded in 2023. Young people pick up résumé writing, financial literacy, CPR &amp; first aid, and job prep through the work itself.</p>
+                    </article>
+                    <article class="card flow-card">
+                      <h4>Events</h4>
+                      <p>Ambassadors created and hosted résumé nights — young people left with a finished résumé — bank-account sign-up events, where youth opened their own accounts, and OSAP sessions that explained how student funding works. With community partners, they also ran Funday With Cops and the Toronto Sports Festival, created Community Graduation 2K21, and helped at Woburn Basketball Day, which was organized by the Toronto Police Service.</p>
+                    </article>
+                    <article class="card flow-card">
+                      <h4>Trips &amp; excursions</h4>
+                      <p>Ambassadors don't just go on trips — they choose the destination, plan the day, and run it themselves. At Brooks Farms in Mount Albert (September 2020), youth spent a day on a working farm — hiking, zip-lining, and apple picking — while single parents got a day of relief back home. Ice fishing trips run the same way: chosen, planned, and led by Ambassadors.</p>
+                    </article>
+                  </div>
+                  <figure class="framed flow-photo">
+                    <img src="assets/programs-excursions.jpg" width="1600" height="1067" alt="Good Guides youth ambassadors apple-picking at Brooks Farms in Mount Albert" loading="lazy" />
+                  </figure>
+                </div>
+              </li>
+              <li class="flow-step text-step">
+                <span class="flow-num" aria-hidden="true">3</span>
+                <div class="flow-body">
+                  <h3>The wider community feels it</h3>
+                  <p class="lead">The work doesn't stop at the youth in the room — neighbours, families, and schools feel it where they live.</p>
+                  <p>Ambassadors do this work for the whole community, not just the youth in the room: hot meals carried to neighbours living in encampments, gifts and treat bags handed out close to home, a day of relief for single parents on excursion days, and a Community Resource Fair connecting families to services in their own neighbourhoods.</p>
+                </div>
+              </li>
+            </ol>
           </div>
         </div>
 
@@ -949,57 +1154,44 @@
           <div class="wrap">
             <div class="section-head">
               <span class="kicker">The Wider Record</span>
-              <h2>What runs on the core</h2>
-              <p class="lead">Built on the co-op and after-school core: City-funded violence prevention, community engagement, and the excursions Ambassadors plan and run themselves.</p>
+              <h2>The wider record</h2>
+              <p class="lead">Built on the co-op and after-school core: City-funded violence prevention and community engagement.</p>
             </div>
 
             <article class="card record-card">
               <span class="kicker">City of Toronto Grant Recipient</span>
               <h3>Youth Violence Prevention</h3>
-              <p class="lead record-lead">In 2023, the City of Toronto awarded The Good Guides its Youth Violence Prevention Grant. The grant supports violence prevention and conflict-calming workshops for youth across Scarborough.</p>
+              <p class="lead record-lead">In 2023, the City of Toronto awarded The Good Guides its Youth Violence Prevention Grant, which supports workshops on preventing violence and settling conflict for youth across Scarborough.</p>
             </article>
 
             <div class="program-block flip">
               <div>
                 <h2>Community Engagement</h2>
-                <p>Being present means showing up where Scarborough lives. Good Guides youth have taken part in sports days alongside neighbourhood officers, and cleared a truckload of garbage from the Doris McCarthy Trail with the Toronto Police Service and more than 25 community volunteers. They have also celebrated graduations for students of every grade, and delivered hot meals to neighbours in encampments. That presence — repeated, reliable, in person — is how trust gets built here.</p>
+                <p>Good Guides youth show up where their neighbours are: sports days alongside neighbourhood officers, graduations for students of every grade, and hot meals delivered to neighbours living in encampments. With the Toronto Police Service and more than 25 community volunteers, they also cleared a truckload of garbage from the Doris McCarthy Trail. Showing up the same way, week after week, is how trust gets built here.</p>
                 <a class="btn btn-outline-green" href="#/contact-us">Contact Us</a>
               </div>
               <figure class="program-media">
-                <img src="assets/g-funday-1.jpg" alt="The Good Guides banner and event tent at Funday With Cops in a Scarborough school park" loading="lazy" />
-              </figure>
-            </div>
-
-            <div class="program-block">
-              <div>
-                <h2>Perspective Excursions</h2>
-                <p>Ambassadors don't just go on trips — they find the excursion, map out the steps, and run it themselves. At Brooks Farms in Mount Albert (September 2020), youth spent a day on a working farm — hiking, zip-lining, and apple picking — while The Good Guides provided relief for single parents back home. Ambassadors have also run ice fishing trips the same way. It's learning by doing — proof for a young person that where they come from doesn't decide how far they go.</p>
-              </div>
-              <figure class="program-media">
-                <img src="assets/programs-excursions.jpg" alt="Good Guides youth ambassadors apple-picking at Brooks Farms in Mount Albert" loading="lazy" />
+                <img src="assets/event-mounted.jpg" width="1290" height="921" alt="Children meeting Toronto Police Service mounted unit officers and their horses at an outdoor community event" loading="lazy" />
               </figure>
             </div>
 
             <div class="roster-block">
               <h3>More initiatives</h3>
-              <p>The Ambassadors' work from 2023–2025 also included initiatives across Scarborough and the GTA:</p>
+              <p>Also in the Ambassadors' record:</p>
               <ul class="roster">
-                <li>Community Giving</li>
+                <li>Toronto Sports Festival</li>
                 <li>Back to School BBQ</li>
-                <li>Financial Literacy</li>
-                <li>CPR &amp; First Aid</li>
-                <li>Job-Prep Workshops</li>
-                <li>March Break Kickoff</li>
-                <li>Ice Fishing</li>
-                <li>Aviation-Career Talk</li>
-                <li>Community Resource Fair</li>
+                <li>Guided by Giving</li>
+                <li>Community Graduation</li>
+                <li>Encampment Meal Deliveries</li>
+                <li>Waterfront Cleanup</li>
               </ul>
             </div>
 
             <div class="programs-cta">
               <div class="cta-band">
                 <p class="cta-title">Our youth are hard at work</p>
-                <p>Right now they're planning what's next — the next season of programs and events is in the works. Donations put more days like it on the calendar.</p>
+                <p>Running the co-op and after-school programs at the heart of this page. Donations put more days like these on the calendar.</p>
                 <a class="btn btn-gold" data-donate href="https://donorbox.org/good-guides-donations" target="_blank" rel="noopener">Donate</a>
               </div>
             </div>
@@ -1012,21 +1204,17 @@
         <div class="page-hero">
           <div class="wrap">
             <h1 tabindex="-1" data-focus>Our Team</h1>
-            <p>Mentors, project leads, and youth leaders — people from the same Scarborough neighbourhoods as the youth they serve. Meet eight of the 20 people — core team and volunteers — behind the programs, events, and community help projects on this site.</p>
+            <p>Mentors, project leads, and youth leaders from the same Scarborough neighbourhoods as the youth they serve. Meet eight of the people — core team and volunteers — behind the programs, events, and community help projects on this site.</p>
           </div>
         </div>
         <div class="band">
           <div class="wrap">
-            <div class="section-head">
-              <span class="kicker">Our Team</span>
-              <h2>Meet the team</h2>
-            </div>
             <div class="team-grid">
               <article class="member">
-                <div class="photo"><img src="assets/team-swabir.jpg" alt="Swabir Shariff, Executive Director/Founder" loading="lazy" /></div>
+                <div class="photo"><img src="assets/team-swabir.jpg" width="410" height="417" alt="Swabir Shariff, Founder &amp; Executive Director" loading="lazy" /></div>
                 <div class="body">
                   <h3>SWABIR SHARIFF</h3>
-                  <span class="title">Executive Director/Founder</span>
+                  <span class="title">Founder &amp; Executive Director</span>
                   <p class="bio">Swabir was born and raised in Scarborough, and he founded The Good Guides in 2020. He previously served on the steering committee of the East Scarborough Storefront and as a Youth Advisory Committee member for the Chief of the Toronto Police Service. He enjoys hiking, travelling, and working with youth.</p>
                   <div class="contact-line">
                     <a href="mailto:swabir.shariff@thegoodguides.org">swabir.shariff@thegoodguides.org</a>
@@ -1035,16 +1223,16 @@
                 </div>
               </article>
               <article class="member">
-                <div class="photo"><img src="assets/team-daye.jpg" alt="Christopher Daye, Operations Manager" loading="lazy" /></div>
+                <div class="photo"><img src="assets/team-daye.jpg" width="1600" height="1416" alt="Christopher Daye, Operations Manager" loading="lazy" /></div>
                 <div class="body">
                   <h3>CHRISTOPHER DAYE</h3>
                   <span class="title">Operations Manager</span>
-                  <p class="bio">Chris has lived and worked in the Scarborough community for most of his life, and has seen it change — too often for the worse — firsthand. He enjoys camping, fishing and trips with the youth.</p>
+                  <p class="bio">Christopher has lived and worked in the Scarborough community for most of his life, and has seen it change — too often for the worse — firsthand. He enjoys camping, fishing and trips with the youth.</p>
                   <div class="contact-line"><a href="mailto:christopher.daye@thegoodguides.org">christopher.daye@thegoodguides.org</a></div>
                 </div>
               </article>
               <article class="member">
-                <div class="photo"><img src="assets/team-chaz.jpg" alt="Chaz Mais, Project Manager" loading="lazy" /></div>
+                <div class="photo"><img src="assets/team-chaz.jpg" width="750" height="688" alt="Chaz Mais, Project Manager" loading="lazy" /></div>
                 <div class="body">
                   <h3>CHAZ MAIS</h3>
                   <span class="title">Project Manager</span>
@@ -1053,21 +1241,27 @@
                 </div>
               </article>
               <article class="member">
-                <div class="photo"><img src="assets/team-farhan.jpg" alt="Farhan Khalid, Project Director" loading="lazy" /></div>
+                <div class="photo"><img src="assets/team-farhan.jpg" width="678" height="997" alt="Farhan Khalid, Project Director" loading="lazy" /></div>
                 <div class="body">
                   <h3>FARHAN KHALID</h3>
                   <span class="title">Project Director</span>
-                  <p class="bio">Farhan has lived in Scarborough his whole life. His community work comes down to one thing: showing up for the youth in his own neighbourhood, and helping them get ahead.</p>
-                  <div class="contact-line"><a href="mailto:farhan.khalid@thegoodguides.org">farhan.khalid@thegoodguides.org</a></div>
+                  <p class="bio">Farhan has lived in Scarborough his whole life. His community work comes down to showing up for the youth in his own neighbourhood, week after week, and helping them move forward.</p>
+                  <div class="contact-line">
+                    <a href="mailto:farhan.khalid@thegoodguides.org">farhan.khalid@thegoodguides.org</a>
+                    <a href="https://ca.linkedin.com/in/farhan-khalid-927996246" target="_blank" rel="noopener">LinkedIn</a>
+                  </div>
                 </div>
               </article>
               <article class="member">
-                <div class="photo"><img src="assets/team-alex.jpg" alt="Alex Ionita, Marketing Specialist" loading="lazy" /></div>
+                <div class="photo"><img src="assets/team-alex.jpg" width="386" height="353" alt="Alex Ionita, Marketing Specialist" loading="lazy" /></div>
                 <div class="body">
                   <h3>ALEX IONITA</h3>
                   <span class="title">Marketing Specialist</span>
-                  <p class="bio">Alex is a University of Toronto graduate with a Bachelor's Degree in Business Administration. Through basketball and other sports, he helps kids learn what they're made of — and life skills that carry off the court.</p>
-                  <div class="contact-line"><a href="mailto:alex.ionita@thegoodguides.org">alex.ionita@thegoodguides.org</a></div>
+                  <p class="bio">Alex is a University of Toronto graduate with a Bachelor's Degree in Business Administration. Through basketball and other sports, he helps youth build confidence and life skills that carry off the court.</p>
+                  <div class="contact-line">
+                    <a href="mailto:alex.ionita@thegoodguides.org">alex.ionita@thegoodguides.org</a>
+                    <a href="https://ca.linkedin.com/in/alex-ionita-96623815a" target="_blank" rel="noopener">LinkedIn</a>
+                  </div>
                 </div>
               </article>
               <article class="member">
@@ -1075,17 +1269,20 @@
                 <div class="body">
                   <h3>ABDI AHMED</h3>
                   <span class="title">Youth Leader</span>
-                  <p class="bio">Abdi is a youth leader in his community, and he has made it his mission to give young people what they need to succeed. "Your breakthrough comes from your sacrifice" - Abdi Ahmed</p>
+                  <p class="bio">Abdi is a youth leader in his community, focused on giving young people what they need to succeed. His line for them: 'Your breakthrough comes from your sacrifice.'</p>
                   <div class="contact-line"><a href="mailto:abdi.ahmed@thegoodguides.org">abdi.ahmed@thegoodguides.org</a></div>
                 </div>
               </article>
               <article class="member">
-                <div class="photo"><img src="assets/team-emmanuel.jpg" alt="Emmanuel Akingbola, Development Coordinator" loading="lazy" /></div>
+                <div class="photo"><img src="assets/team-emmanuel.jpg" width="1300" height="1344" alt="Emmanuel Akingbola, Development Coordinator" loading="lazy" /></div>
                 <div class="body">
                   <h3>EMMANUEL AKINGBOLA</h3>
                   <span class="title">Development Coordinator</span>
-                  <p class="bio">Emmanuel Akingbola holds a Bachelor of Commerce from Toronto Metropolitan University and is currently pursuing a Master of Science in Management. Outside of work, Emmanuel enjoys music, sports, spending time outdoors, and connecting with his community.</p>
-                  <div class="contact-line"><a href="mailto:emmanuel.akingbola@thegoodguides.org">emmanuel.akingbola@thegoodguides.org</a></div>
+                  <p class="bio">Emmanuel holds a Bachelor of Commerce from Toronto Metropolitan University and is pursuing a Master of Science in Management. Outside of work, he enjoys music, sports, spending time outdoors, and connecting with his community.</p>
+                  <div class="contact-line">
+                    <a href="mailto:emmanuel.akingbola@thegoodguides.org">emmanuel.akingbola@thegoodguides.org</a>
+                    <a href="https://ca.linkedin.com/in/emmanuel-akingbola-2427981a2" target="_blank" rel="noopener">LinkedIn</a>
+                  </div>
                 </div>
               </article>
               <article class="member">
@@ -1093,7 +1290,7 @@
                 <div class="body">
                   <h3>SABRINA SHARIFF, RN</h3>
                   <span class="title">Development &amp; Safety Coordinator</span>
-                  <p class="bio">Sabrina Shariff is a Public Health Nurse with a Bachelor of Science in Nursing, and is currently a Master of Education candidate. She gives back by teaching youth and their families about health and healthy living.</p>
+                  <p class="bio">Sabrina is a Public Health Nurse with a Bachelor of Science in Nursing, and is currently a Master of Education candidate. She gives back by teaching youth and their families about health and healthy living.</p>
                   <div class="contact-line"><a href="mailto:sabrina.shariff@thegoodguides.org">sabrina.shariff@thegoodguides.org</a></div>
                 </div>
               </article>
@@ -1107,16 +1304,24 @@
         <div class="page-hero">
           <div class="wrap">
             <h1 tabindex="-1" data-focus>Partners</h1>
-            <p>We don't do this work alone. These are the partners who stand alongside Scarborough youth with us.</p>
+            <p>We don't do this work alone. These are the partners who stand alongside Scarborough youth.</p>
           </div>
         </div>
         <div class="band">
           <div class="wrap">
-            <div style="max-width:820px">
-              <p class="lead">Want to work with us? We visit schools and community centres across the GTA, and we build workshops with our partners — practical sessions youth help run, on things like résumés, opening a bank account, and understanding OSAP (Ontario student aid) funding.</p>
-              <p>Partner contributions go straight to work, too — sports gear, event tickets, and snacks and drinks for program days. Schools and businesses: the Start a Partnership button opens our partnership form.</p>
-              <p><a class="btn btn-green" href="https://docs.google.com/forms/d/e/1FAIpQLSf4_fO1dhzDchVRbb4TYMU_iSWfSNtPjGg-PWY_yFbIHYlXQw/viewform" target="_blank" rel="noopener">Start a Partnership</a></p>
-              <p>Teachers asking about co-op placements: see <a href="#/contact-us">Contact Us</a>.</p>
+            <div>
+              <p class="lead" style="max-width:820px">Want to work with us? We visit schools and community centres across Scarborough, and we build workshops with our partners.</p>
+              <div class="cards-2">
+                <article class="card">
+                  <h3>Workshops, built with our partners</h3>
+                  <p>Practical sessions, run by our Ambassadors, on the things young people ask for: a first résumé, a first bank account, and how OSAP funding works.</p>
+                </article>
+                <article class="card">
+                  <h3>Contributions go to program days</h3>
+                  <p>Partner contributions go to program days: sports gear, event tickets, and snacks and drinks for the youth taking part. Schools and businesses can start with the partnership form below.</p>
+                </article>
+              </div>
+              <p class="note-line">Teachers asking about co-op placements: see <a href="#/contact-us">Contact Us</a>.</p>
             </div>
 
             <div class="section-head" style="margin-top:56px">
@@ -1125,21 +1330,17 @@
             </div>
             <div class="partner-grid">
               <a class="partner-tile" href="https://www.torontopolice.on.ca" target="_blank" rel="noopener">
-                <span class="logo-bg"><img src="assets/partner-tps.png" alt="Toronto Police Service logo" loading="lazy" /></span>
+                <span class="logo-bg"><img src="assets/partner-tps.png" width="211" height="239" alt="Toronto Police Service logo" loading="lazy" /></span>
                 <span class="tile-name">Toronto Police Service</span>
-                <span class="tile-sub">Funday With Cops · Toronto Sports Festival</span>
+                <span class="tile-sub">Community Partnership and Engagement Unit</span>
               </a>
               <a class="partner-tile" href="https://www.tdsb.on.ca" target="_blank" rel="noopener">
-                <span class="logo-bg"><img src="assets/partner-tdsb.png" alt="Toronto District School Board logo" loading="lazy" /></span>
+                <span class="logo-bg"><img src="assets/partner-tdsb.png" width="305" height="95" alt="Toronto District School Board logo" loading="lazy" /></span>
                 <span class="tile-name">Toronto District School Board</span>
-                <span class="tile-sub">Co-op placements · school visits</span>
+                <span class="tile-sub">Community partner</span>
               </a>
               <a class="partner-tile text-tile" href="https://www.toronto.ca" target="_blank" rel="noopener">
                 <span class="tile-name">City of Toronto</span>
-                <span class="tile-sub">Youth Violence Prevention Grant (2023) — workshops across Scarborough</span>
-              </a>
-              <a class="partner-tile text-tile" href="https://www.letsroam.com" target="_blank" rel="noopener">
-                <span class="tile-name">Scavenger Hunts by Let's Roam</span>
                 <span class="tile-sub">Community partner</span>
               </a>
             </div>
@@ -1149,18 +1350,18 @@
               <h2>Partnership gallery</h2>
             </div>
             <div class="pgallery">
-              <figure><img src="assets/partnership-2.jpg" alt="Good Guides youth and a partner staffer packing meal boxes and bottled water for a community distribution" loading="lazy" /></figure>
-              <figure><img src="assets/g-trail-2.jpg" alt="Good Guides and Toronto Police Service members at the Doris McCarthy Trail cleanup" loading="lazy" /></figure>
+              <figure><img src="assets/partnership-2.jpg" width="1600" height="1200" alt="Good Guides youth and a partner staffer packing meal boxes and bottled water for a community distribution" loading="lazy" /></figure>
+              <figure><img src="assets/g-trail-2.jpg" width="480" height="640" alt="Good Guides and Toronto Police Service members at the Doris McCarthy Trail cleanup" loading="lazy" /></figure>
             </div>
 
             <div class="section-head" style="margin-top:64px">
               <span class="kicker">Get Involved</span>
-              <h2>Let us know!</h2>
+              <h2>Start a partnership</h2>
               <p>Tell us what you have in mind — a partnership, a contribution, or both — and we'll get back to you.</p>
             </div>
             <div class="form-card">
               <a class="btn btn-green" href="https://docs.google.com/forms/d/e/1FAIpQLSf4_fO1dhzDchVRbb4TYMU_iSWfSNtPjGg-PWY_yFbIHYlXQw/viewform" target="_blank" rel="noopener">Start a Partnership</a>
-              <p class="mail-note">Prefer email? You can also reach us at <a href="mailto:swabir.shariff@thegoodguides.org">swabir.shariff@thegoodguides.org</a>.</p>
+              <p class="mail-note">Prefer email? Partnerships go to Swabir Shariff at <a href="mailto:swabir.shariff@thegoodguides.org">swabir.shariff@thegoodguides.org</a>.</p>
             </div>
           </div>
         </div>
@@ -1171,96 +1372,92 @@
         <div class="page-hero">
           <div class="wrap">
             <h1 tabindex="-1" data-focus>Gallery</h1>
-            <p>The record so far: sports days, trail cleanups, graduations, and giving back across Scarborough — events and initiatives organized by our Ambassadors and community partners. And it's still growing. See Our Programs for what youth are running now.</p>
+            <p>The record so far: sports days, trail cleanups, graduations, and meal deliveries across Scarborough — events and initiatives organized by our Ambassadors and community partners. See Our Programs for what youth are running now.</p>
           </div>
         </div>
         <div class="wrap">
           <article class="event">
             <div class="event-head"><h2>Guided by Giving</h2><span class="event-date">December 2024</span></div>
+            <p>Good Guides team members and Toronto Police officers wrapped and handed out gifts with Santa in December 2024.</p>
             <div class="photo-grid">
-              <figure><img src="assets/g-giving-1.jpg" alt="Good Guides team members and Toronto Police officers posing with Santa at Guided by Giving" loading="lazy" /></figure>
+              <figure><img src="assets/g-giving-1.jpg" width="1280" height="1600" alt="Good Guides team members and Toronto Police officers posing with Santa at Guided by Giving" loading="lazy" /></figure>
+              <figure><img src="assets/g-wrapping-1.jpg" width="720" height="1280" alt="Two volunteers wrapping holiday gifts at a table during Guided by Giving" loading="lazy" /></figure>
             </div>
           </article>
 
-          <article class="event">
-            <div class="event-head"><h2>Wrapping Gifts at Guided by Giving</h2><span class="event-date">December 2024</span></div>
-            <div class="photo-grid">
-              <figure><img src="assets/g-wrapping-1.jpg" alt="Two volunteers wrapping holiday gifts at a table during Guided by Giving" loading="lazy" /></figure>
-            </div>
-          </article>
 
           <article class="event">
-            <div class="event-head"><h2>Carnival at Willow Park Public School</h2><span class="event-date">Date Unconfirmed</span></div>
+            <div class="event-head"><h2>Carnival at Willow Park Public School</h2></div>
             <div class="photo-grid">
-              <figure><img src="assets/g-carnival-1.jpg" alt="Children gathered around a superhero inflatable at an outdoor school carnival" loading="lazy" /></figure>
+              <figure><img src="assets/g-carnival-1.jpg" width="1280" height="1599" alt="Children gathered around a superhero inflatable at an outdoor school carnival" loading="lazy" /></figure>
             </div>
           </article>
 
           <article class="event">
             <div class="event-head"><h2>Financial Literacy Workshop</h2><span class="event-date">December 2023</span></div>
             <div class="photo-grid">
-              <figure><img src="assets/g-finlit-1.jpg" alt="Youth seated in a classroom watching a Financial Literacy 101 presentation" loading="lazy" /></figure>
+              <figure><img src="assets/g-finlit-1.jpg" width="1440" height="960" alt="Youth seated in a classroom watching a Financial Literacy 101 presentation" loading="lazy" /></figure>
             </div>
           </article>
 
           <article class="event">
             <div class="event-head"><h2>Back to School BBQ</h2><span class="event-date">September 2023</span></div>
             <div class="photo-grid">
-              <figure><img src="assets/g-bbq-1.jpg" alt="Families lined up at outdoor tables stacked with backpacks at the Back to School BBQ" loading="lazy" /></figure>
+              <figure><img src="assets/g-bbq-1.jpg" width="1283" height="1600" alt="Families lined up at outdoor tables stacked with backpacks at the Back to School BBQ" loading="lazy" /></figure>
             </div>
           </article>
 
           <article class="event">
-            <div class="event-head"><h2>Rookie League Baseball with Jays Care</h2><span class="event-date">Summer 2023</span></div>
+            <div class="event-head"><h2>Rookie League Baseball</h2><span class="event-date">Summer 2023</span></div>
             <div class="photo-grid">
-              <figure><img src="assets/g-jayscare-1.jpg" alt="Three youth in Blue Jays shirts holding bats, posing with their coaches on a grass field" loading="lazy" /></figure>
+              <figure><img src="assets/g-jayscare-1.jpg" width="533" height="533" style="aspect-ratio: 1 / 1" alt="Three youth in Blue Jays shirts holding bats, posing with their coaches on a grass field" loading="lazy" /></figure>
             </div>
           </article>
 
           <article class="event">
-            <div class="event-head"><h2>Sledding Day with 41 Division Officers</h2><span class="event-date">March 2023</span></div>
+            <div class="event-head"><h2>Sledding Day with Toronto Police Service Officers</h2><span class="event-date">March 2023</span></div>
             <div class="photo-grid">
-              <figure><img src="assets/g-sledding-1.jpg" alt="Children sledding down a snowy hill while community officers look on" loading="lazy" /></figure>
+              <figure><img src="assets/g-sledding-1.jpg" width="720" height="900" alt="Children sledding down a snowy hill while community officers look on" loading="lazy" /></figure>
             </div>
           </article>
 
           <article class="event">
             <div class="event-head"><h2>Youth at Our First CPR Training Session</h2><span class="event-date">Winter 2022–23</span></div>
             <div class="photo-grid">
-              <figure><img src="assets/g-cpr-1.jpg" alt="Youth practising on CPR manikins at tables during a training session led by an instructor" loading="lazy" /></figure>
+              <figure><img src="assets/g-cpr-1.jpg" width="1280" height="1600" alt="Youth practising on CPR manikins at tables during a training session led by an instructor" loading="lazy" /></figure>
             </div>
           </article>
 
           <article class="event">
-            <div class="event-head"><h2>FUNDAY WITH COPS</h2><span class="event-date">July 23, 2022</span></div>
-            <p>Youth of all ages were invited to play sports with Toronto Police Service neighbourhood officers at a local school park. Families in the area came out and spent the day playing friendly games with neighbours and officers.</p>
+            <div class="event-head"><h2>Funday With Cops</h2><span class="event-date">July 23, 2022</span></div>
+            <p>Young people played sports with Toronto Police Service neighbourhood officers at a local school park, and families from the area joined the games.</p>
             <p class="thanks"><b>Special Thanks to:</b> PRO ACTION Cops and Kids</p>
             <div class="photo-grid">
-              <figure><img src="assets/g-funday-1.jpg" alt="The Good Guides banner and event tent at Funday With Cops in a Scarborough school park" loading="lazy" /></figure>
-              <figure><img src="assets/g-funday-2.jpg" alt="Families and community members at the Funday With Cops school park event" loading="lazy" /></figure>
-              <figure><img src="assets/g-funday-3.jpg" alt="Friendly games at Funday With Cops, July 2022" loading="lazy" /></figure>
+              <figure><img src="assets/g-funday-1.jpg" width="1175" height="1600" alt="The Good Guides banner and event tent at Funday With Cops in a Scarborough school park" loading="lazy" /></figure>
+              <figure><img src="assets/g-funday-2.jpg" width="720" height="960" alt="Families and community members at the Funday With Cops school park event" loading="lazy" /></figure>
+              <figure><img src="assets/g-funday-3.jpg" width="1200" height="1600" alt="Friendly games at Funday With Cops, July 2022" loading="lazy" /></figure>
             </div>
           </article>
 
           <article class="event">
             <div class="event-head"><h2>Toronto Sports Festival</h2><span class="event-date">June 12, 2022</span></div>
-            <p>The Toronto Sports Festival brought Scarborough youth and families together for a community day of sport — young people playing, families out together, and neighbours connecting through sport.</p>
+            <p>A community day of sport for Scarborough youth and families, with neighbourhood officers joining the games.</p>
             <p class="thanks"><b>Special Thanks to:</b> PRO ACTION Cops and Kids &amp; The Toronto Police Chief's Youth Advisory Committee</p>
             <div class="photo-grid four">
-              <figure><img src="assets/g-sportsfest-1.jpg" alt="Youth and officers playing sports at the Toronto Sports Festival" loading="lazy" /></figure>
-              <figure><img src="assets/g-sportsfest-2.jpg" alt="Community members gathered at the Toronto Sports Festival" loading="lazy" /></figure>
-              <figure><img src="assets/g-sportsfest-3.jpg" alt="Sports and activities at the Toronto Sports Festival, June 2022" loading="lazy" /></figure>
-              <figure><img src="assets/g-sportsfest-4.jpg" alt="Families enjoying the Toronto Sports Festival" loading="lazy" /></figure>
+              <figure><img src="assets/g-sportsfest-1.jpg" width="1440" height="1086" alt="Youth and officers playing sports at the Toronto Sports Festival" loading="lazy" /></figure>
+              <figure><img src="assets/g-sportsfest-2.jpg" width="1440" height="1086" alt="Community members gathered at the Toronto Sports Festival" loading="lazy" /></figure>
+              <figure><img src="assets/g-sportsfest-3.jpg" width="1284" height="1600" alt="Sports and activities at the Toronto Sports Festival, June 2022" loading="lazy" /></figure>
+              <figure><img src="assets/g-sportsfest-4.jpg" width="1284" height="1600" alt="Families enjoying the Toronto Sports Festival" loading="lazy" /></figure>
             </div>
           </article>
 
           <article class="event">
             <div class="event-head"><h2>Woburn Basketball Day</h2><span class="event-date">April 30, 2022</span></div>
-            <p>The Good Guides supported the first annual Woburn Basketball Day, bringing youth from across Scarborough together for a day of basketball at Centennial College. Thank you to PC Amanda from the Toronto Police Service for organizing the event, and to all the partners who made it a huge success.</p>
+            <p>The Good Guides supported the first annual Woburn Basketball Day, bringing youth from across Scarborough together for a day of basketball at Centennial College. Thank you to PC Amanda from the Toronto Police Service for organizing the event, and to all the partners who helped run it.</p>
             <div class="photo-grid">
-              <figure><img src="assets/g-woburn-1.jpg" alt="Youth gathered on the court at Woburn Basketball Day at Centennial College" loading="lazy" /></figure>
-              <figure><img src="assets/g-woburn-2.jpg" alt="Woburn Basketball Day participants on the court" loading="lazy" /></figure>
-              <figure><img src="assets/g-woburn-3.jpg" alt="First annual Woburn Basketball Day, April 2022" loading="lazy" /></figure>
+              <figure><img src="assets/g-woburn-1.jpg" width="1600" height="1200" alt="Youth gathered on the court at Woburn Basketball Day at Centennial College" loading="lazy" /></figure>
+              <figure><img src="assets/g-woburn-2.jpg" width="1200" height="1600" alt="Woburn Basketball Day participants on the court" loading="lazy" /></figure>
+              <figure><img src="assets/g-woburn-3.jpg" width="1600" height="1200" alt="First annual Woburn Basketball Day, April 2022" loading="lazy" /></figure>
             </div>
           </article>
 
@@ -1268,52 +1465,53 @@
             <div class="event-head"><h2>Doris McCarthy Trail - Cleanup</h2><span class="event-date">October 26, 2021</span></div>
             <p>The Good Guides joined Toronto Police Service members and more than 25 local volunteers to clean up the Doris McCarthy Trail, hauling a truckload of garbage out of the ravine and off the waterfront. Thank you to everyone who came out.</p>
             <div class="photo-grid">
-              <figure><img src="assets/g-trail-1.jpg" alt="Volunteers cleaning up the Doris McCarthy Trail ravine" loading="lazy" /></figure>
-              <figure><img src="assets/g-trail-2.jpg" alt="Good Guides and Toronto Police Service members at the trail cleanup" loading="lazy" /></figure>
-              <figure><img src="assets/g-trail-3.jpg" alt="Community volunteers removing garbage from the waterfront trail" loading="lazy" /></figure>
+              <figure><img src="assets/g-trail-1.jpg" width="1095" height="589" alt="Volunteers cleaning up the Doris McCarthy Trail ravine" loading="lazy" /></figure>
+              <figure><img src="assets/g-trail-2.jpg" width="480" height="640" alt="Good Guides and Toronto Police Service members at the trail cleanup" loading="lazy" /></figure>
+              <figure><img src="assets/g-trail-3.jpg" width="640" height="480" alt="Community volunteers removing garbage from the waterfront trail" loading="lazy" /></figure>
             </div>
           </article>
 
           <article class="event">
             <div class="event-head"><h2>Community Graduation 2K21</h2><span class="event-date">July 24, 2021</span></div>
-            <p>Community Graduation 2K21 celebrated students from all grades. It would not have been possible without our partners and supporters — a big thank you to everyone who helped make the day happen.</p>
+            <p>Community Graduation 2K21 celebrated students from all grades, with our partners and supporters there to cheer them on.</p>
             <div class="photo-grid four">
-              <figure><img src="assets/g-grad-1.jpg" alt="Students celebrating at the Community Graduation 2K21" loading="lazy" /></figure>
-              <figure><img src="assets/g-grad-2.jpg" alt="Graduates and families at the Community Graduation celebration" loading="lazy" /></figure>
-              <figure><img src="assets/g-grad-3.jpg" alt="Community Graduation 2K21 ceremony, July 2021" loading="lazy" /></figure>
-              <figure><img src="assets/g-grad-4.jpg" alt="Celebrating students at Community Graduation 2K21" loading="lazy" /></figure>
+              <figure><img src="assets/g-grad-1.jpg" width="1600" height="1200" alt="Students celebrating at the Community Graduation 2K21" loading="lazy" /></figure>
+              <figure><img src="assets/g-grad-2.jpg" width="1600" height="1200" alt="Graduates and families at the Community Graduation celebration" loading="lazy" /></figure>
+              <figure><img class="poster-fit" src="assets/g-grad-3.jpg" width="1144" height="1600" alt="Community Graduation 2K21 ceremony, July 2021" loading="lazy" /></figure>
+              <figure><img src="assets/g-grad-4.jpg" width="1200" height="1600" alt="Celebrating students at Community Graduation 2K21" loading="lazy" /></figure>
             </div>
           </article>
 
           <article class="event text-only">
-            <div class="event-head"><h2>Meal Delivery — Support for Local Homeless Encampments</h2><span class="event-date">January 2, 2021</span></div>
             <span class="program-tag">Community Support</span>
-            <p>The Good Guides partnered with KxngsTable and delivered hot meals to our neighbours living in homeless encampments. Special thanks to our guest chef for his amazing contributions.</p>
+            <div class="event-head"><h2>Meal Delivery — Support for Local Homeless Encampments</h2></div>
+            <div class="panel-date">January 2, 2021</div>
+            <p class="panel-body">The Good Guides delivered hot meals to our neighbours living in encampments.</p>
+            <p class="thanks"><b>Special Thanks to:</b> KxngsTable and our guest chef</p>
           </article>
 
           <article class="event">
             <div class="event-head"><h2>Delivering Presents 2K20</h2><span class="event-date">November 29, 2020</span></div>
             <p>Our Project Manager Chaz spent the weekend handing out gifts and treat bags in the community.</p>
-            <p>Days like this only happen because people give. Thank you to everyone who does.</p>
             <div class="photo-grid">
-              <figure><img src="assets/g-presents-1.jpg" alt="Project Manager Chaz handing out gifts and treat bags in the community" loading="lazy" /></figure>
+              <figure><img src="assets/g-presents-1.jpg" width="1200" height="1600" alt="Project Manager Chaz handing out gifts and treat bags in the community" loading="lazy" /></figure>
             </div>
           </article>
 
           <article class="event">
             <div class="event-head"><h2>Brooks Farms - Field Trip</h2><span class="event-date">September 27, 2020</span></div>
-            <p>We travelled to Brooks Farms in Mount Albert, Ontario, where youth spent the day outdoors — hiking, zip-lining, and apple picking at a real, working farm. For many of them, it was their first time on a farm. The trip gave single parents a day of relief, too.</p>
+            <p>We travelled to Brooks Farms in Mount Albert, Ontario, where youth spent the day outdoors — hiking, zip-lining, and apple picking at a working farm. For many of them, it was their first time on a farm. The trip gave single parents a day of relief, too.</p>
             <div class="photo-grid">
-              <figure><img src="assets/g-farm-1.jpg" alt="Good Guides youth exploring Brooks Farms in Mount Albert" loading="lazy" /></figure>
-              <figure><img src="assets/g-farm-2.jpg" alt="Youth enjoying outdoor activities on the Brooks Farms field trip" loading="lazy" /></figure>
-              <figure><img src="assets/g-farm-3.jpg" alt="Apple picking and hiking at Brooks Farms, September 2020" loading="lazy" /></figure>
+              <figure><img src="assets/g-farm-1.jpg" width="800" height="533" alt="Good Guides youth exploring Brooks Farms in Mount Albert" loading="lazy" /></figure>
+              <figure><img src="assets/g-farm-2.jpg" width="640" height="480" alt="Youth enjoying outdoor activities on the Brooks Farms field trip" loading="lazy" /></figure>
+              <figure><img src="assets/g-farm-3.jpg" width="640" height="427" alt="Apple picking and hiking at Brooks Farms, September 2020" loading="lazy" /></figure>
             </div>
           </article>
 
-          <div class="programs-cta" style="padding-bottom:64px">
+          <div class="programs-cta">
             <div class="cta-band">
-              <p class="cta-title">Be part of the next one</p>
-              <p>Days like these happen because people show up — as mentors, partners, and donors.</p>
+              <p class="cta-title">Be part of the next event</p>
+              <p>These days happen because people show up — as mentors, partners, and donors.</p>
               <div class="hero-actions" style="justify-content:center">
                 <a class="btn btn-gold" href="#/take-action">Get Involved</a>
                 <a class="btn btn-outline-light" href="#/our-programs">See Our Programs</a>
@@ -1328,25 +1526,40 @@
         <div class="page-hero">
           <div class="wrap">
             <h1 tabindex="-1" data-focus>Contact Us</h1>
-            <p>Mentoring for your child, a co-op placement, a partnership, or just a question — connect with us today.</p>
+            <p>Mentoring for your child, a co-op placement, a partnership, or just a question — get in touch.</p>
           </div>
         </div>
         <div class="band">
           <div class="wrap">
             <figure class="banner-photo">
-              <img src="assets/programs-engagement.jpg" alt="A community family connecting with The Good Guides at a neighbourhood event in Scarborough" />
+              <img src="assets/programs-engagement.jpg" width="1600" height="1200" alt="A community family connecting with The Good Guides at a neighbourhood event in Scarborough" />
             </figure>
-            <div style="max-width:820px">
-              <p class="lead">We're an incorporated non-profit based in Scarborough, Ontario. Our work runs in neighbourhoods across the GTA that too often get overlooked — and we want to hear from the people who live in them.</p>
-              <p>Whether you're a parent looking for a mentor for your child or a local business that wants to back Scarborough youth, send us a message and tell us what you need — the role emails below will get you to the right person. Parents and youth: start with General Inquiries.</p>
+            <div>
+              <p class="lead" style="max-width:820px">We're an incorporated non-profit based in Scarborough, Ontario. Our work runs in Scarborough neighbourhoods — and we want to hear from the people who live in them.</p>
+              <p style="max-width:820px">Send us a message and tell us what you need — the emails below will get you to the right person.</p>
+              <div class="route-grid">
+                <div class="route-item">
+                  <h3>A parent looking for a mentor for your child</h3>
+                  <p>Parents and youth: start with General Inquiries.</p>
+                </div>
+                <div class="route-item">
+                  <h3>A student or teacher asking about a co-op placement</h3>
+                  <p>Use Co-op &amp; Student Placements.</p>
+                </div>
+                <div class="route-item">
+                  <h3>A local business that wants to back Scarborough youth</h3>
+                  <p>Partnerships is the route.</p>
+                </div>
+              </div>
             </div>
-            <div class="contact-grid" style="margin-top:40px">
+            <div class="contact-grid" style="margin-top:44px">
               <article class="card contact-card">
                 <span class="kicker">Visit Us</span>
                 <h2>Office Address</h2>
-                <p><a href="https://www.google.com/maps/search/?api=1&query=2229+Kingston+Rd+Unit+B+Scarborough+ON+M1N+1T8" target="_blank" rel="noopener">2229 Kingston Rd, Unit B<br />Scarborough, ON M1N 1T8</a></p>
-                <h2 style="margin-top:22px">Phone Number</h2>
-                <p><a href="tel:18005162818">1-800-516-2818</a></p>
+                <p class="address"><a href="https://www.google.com/maps/search/?api=1&query=2229+Kingston+Rd+Unit+B+Scarborough+ON+M1N+1T8" target="_blank" rel="noopener">2229 Kingston Rd Unit B,<br />Scarborough, ON M1N 1T8</a></p>
+                <div class="card-action">
+                  <p><a class="btn btn-outline-green" href="https://www.google.com/maps/search/?api=1&query=2229+Kingston+Rd+Unit+B+Scarborough+ON+M1N+1T8" target="_blank" rel="noopener">Get Directions</a></p>
+                </div>
               </article>
               <article class="card contact-card" id="role-contacts">
                 <span class="kicker">Email Us</span>
@@ -1356,7 +1569,9 @@
                   <li><span class="role">Partnerships</span><a href="mailto:swabir.shariff@thegoodguides.org">swabir.shariff@thegoodguides.org</a></li>
                   <li><span class="role">Co-op &amp; Student Placements</span><a href="mailto:ambassador@thegoodguides.org">ambassador@thegoodguides.org</a></li>
                 </ul>
-                <p style="margin:26px 0 0"><a class="btn btn-green" href="https://docs.google.com/forms/d/e/1FAIpQLSesdMDa_zVWDmYiz4SykFRYnBSest8HbVTFtaQMrp6MVkC4Pw/viewform" target="_blank" rel="noopener">Send Us a Message</a></p>
+                <div class="card-action">
+                  <p><a class="btn btn-green" href="https://docs.google.com/forms/d/e/1FAIpQLSesdMDa_zVWDmYiz4SykFRYnBSest8HbVTFtaQMrp6MVkC4Pw/viewform" target="_blank" rel="noopener">Send Us a Message</a></p>
+                </div>
               </article>
             </div>
           </div>
@@ -1369,7 +1584,7 @@
         <div class="footer-grid">
           <div class="footer-brand">
             <img src="assets/logo.jpg" alt="The Good Guides logo" width="76" height="76" />
-            <div class="org-name">The Good Guides - Inner City Youth Mentoring</div>
+            <div class="org-name">The Good Guides — Inner City Youth Mentoring</div>
             <p>Toronto, Ontario</p>
             <p><a href="mailto:service@thegoodguides.org">service@thegoodguides.org</a></p>
           </div>
@@ -1398,11 +1613,17 @@
         </div>
         <div class="footer-bottom">
           <span>© 2026 The Good Guides</span>
-          <span>The Good Guides - Inner City Youth Mentoring · Toronto, Ontario</span>
-          <span>Information sent through our forms is used only to respond and to run our programs. We don't sell or share it.</span>
+          <span>The Good Guides — Inner City Youth Mentoring · Toronto, Ontario</span>
+          <span>Information sent through our forms is used only to respond and to run our programs. We don't sell it or share it.</span>
         </div>
       </div>
     </footer>
+
+    <nav class="mobile-action-bar" aria-label="Quick actions">
+      <a class="mab-action mab-donate" data-donate href="https://donorbox.org/good-guides-donations" target="_blank" rel="noopener">Donate</a>
+      <a class="mab-action" href="https://docs.google.com/forms/d/e/1FAIpQLSduLWh-M4CYEuGnOVAiLQhqm06BAzJ3-AGqz7_l6rRx8J-FkA/viewform" target="_blank" rel="noopener">Volunteer</a>
+      <a class="mab-action" href="mailto:service@thegoodguides.org">Email</a>
+    </nav>
 
     <script>
       var DONATE_URL = "https://donorbox.org/good-guides-donations";
@@ -1411,9 +1632,9 @@
         "/":            { view: "view-home",         title: "The Good Guides — Inner City Youth Mentoring",            description: "Youth-led mentoring in Scarborough, Toronto — The Good Guides puts young people in charge of change through co-op and after-school programming." },
         "/about-us":    { view: "view-about-us",     title: "About Us | The Good Guides",                               description: "Founded in Scarborough in 2020, The Good Guides is a grassroots, Black-led non-profit where young people lead the programs, run the events, and shape the help in their own neighbourhoods." },
         "/take-action": { view: "view-take-action",  title: "Take Action | The Good Guides",                            description: "It takes a village to raise a child — donate or volunteer with The Good Guides, and sign up to become a Good Guide today." },
-        "/our-programs":{ view: "view-our-programs", title: "Our Programs | The Good Guides",                           description: "Not just a chair at the table — the keys to the entire program. The Good Guides' core program runs through co-op placements and after-school programming, built and run by youth themselves." },
+        "/our-programs":{ view: "view-our-programs", title: "Our Programs | The Good Guides",                           description: "Not just a chair at the table — the keys to the whole program. The Good Guides' core program runs through co-op placements and after-school programming, built and run by youth themselves." },
         "/our-team":    { view: "view-our-team",     title: "Our Team | The Good Guides",                               description: "Our team is from Scarborough — the same streets, schools, and neighbourhoods as the youth they mentor." },
-        "/partners":    { view: "view-partners",     title: "Partners | The Good Guides",                               description: "The Toronto Police Service, the Toronto District School Board, the City of Toronto, and Let's Roam — the partners who stand alongside Scarborough youth with The Good Guides." },
+        "/partners":    { view: "view-partners",     title: "Partners | The Good Guides",                               description: "The Toronto Police Service, the Toronto District School Board, and the City of Toronto — the partners who stand alongside Scarborough youth with The Good Guides." },
         "/gallery":     { view: "view-gallery",      title: "Gallery | The Good Guides",                                description: "Events and initiatives from The Good Guides — youth playing sports, cleaning trails, celebrating graduations and giving back across Scarborough." },
         "/contact-us":  { view: "view-contact-us",   title: "Contact Us | The Good Guides",                             description: "Connect with The Good Guides today — an incorporated non-profit in Ontario, based in Scarborough." }
       };
@@ -1448,7 +1669,7 @@
 
       function scrollToAnchor(anchor) {
         if (!anchor) return;
-        var active = document.querySelector(".view.active");
+        var active = currentView || document.querySelector(".view.active");
         if (!active) return;
         var target = active.querySelector('[id="' + anchor + '"]');
         if (!target) return;
@@ -1456,14 +1677,109 @@
         target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
       }
 
+      /* ---------- Motion: view transitions ---------- */
+      var reduceMotion = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+      var firstRender = true;
+      var currentView = null;
+      var mainEl = document.getElementById("main");
+      var crossfadeTimers = [];
+
+      function swapTo(route, parsed, newView, animateEnter) {
+        var views = document.querySelectorAll(".view");
+        for (var i = 0; i < views.length; i++) {
+          views[i].classList.toggle("active", views[i] === newView);
+        }
+        /* Scroll restoration to the top happens instantly, underneath the fade,
+           so there is no visible scroll jump (html uses smooth scrolling). */
+        var rootEl = document.documentElement;
+        var prevBehavior = rootEl.style.scrollBehavior;
+        rootEl.style.scrollBehavior = "auto";
+        window.scrollTo(0, 0);
+        rootEl.style.scrollBehavior = prevBehavior;
+        if (animateEnter && newView) {
+          newView.classList.add("view-enter-start");
+          void newView.offsetWidth; /* settle the start state before transitioning */
+          newView.classList.add("view-enter-active");
+          newView.classList.remove("view-enter-start");
+          window.setTimeout(function () { newView.classList.remove("view-enter-active"); }, 400);
+        }
+        var focusTarget = newView ? newView.querySelector("[data-focus]") : null;
+        if (focusTarget) focusTarget.focus({ preventScroll: true });
+        if (parsed.anchor) {
+          scrollToAnchor(parsed.anchor);
+          /* Retry once images settle, so the target lands in the same place. */
+          window.setTimeout(function () { scrollToAnchor(parsed.anchor); }, 450);
+        }
+      }
+
+      function clearCrossfadeTimers() {
+        for (var i = 0; i < crossfadeTimers.length; i++) window.clearTimeout(crossfadeTimers[i]);
+        crossfadeTimers = [];
+      }
+
+      /* Settle instantly: every view except the destination drops its
+         transition classes (and, except the destination, its active flag),
+         and any crossfade stacking is torn down. */
+      function settleViews(newView) {
+        clearCrossfadeTimers();
+        mainEl.classList.remove("crossfading");
+        var views = document.querySelectorAll(".view");
+        for (var i = 0; i < views.length; i++) {
+          views[i].classList.remove("view-leaving", "view-enter-start", "view-enter-active");
+          if (views[i] !== newView) views[i].classList.remove("active");
+        }
+      }
+
+      function endCrossfade(oldView, newView) {
+        oldView.classList.remove("active");
+        oldView.classList.remove("view-leaving");
+        newView.classList.remove("view-enter-active");
+        mainEl.classList.remove("crossfading");
+      }
+
+      /* True crossfade: both views are active at once, stacked in the same
+         grid cell of <main>, so the incoming view's 320ms ease-out rise
+         overlaps the outgoing view's 160ms ease-in fade — both are partially
+         visible mid-transition and the content area is never blank. The
+         scroll reset stays instant, underneath the crossfade, and the
+         incoming view sits on top, so clicks and forms stay live. */
+      function crossfadeTo(parsed, oldView, newView) {
+        clearCrossfadeTimers();
+        /* Normalize any crossfade still in flight: retire a stale outgoing
+           view, keep the current one as this transition's outgoing view. */
+        var views = document.querySelectorAll(".view");
+        for (var i = 0; i < views.length; i++) {
+          views[i].classList.remove("view-leaving", "view-enter-start", "view-enter-active");
+          if (views[i] !== oldView && views[i] !== newView) views[i].classList.remove("active");
+        }
+        mainEl.classList.add("crossfading");
+        newView.classList.add("active");
+        newView.classList.add("view-enter-start");
+        var rootEl = document.documentElement;
+        var prevBehavior = rootEl.style.scrollBehavior;
+        rootEl.style.scrollBehavior = "auto";
+        window.scrollTo(0, 0);
+        rootEl.style.scrollBehavior = prevBehavior;
+        void newView.offsetWidth; /* settle the start state before transitioning */
+        oldView.classList.add("view-leaving");
+        newView.classList.add("view-enter-active");
+        newView.classList.remove("view-enter-start");
+        var focusTarget = newView.querySelector("[data-focus]");
+        if (focusTarget) focusTarget.focus({ preventScroll: true });
+        crossfadeTimers.push(window.setTimeout(function () {
+          endCrossfade(oldView, newView);
+          if (parsed.anchor) {
+            scrollToAnchor(parsed.anchor);
+            /* Retry once images settle, so the target lands in the same place. */
+            window.setTimeout(function () { scrollToAnchor(parsed.anchor); }, 300);
+          }
+        }, 340));
+      }
+
       function render() {
         var parsed = parseHash();
         var path = parsed.path;
         var route = ROUTES[path];
-        var views = document.querySelectorAll(".view");
-        for (var i = 0; i < views.length; i++) {
-          views[i].classList.toggle("active", views[i].id === route.view);
-        }
         document.title = route.title;
         var meta = document.querySelector('meta[name="description"]');
         if (meta) meta.setAttribute("content", route.description);
@@ -1473,15 +1789,17 @@
           else links[j].removeAttribute("aria-current");
         }
         closeMenu();
-        window.scrollTo(0, 0);
-        var active = document.getElementById(route.view);
-        var focusTarget = active ? active.querySelector("[data-focus]") : null;
-        if (focusTarget) focusTarget.focus({ preventScroll: true });
-        if (parsed.anchor) {
-          scrollToAnchor(parsed.anchor);
-          /* Retry once images settle, so the target lands in the same place. */
-          window.setTimeout(function () { scrollToAnchor(parsed.anchor); }, 450);
+        var newView = document.getElementById(route.view);
+        var oldView = currentView;
+        currentView = newView;
+        var isFirst = firstRender;
+        firstRender = false;
+        if (reduceMotion || isFirst || !oldView || oldView === newView) {
+          settleViews(newView);
+          swapTo(route, parsed, newView, !reduceMotion && oldView !== newView);
+          return;
         }
+        crossfadeTo(parsed, oldView, newView);
       }
 
       var hamburger = document.getElementById("hamburger");
@@ -1496,6 +1814,17 @@
         hamburger.setAttribute("aria-expanded", open ? "true" : "false");
         hamburger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
       });
+
+      /* Skip link: move focus to the main content of the current view
+         without touching the hash (the router owns the hash). */
+      var skipLink = document.querySelector(".skip-link");
+      if (skipLink) {
+        skipLink.addEventListener("click", function (e) {
+          e.preventDefault();
+          var mainEl = document.getElementById("main");
+          if (mainEl) { mainEl.focus({ preventScroll: true }); mainEl.scrollIntoView(); }
+        });
+      }
 
       window.addEventListener("hashchange", render);
 
@@ -1551,6 +1880,79 @@
           t.style.display = "none";
         }
       }, true);
+
+      /* Scroll reveals: sections and cards fade/rise once as they enter the
+         viewport, with a slight stagger (75ms per item, capped) within each
+         parent group. The .reveal class is added here only, and never under
+         reduced motion, so content is never hidden when motion is off.
+         Hero content is excluded — it has its own entrance animation. */
+      (function setupReveals() {
+        if (reduceMotion || !("IntersectionObserver" in window)) return;
+        var targets = document.querySelectorAll(".section-head, .card, .form-card, .vm-item, .core-card, .member, .partner-tile, .stat, .value-row, .timeline li, .event, .program-block, .roster li, .photo-grid figure, .pgallery figure, .photo-stack figure, .banner-photo, .framed, .founder-quote, .subscribe, .cta-band, .proverb, .flow-step, .route-item, .phil-quote, .phil-head");
+        var observer = new IntersectionObserver(function (entries) {
+          for (var i = 0; i < entries.length; i++) {
+            if (!entries[i].isIntersecting) continue;
+            var el = entries[i].target;
+            observer.unobserve(el);
+            el.classList.add("revealed");
+            (function (node) {
+              var d = parseInt(node.style.getPropertyValue("--reveal-delay"), 10) || 0;
+              window.setTimeout(function () {
+                node.classList.remove("reveal");
+                node.classList.remove("revealed");
+                node.style.removeProperty("--reveal-delay");
+              }, d + 700);
+            })(el);
+          }
+        }, { threshold: 0.1, rootMargin: "0px 0px -6% 0px" });
+        var counts = new Map();
+        for (var i = 0; i < targets.length; i++) {
+          var el = targets[i];
+          /* Gallery figures inside an .event reveal with the event as a whole. */
+          if (el.tagName === "FIGURE" && el.closest && el.closest(".event")) continue;
+          var parent = el.parentNode;
+          var n = counts.get(parent) || 0;
+          counts.set(parent, n + 1);
+          el.style.setProperty("--reveal-delay", Math.min(n, 4) * 75 + "ms");
+          el.classList.add("reveal");
+          observer.observe(el);
+        }
+      })();
+
+      /* Stats count-up: the youth-mentored figure counts 0 -> 10,000 once when
+         its stats band scrolls into view (~1.4s ease-out, comma + "+" format).
+         The real figure is what ships in the DOM, so with JS off, no
+         IntersectionObserver, or reduced motion, the final value simply shows.
+         The 2020 founding year carries no data-count-up attribute and never counts. */
+      (function setupCountUp() {
+        if (reduceMotion || !("IntersectionObserver" in window) || !window.requestAnimationFrame) return;
+        var nums = document.querySelectorAll("[data-count-up]");
+        if (!nums.length) return;
+        function countUp(el) {
+          var target = parseInt(el.getAttribute("data-count-up"), 10) || 0;
+          var duration = 1400;
+          var start = null;
+          function frame(ts) {
+            if (!start) start = ts;
+            var t = Math.min((ts - start) / duration, 1);
+            var eased = 1 - Math.pow(1 - t, 3); /* easeOutCubic */
+            el.textContent = Math.round(target * eased).toLocaleString("en-CA") + "+";
+            if (t < 1) window.requestAnimationFrame(frame);
+          }
+          window.requestAnimationFrame(frame);
+        }
+        var observer = new IntersectionObserver(function (entries) {
+          for (var i = 0; i < entries.length; i++) {
+            if (!entries[i].isIntersecting) continue;
+            observer.unobserve(entries[i].target);
+            countUp(entries[i].target);
+          }
+        }, { threshold: 0.35 });
+        for (var i = 0; i < nums.length; i++) {
+          nums[i].textContent = "0+";
+          observer.observe(nums[i]);
+        }
+      })();
 
       render();
     </script>
