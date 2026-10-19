@@ -8,16 +8,18 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="The Good Guides" />
     <meta property="og:title" content="The Good Guides — Inner City Youth Mentoring" />
-    <meta property="og:description" content="Youth-led mentoring in Scarborough, Toronto. Young people build the programs, run the events, and shape the help in their own neighbourhoods — with mentors from those same streets standing behind them." />
+    <meta property="og:description" content="Young people don't need saving — they need the lead. We mentor alongside them and open the doors." />
     <meta property="og:url" content="https://thegoodguides.org/" />
-    <meta property="og:image" content="https://thegoodguides.org/assets/hero-serving.jpg" />
-    <meta property="og:image:width" content="1290" />
-    <meta property="og:image:height" content="937" />
+    <meta property="og:image" content="https://thegoodguides.org/assets/og-card.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="The Good Guides — Inner City Youth Mentoring" />
-    <meta name="twitter:description" content="Youth-led mentoring in Scarborough, Toronto. Young people build the programs, run the events, and shape the help in their own neighbourhoods — with mentors from those same streets standing behind them." />
-    <meta name="twitter:image" content="https://thegoodguides.org/assets/hero-serving.jpg" />
+    <meta name="twitter:description" content="Young people don't need saving — they need the lead. We mentor alongside them and open the doors." />
+    <meta name="twitter:image" content="https://thegoodguides.org/assets/og-card.jpg" />
+    <meta name="theme-color" content="#2D6B38" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
     <link rel="icon" href="assets/logo.jpg" />
     <title>The Good Guides — Inner City Youth Mentoring</title>
     <link rel="canonical" href="https://thegoodguides.org/" />
@@ -415,6 +417,19 @@
       .pgallery figure { margin: 0; border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); }
       .pgallery img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; aspect-ratio: 4 / 3; }
 
+      /* FAQ (Take Action) */
+      .faq-list { max-width: 820px; }
+      .faq-item { background: var(--surface); border: 1px solid var(--card-line); border-radius: 14px; box-shadow: var(--shadow); margin-bottom: 12px; }
+      .faq-item summary { cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; font-family: var(--font-display); font-weight: 600; font-size: 1.12rem; line-height: 1.35; color: var(--ink); }
+      .faq-item summary::-webkit-details-marker { display: none; }
+      .faq-item summary::after { content: "+"; flex: none; font-size: 1.5rem; font-weight: 700; line-height: 1; color: var(--green); }
+      .faq-item[open ] summary::after { content: "\2013"; }
+      .faq-item summary:hover { color: var(--green); }
+      .faq-item summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; border-radius: 14px; }
+      .faq-a { padding: 0 24px 22px; }
+      .faq-a p { margin: 0 0 10px; }
+      .faq-a p:last-child { margin-bottom: 0; }
+
       /* Forms */
       .form-card { background: var(--surface); border: 1px solid var(--card-line); border-radius: 16px; padding: 28px; box-shadow: var(--shadow); }
       .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
@@ -704,7 +719,7 @@
                 </div>
               </div>
               <figure class="hero-photo">
-                <img src="assets/hero-serving.jpg" width="1290" height="937" alt="Good Guide Ambassadors in gloves serving food under a canopy at a community barbecue in Scarborough" />
+                <img src="assets/hero-serving.webp" width="1290" height="937" alt="Good Guide Ambassadors in gloves serving food under a canopy at a community barbecue in Scarborough" />
               </figure>
             </div>
           </div>
@@ -732,8 +747,8 @@
                 <p>Along the way, they pick up skills that stay with them long after any single program ends.</p>
               </div>
               <div class="photo-stack">
-                <figure><img src="assets/g-carnival-1.jpg" width="1280" height="1599" alt="Children gathered around a superhero inflatable at an outdoor school carnival" loading="lazy" /></figure>
-                <figure><img src="assets/g-grad-1.jpg" width="1600" height="1200" alt="Students celebrating at the Community Graduation 2K21" loading="lazy" /></figure>
+                <figure><img src="assets/g-carnival-1.webp" width="1280" height="1599" alt="Children gathered around a superhero inflatable at an outdoor school carnival" loading="lazy" /></figure>
+                <figure><img src="assets/g-grad-1.webp" width="1600" height="1200" alt="Students celebrating at the Community Graduation 2K21" loading="lazy" /></figure>
               </div>
             </div>
           </div>
@@ -834,7 +849,7 @@
                 </div>
               </div>
               <figure class="hero-photo">
-                <img src="assets/event-handshake.jpg" width="1290" height="794" alt="Toronto Police officers smiling as one shakes a young child's hand on a grass field at a community event" />
+                <img src="assets/event-handshake.webp" width="1290" height="794" alt="Toronto Police officers smiling as one shakes a young child's hand on a grass field at a community event" />
               </figure>
             </div>
           </div>
@@ -851,8 +866,8 @@
                 <p>So they built their own: mentors from those same neighbourhoods, people young people could recognize as their own. It still runs the way it grew — mentors showing up week after week, and young people stepping up to lead alongside them.</p>
               </div>
               <div class="photo-stack">
-                <figure><img src="assets/partnership-2.jpg" width="1600" height="1200" alt="Good Guides youth and a partner staffer packing meal boxes and bottled water for a community distribution" loading="lazy" /></figure>
-                <figure><img src="assets/event-backpacks.jpg" width="1290" height="826" style="object-position:40% center" alt="Children carrying new backpacks across the grass at a Back to School event in Scarborough" loading="lazy" /></figure>
+                <figure><img src="assets/partnership-2.webp" width="1600" height="1200" alt="Good Guides youth and a partner staffer packing meal boxes and bottled water for a community distribution" loading="lazy" /></figure>
+                <figure><img src="assets/event-backpacks.webp" width="1290" height="826" style="object-position:40% center" alt="Children carrying new backpacks across the grass at a Back to School event in Scarborough" loading="lazy" /></figure>
               </div>
             </div>
           </div>
@@ -907,8 +922,8 @@
           <div class="wrap">
             <div class="split phil-split">
               <div class="photo-stack">
-                <figure><img src="assets/bbq-line.jpg" width="1290" height="825" style="object-position:45% center" alt="Volunteers serving food to youth at an outdoor barbecue beside a grill" loading="lazy" /></figure>
-                <figure><img src="assets/philosophy-2.jpg" width="1600" height="1200" alt="Good Guides mentors and community members gathered at an ice-cream truck with Share-a-Meal bags at an outdoor event in Scarborough" loading="lazy" /></figure>
+                <figure><img src="assets/bbq-line.webp" width="1290" height="825" style="object-position:45% center" alt="Volunteers serving food to youth at an outdoor barbecue beside a grill" loading="lazy" /></figure>
+                <figure><img src="assets/philosophy-2.webp" width="1600" height="1200" alt="Good Guides mentors and community members gathered at an ice-cream truck with Share-a-Meal bags at an outdoor event in Scarborough" loading="lazy" /></figure>
               </div>
               <div>
                 <span class="kicker">Our Philosophy</span>
@@ -976,7 +991,7 @@
         <div class="band" style="padding-top:36px">
           <div class="wrap">
             <figure class="banner-photo">
-              <img src="assets/event-cottoncandy.jpg" width="1290" height="913" style="object-position:center 55%" alt="Children watching a cotton-candy machine spin at an outdoor community event, a girl in a pink shirt in the foreground" />
+              <img src="assets/event-cottoncandy.webp" width="1290" height="913" style="object-position:center 55%" alt="Children watching a cotton-candy machine spin at an outdoor community event, a girl in a pink shirt in the foreground" />
             </figure>
             <div class="cards-2">
               <article class="card action-card">
@@ -994,9 +1009,64 @@
               </article>
             </div>
             <div class="photo-grid" style="margin-top:28px">
-              <figure><img src="assets/g-presents-1.jpg" width="1200" height="1600" alt="Project Manager Chaz handing out gifts and treat bags in the community" loading="lazy" /></figure>
-              <figure><img src="assets/g-sportsfest-1.jpg" width="1440" height="1086" alt="Youth and officers playing sports at the Toronto Sports Festival" loading="lazy" /></figure>
-              <figure><img src="assets/g-farm-1.jpg" width="800" height="533" alt="Good Guides youth exploring Brooks Farms in Mount Albert" loading="lazy" /></figure>
+              <figure><img src="assets/g-presents-1.webp" width="1200" height="1600" alt="Project Manager Chaz handing out gifts and treat bags in the community" loading="lazy" /></figure>
+              <figure><img src="assets/g-sportsfest-1.webp" width="1440" height="1086" alt="Youth and officers playing sports at the Toronto Sports Festival" loading="lazy" /></figure>
+              <figure><img src="assets/g-farm-1.webp" width="800" height="533" alt="Good Guides youth exploring Brooks Farms in Mount Albert" loading="lazy" /></figure>
+            </div>
+          </div>
+        </div>
+        <div class="band band-cream">
+          <div class="wrap">
+            <div class="section-head">
+              <span class="kicker">Good Questions</span>
+              <h2>Frequently asked questions</h2>
+            </div>
+            <div class="faq-list">
+              <details class="faq-item">
+                <summary>Are you a registered charity? Can I get a tax receipt for my donation?</summary>
+                <div class="faq-a">
+                  <p>We're an incorporated non-profit in Ontario — not a registered charity — so we can't give you a tax receipt for your donation.</p>
+                  <p>Your contribution still goes straight into the weekly work: after-school mentoring and virtual hangouts, violence prevention workshops, hot meals delivered to neighbours, and excursion days for youth.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>How do I donate?</summary>
+                <div class="faq-a">
+                  <p>Donations run through Donorbox. Tap any Donate button on this site and you'll land on our secure donation page — one-time and monthly gifts are both welcome, and monthly donors keep the weekly work going.</p>
+                  <p><a data-donate href="https://donorbox.org/good-guides-donations" target="_blank" rel="noopener">Donate through Donorbox</a></p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>How do I volunteer, become a mentor, or become an Ambassador?</summary>
+                <div class="faq-a">
+                  <p>Start with the <a href="https://docs.google.com/forms/d/e/1FAIpQLSduLWh-M4CYEuGnOVAiLQhqm06BAzJ3-AGqz7_l6rRx8J-FkA/viewform" target="_blank" rel="noopener">volunteer sign-up form</a> and we'll be in touch. Our volunteers mentor youth after school and help run youth-created events — showing up week after week is the heart of it.</p>
+                  <p>Students: you can start with a co-op placement and earn school credits as a Good Guide Ambassador. See <a href="#/our-programs">Our Programs</a> for how placements work.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>What ages do you work with?</summary>
+                <div class="faq-a">
+                  <p>Our programs are for young people ages 11–18, after the school day ends, in the Scarborough neighbourhoods they call home — plus virtual hangouts between sessions. There is no long application; joining starts with a conversation.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>Where are you based?</summary>
+                <div class="faq-a">
+                  <p>Our office is at 2229 Kingston Rd Unit B, Scarborough, ON M1N 1T8, and our programs run in neighbourhoods across Scarborough.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>How can my organization partner with The Good Guides?</summary>
+                <div class="faq-a">
+                  <p>Start with the <a href="https://docs.google.com/forms/d/e/1FAIpQLSf4_fO1dhzDchVRbb4TYMU_iSWfSNtPjGg-PWY_yFbIHYlXQw/viewform" target="_blank" rel="noopener">partnership form</a> and tell us what you have in mind. Partners build workshops with us, host co-op students, back event days, and put contributions and in-kind gifts to work for Scarborough youth — see <a href="#/partners">Partners</a> for the ways in.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>How do I reach you?</summary>
+                <div class="faq-a">
+                  <p>Email us at <a href="mailto:service@thegoodguides.org">service@thegoodguides.org</a>, or send a message through the form on our <a href="#/contact-us">Contact page</a> — parents, students, teachers, and businesses will each find the right route there.</p>
+                </div>
+              </details>
             </div>
           </div>
         </div>
@@ -1097,7 +1167,7 @@
                     </article>
                   </div>
                   <figure class="framed flow-photo">
-                    <img src="assets/programs-excursions.jpg" width="1600" height="1067" alt="Good Guides youth ambassadors apple-picking at Brooks Farms in Mount Albert" loading="lazy" />
+                    <img src="assets/programs-excursions.webp" width="1600" height="1067" alt="Good Guides youth ambassadors apple-picking at Brooks Farms in Mount Albert" loading="lazy" />
                   </figure>
                 </div>
               </li>
@@ -1134,7 +1204,7 @@
                 <a class="btn btn-outline-green" href="#/contact-us">Contact Us</a>
               </div>
               <figure class="program-media">
-                <img src="assets/event-mounted.jpg" width="1290" height="921" alt="Children meeting Toronto Police Service mounted unit officers and their horses at an outdoor community event" loading="lazy" />
+                <img src="assets/event-mounted.webp" width="1290" height="921" alt="Children meeting Toronto Police Service mounted unit officers and their horses at an outdoor community event" loading="lazy" />
               </figure>
             </div>
 
@@ -1174,7 +1244,7 @@
           <div class="wrap">
             <div class="team-grid">
               <article class="member">
-                <div class="photo"><img src="assets/team-swabir.jpg" width="410" height="417" alt="Swabir Shariff, Founder &amp; Executive Director" loading="lazy" /></div>
+                <div class="photo"><img src="assets/team-swabir.webp" width="410" height="417" alt="Swabir Shariff, Founder &amp; Executive Director" loading="lazy" /></div>
                 <div class="body">
                   <h3>SWABIR SHARIFF</h3>
                   <span class="title">Founder &amp; Executive Director</span>
@@ -1186,7 +1256,7 @@
                 </div>
               </article>
               <article class="member">
-                <div class="photo"><img src="assets/team-daye.jpg" width="1600" height="1416" alt="Christopher Daye, Operations Manager" loading="lazy" /></div>
+                <div class="photo"><img src="assets/team-daye.webp" width="1600" height="1416" alt="Christopher Daye, Operations Manager" loading="lazy" /></div>
                 <div class="body">
                   <h3>CHRISTOPHER DAYE</h3>
                   <span class="title">Operations Manager</span>
@@ -1195,7 +1265,7 @@
                 </div>
               </article>
               <article class="member">
-                <div class="photo"><img src="assets/team-chaz.jpg" width="750" height="688" alt="Chaz Mais, Project Manager" loading="lazy" /></div>
+                <div class="photo"><img src="assets/team-chaz.webp" width="750" height="688" alt="Chaz Mais, Project Manager" loading="lazy" /></div>
                 <div class="body">
                   <h3>CHAZ MAIS</h3>
                   <span class="title">Project Manager</span>
@@ -1204,7 +1274,7 @@
                 </div>
               </article>
               <article class="member">
-                <div class="photo"><img src="assets/team-farhan.jpg" width="678" height="997" alt="Farhan Khalid, Project Director" loading="lazy" /></div>
+                <div class="photo"><img src="assets/team-farhan.webp" width="678" height="997" alt="Farhan Khalid, Project Director" loading="lazy" /></div>
                 <div class="body">
                   <h3>FARHAN KHALID</h3>
                   <span class="title">Project Director</span>
@@ -1216,7 +1286,7 @@
                 </div>
               </article>
               <article class="member">
-                <div class="photo"><img src="assets/team-alex.jpg" width="386" height="353" alt="Alex Ionita, Marketing Specialist" loading="lazy" /></div>
+                <div class="photo"><img src="assets/team-alex.webp" width="386" height="353" alt="Alex Ionita, Marketing Specialist" loading="lazy" /></div>
                 <div class="body">
                   <h3>ALEX IONITA</h3>
                   <span class="title">Marketing Specialist</span>
@@ -1237,7 +1307,7 @@
                 </div>
               </article>
               <article class="member">
-                <div class="photo"><img src="assets/team-emmanuel.jpg" width="1300" height="1344" alt="Emmanuel Akingbola, Development Coordinator" loading="lazy" /></div>
+                <div class="photo"><img src="assets/team-emmanuel.webp" width="1300" height="1344" alt="Emmanuel Akingbola, Development Coordinator" loading="lazy" /></div>
                 <div class="body">
                   <h3>EMMANUEL AKINGBOLA</h3>
                   <span class="title">Development Coordinator</span>
@@ -1345,8 +1415,8 @@
               <h2>Partnership gallery</h2>
             </div>
             <div class="pgallery">
-              <figure><img src="assets/partnership-2.jpg" width="1600" height="1200" alt="Good Guides youth and a partner staffer packing meal boxes and bottled water for a community distribution" loading="lazy" /></figure>
-              <figure><img src="assets/g-trail-2.jpg" width="480" height="640" alt="Good Guides and Toronto Police Service members at the Doris McCarthy Trail cleanup" loading="lazy" /></figure>
+              <figure><img src="assets/partnership-2.webp" width="1600" height="1200" alt="Good Guides youth and a partner staffer packing meal boxes and bottled water for a community distribution" loading="lazy" /></figure>
+              <figure><img src="assets/g-trail-2.webp" width="480" height="640" alt="Good Guides and Toronto Police Service members at the Doris McCarthy Trail cleanup" loading="lazy" /></figure>
             </div>
 
             <div class="section-head" style="margin-top:64px">
@@ -1380,8 +1450,8 @@
             <div class="event-head"><h2>Guided by Giving</h2><span class="event-date">December 2024</span></div>
             <p>Good Guides team members and Toronto Police officers wrapped and handed out gifts with Santa in December 2024.</p>
             <div class="photo-grid">
-              <figure><img src="assets/g-giving-1.jpg" width="1280" height="1600" alt="Good Guides team members and Toronto Police officers posing with Santa at Guided by Giving" loading="lazy" /></figure>
-              <figure><img src="assets/g-wrapping-1.jpg" width="720" height="1280" alt="Two volunteers wrapping holiday gifts at a table during Guided by Giving" loading="lazy" /></figure>
+              <figure><img src="assets/g-giving-1.webp" width="1280" height="1600" alt="Good Guides team members and Toronto Police officers posing with Santa at Guided by Giving" loading="lazy" /></figure>
+              <figure><img src="assets/g-wrapping-1.webp" width="720" height="1280" alt="Two volunteers wrapping holiday gifts at a table during Guided by Giving" loading="lazy" /></figure>
             </div>
           </article>
 
@@ -1389,42 +1459,42 @@
           <article class="event">
             <div class="event-head"><h2>Carnival at Willow Park Public School</h2></div>
             <div class="photo-grid">
-              <figure><img src="assets/g-carnival-1.jpg" width="1280" height="1599" alt="Children gathered around a superhero inflatable at an outdoor school carnival" loading="lazy" /></figure>
+              <figure><img src="assets/g-carnival-1.webp" width="1280" height="1599" alt="Children gathered around a superhero inflatable at an outdoor school carnival" loading="lazy" /></figure>
             </div>
           </article>
 
           <article class="event">
             <div class="event-head"><h2>Financial Literacy Workshop</h2><span class="event-date">December 2023</span></div>
             <div class="photo-grid">
-              <figure><img src="assets/g-finlit-1.jpg" width="1440" height="960" alt="Youth seated in a classroom watching a Financial Literacy 101 presentation" loading="lazy" /></figure>
+              <figure><img src="assets/g-finlit-1.webp" width="1440" height="960" alt="Youth seated in a classroom watching a Financial Literacy 101 presentation" loading="lazy" /></figure>
             </div>
           </article>
 
           <article class="event">
             <div class="event-head"><h2>Back to School BBQ</h2><span class="event-date">September 2023</span></div>
             <div class="photo-grid">
-              <figure><img src="assets/g-bbq-1.jpg" width="1283" height="1600" alt="Families lined up at outdoor tables stacked with backpacks at the Back to School BBQ" loading="lazy" /></figure>
+              <figure><img src="assets/g-bbq-1.webp" width="1283" height="1600" alt="Families lined up at outdoor tables stacked with backpacks at the Back to School BBQ" loading="lazy" /></figure>
             </div>
           </article>
 
           <article class="event">
             <div class="event-head"><h2>Rookie League Baseball</h2><span class="event-date">Summer 2023</span></div>
             <div class="photo-grid">
-              <figure><img src="assets/g-jayscare-1.jpg" width="533" height="533" style="aspect-ratio: 1 / 1" alt="Three youth in Blue Jays shirts holding bats, posing with their coaches on a grass field" loading="lazy" /></figure>
+              <figure><img src="assets/g-jayscare-1.webp" width="533" height="533" style="aspect-ratio: 1 / 1" alt="Three youth in Blue Jays shirts holding bats, posing with their coaches on a grass field" loading="lazy" /></figure>
             </div>
           </article>
 
           <article class="event">
             <div class="event-head"><h2>Sledding Day with Toronto Police Service Officers</h2><span class="event-date">March 2023</span></div>
             <div class="photo-grid">
-              <figure><img src="assets/g-sledding-1.jpg" width="720" height="900" alt="Children sledding down a snowy hill while community officers look on" loading="lazy" /></figure>
+              <figure><img src="assets/g-sledding-1.webp" width="720" height="900" alt="Children sledding down a snowy hill while community officers look on" loading="lazy" /></figure>
             </div>
           </article>
 
           <article class="event">
             <div class="event-head"><h2>Youth at Our First CPR Training Session</h2><span class="event-date">Winter 2022–23</span></div>
             <div class="photo-grid">
-              <figure><img src="assets/g-cpr-1.jpg" width="1280" height="1600" alt="Youth practising on CPR manikins at tables during a training session led by an instructor" loading="lazy" /></figure>
+              <figure><img src="assets/g-cpr-1.webp" width="1280" height="1600" alt="Youth practising on CPR manikins at tables during a training session led by an instructor" loading="lazy" /></figure>
             </div>
           </article>
 
@@ -1433,9 +1503,9 @@
             <p>Young people played sports with Toronto Police Service neighbourhood officers at a local school park, and families from the area joined the games.</p>
             <p class="thanks"><b>Special Thanks to:</b> PRO ACTION Cops and Kids</p>
             <div class="photo-grid">
-              <figure><img src="assets/g-funday-1.jpg" width="1175" height="1600" alt="The Good Guides banner and event tent at Funday With Cops in a Scarborough school park" loading="lazy" /></figure>
-              <figure><img src="assets/g-funday-2.jpg" width="720" height="960" alt="Families and community members at the Funday With Cops school park event" loading="lazy" /></figure>
-              <figure><img src="assets/g-funday-3.jpg" width="1200" height="1600" alt="Friendly games at Funday With Cops, July 2022" loading="lazy" /></figure>
+              <figure><img src="assets/g-funday-1.webp" width="1175" height="1600" alt="The Good Guides banner and event tent at Funday With Cops in a Scarborough school park" loading="lazy" /></figure>
+              <figure><img src="assets/g-funday-2.webp" width="720" height="960" alt="Families and community members at the Funday With Cops school park event" loading="lazy" /></figure>
+              <figure><img src="assets/g-funday-3.webp" width="1200" height="1600" alt="Friendly games at Funday With Cops, July 2022" loading="lazy" /></figure>
             </div>
           </article>
 
@@ -1444,10 +1514,10 @@
             <p>A community day of sport for Scarborough youth and families, with neighbourhood officers joining the games.</p>
             <p class="thanks"><b>Special Thanks to:</b> PRO ACTION Cops and Kids &amp; The Toronto Police Chief's Youth Advisory Committee</p>
             <div class="photo-grid four">
-              <figure><img src="assets/g-sportsfest-1.jpg" width="1440" height="1086" alt="Youth and officers playing sports at the Toronto Sports Festival" loading="lazy" /></figure>
-              <figure><img src="assets/g-sportsfest-2.jpg" width="1440" height="1086" alt="Community members gathered at the Toronto Sports Festival" loading="lazy" /></figure>
-              <figure><img src="assets/g-sportsfest-3.jpg" width="1284" height="1600" alt="Sports and activities at the Toronto Sports Festival, June 2022" loading="lazy" /></figure>
-              <figure><img src="assets/g-sportsfest-4.jpg" width="1284" height="1600" alt="Families enjoying the Toronto Sports Festival" loading="lazy" /></figure>
+              <figure><img src="assets/g-sportsfest-1.webp" width="1440" height="1086" alt="Youth and officers playing sports at the Toronto Sports Festival" loading="lazy" /></figure>
+              <figure><img src="assets/g-sportsfest-2.webp" width="1440" height="1086" alt="Community members gathered at the Toronto Sports Festival" loading="lazy" /></figure>
+              <figure><img src="assets/g-sportsfest-3.webp" width="1284" height="1600" alt="Sports and activities at the Toronto Sports Festival, June 2022" loading="lazy" /></figure>
+              <figure><img src="assets/g-sportsfest-4.webp" width="1284" height="1600" alt="Families enjoying the Toronto Sports Festival" loading="lazy" /></figure>
             </div>
           </article>
 
@@ -1455,9 +1525,9 @@
             <div class="event-head"><h2>Woburn Basketball Day</h2><span class="event-date">April 30, 2022</span></div>
             <p>The Good Guides supported the first annual Woburn Basketball Day, bringing youth from across Scarborough together for a day of basketball at Centennial College. Thank you to PC Amanda from the Toronto Police Service for organizing the event, and to all the partners who helped run it.</p>
             <div class="photo-grid">
-              <figure><img src="assets/g-woburn-1.jpg" width="1600" height="1200" alt="Youth gathered on the court at Woburn Basketball Day at Centennial College" loading="lazy" /></figure>
-              <figure><img src="assets/g-woburn-2.jpg" width="1200" height="1600" alt="Woburn Basketball Day participants on the court" loading="lazy" /></figure>
-              <figure><img src="assets/g-woburn-3.jpg" width="1600" height="1200" alt="First annual Woburn Basketball Day, April 2022" loading="lazy" /></figure>
+              <figure><img src="assets/g-woburn-1.webp" width="1600" height="1200" alt="Youth gathered on the court at Woburn Basketball Day at Centennial College" loading="lazy" /></figure>
+              <figure><img src="assets/g-woburn-2.webp" width="1200" height="1600" alt="Woburn Basketball Day participants on the court" loading="lazy" /></figure>
+              <figure><img src="assets/g-woburn-3.webp" width="1600" height="1200" alt="First annual Woburn Basketball Day, April 2022" loading="lazy" /></figure>
             </div>
           </article>
 
@@ -1465,9 +1535,9 @@
             <div class="event-head"><h2>Doris McCarthy Trail - Cleanup</h2><span class="event-date">October 26, 2021</span></div>
             <p>The Good Guides joined Toronto Police Service members and more than 25 local volunteers to clean up the Doris McCarthy Trail, hauling a truckload of garbage out of the ravine and off the waterfront. Thank you to everyone who came out.</p>
             <div class="photo-grid">
-              <figure><img src="assets/g-trail-1.jpg" width="1095" height="589" alt="Volunteers cleaning up the Doris McCarthy Trail ravine" loading="lazy" /></figure>
-              <figure><img src="assets/g-trail-2.jpg" width="480" height="640" alt="Good Guides and Toronto Police Service members at the trail cleanup" loading="lazy" /></figure>
-              <figure><img src="assets/g-trail-3.jpg" width="640" height="480" alt="Community volunteers removing garbage from the waterfront trail" loading="lazy" /></figure>
+              <figure><img src="assets/g-trail-1.webp" width="1095" height="589" alt="Volunteers cleaning up the Doris McCarthy Trail ravine" loading="lazy" /></figure>
+              <figure><img src="assets/g-trail-2.webp" width="480" height="640" alt="Good Guides and Toronto Police Service members at the trail cleanup" loading="lazy" /></figure>
+              <figure><img src="assets/g-trail-3.webp" width="640" height="480" alt="Community volunteers removing garbage from the waterfront trail" loading="lazy" /></figure>
             </div>
           </article>
 
@@ -1475,10 +1545,10 @@
             <div class="event-head"><h2>Community Graduation 2K21</h2><span class="event-date">July 24, 2021</span></div>
             <p>Community Graduation 2K21 celebrated students from all grades, with our partners and supporters there to cheer them on.</p>
             <div class="photo-grid four">
-              <figure><img src="assets/g-grad-1.jpg" width="1600" height="1200" alt="Students celebrating at the Community Graduation 2K21" loading="lazy" /></figure>
-              <figure><img src="assets/g-grad-2.jpg" width="1600" height="1200" alt="Graduates and families at the Community Graduation celebration" loading="lazy" /></figure>
-              <figure><img class="poster-fit" src="assets/g-grad-3.jpg" width="1144" height="1600" alt="Community Graduation 2K21 ceremony, July 2021" loading="lazy" /></figure>
-              <figure><img src="assets/g-grad-4.jpg" width="1200" height="1600" alt="Celebrating students at Community Graduation 2K21" loading="lazy" /></figure>
+              <figure><img src="assets/g-grad-1.webp" width="1600" height="1200" alt="Students celebrating at the Community Graduation 2K21" loading="lazy" /></figure>
+              <figure><img src="assets/g-grad-2.webp" width="1600" height="1200" alt="Graduates and families at the Community Graduation celebration" loading="lazy" /></figure>
+              <figure><img class="poster-fit" src="assets/g-grad-3.webp" width="1144" height="1600" alt="Community Graduation 2K21 ceremony, July 2021" loading="lazy" /></figure>
+              <figure><img src="assets/g-grad-4.webp" width="1200" height="1600" alt="Celebrating students at Community Graduation 2K21" loading="lazy" /></figure>
             </div>
           </article>
 
@@ -1494,7 +1564,7 @@
             <div class="event-head"><h2>Delivering Presents 2K20</h2><span class="event-date">November 29, 2020</span></div>
             <p>Our Project Manager Chaz spent the weekend handing out gifts and treat bags in the community.</p>
             <div class="photo-grid">
-              <figure><img src="assets/g-presents-1.jpg" width="1200" height="1600" alt="Project Manager Chaz handing out gifts and treat bags in the community" loading="lazy" /></figure>
+              <figure><img src="assets/g-presents-1.webp" width="1200" height="1600" alt="Project Manager Chaz handing out gifts and treat bags in the community" loading="lazy" /></figure>
             </div>
           </article>
 
@@ -1502,9 +1572,9 @@
             <div class="event-head"><h2>Brooks Farms - Field Trip</h2><span class="event-date">September 27, 2020</span></div>
             <p>We travelled to Brooks Farms in Mount Albert, Ontario, where youth spent the day outdoors — hiking, zip-lining, and apple picking at a working farm. For many of them, it was their first time on a farm. The trip gave single parents a day of relief, too.</p>
             <div class="photo-grid">
-              <figure><img src="assets/g-farm-1.jpg" width="800" height="533" alt="Good Guides youth exploring Brooks Farms in Mount Albert" loading="lazy" /></figure>
-              <figure><img src="assets/g-farm-2.jpg" width="640" height="480" alt="Youth enjoying outdoor activities on the Brooks Farms field trip" loading="lazy" /></figure>
-              <figure><img src="assets/g-farm-3.jpg" width="640" height="427" alt="Apple picking and hiking at Brooks Farms, September 2020" loading="lazy" /></figure>
+              <figure><img src="assets/g-farm-1.webp" width="800" height="533" alt="Good Guides youth exploring Brooks Farms in Mount Albert" loading="lazy" /></figure>
+              <figure><img src="assets/g-farm-2.webp" width="640" height="480" alt="Youth enjoying outdoor activities on the Brooks Farms field trip" loading="lazy" /></figure>
+              <figure><img src="assets/g-farm-3.webp" width="640" height="427" alt="Apple picking and hiking at Brooks Farms, September 2020" loading="lazy" /></figure>
             </div>
           </article>
 
@@ -1532,7 +1602,7 @@
         <div class="band">
           <div class="wrap">
             <figure class="banner-photo">
-              <img src="assets/programs-engagement.jpg" width="1600" height="1200" alt="A community family connecting with The Good Guides at a neighbourhood event in Scarborough" />
+              <img src="assets/programs-engagement.webp" width="1600" height="1200" alt="A community family connecting with The Good Guides at a neighbourhood event in Scarborough" />
             </figure>
             <div>
               <p class="lead" style="max-width:820px">We're an incorporated non-profit based in Scarborough, Ontario. Our work runs in Scarborough neighbourhoods — and we want to hear from the people who live in them.</p>
