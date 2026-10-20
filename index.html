@@ -302,7 +302,7 @@
       }
       .subscribe .thanks { font-size: 1.3rem; font-weight: 800; color: var(--gold); margin: 0; }
       .subscribe .form-error { flex-basis: 100%; margin: 2px 0 0; color: #FFFFFF; font-weight: 700; }
-      .subscribe .subscribe-note { margin: 12px 0 0; color: var(--on-green); font-size: 0.94rem; }
+      .subscribe .subscribe-note { flex-basis: 100%; margin: 12px 0 0; color: var(--on-green); font-size: 0.94rem; }
       .footer-subscribe { border-top: 1px solid rgba(245, 241, 230, 0.18); margin-top: 48px; padding-top: 40px; padding-bottom: 8px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 28px; align-items: center; }
       .footer-subscribe h3 { margin: 0 0 6px; }
       .footer-subscribe p { color: var(--footer-muted); margin: 0; }
@@ -311,6 +311,7 @@
       .footer-subscribe input[type="email"] { flex: 1 1 240px; padding: 13px 16px; border-radius: 999px; border: 2px solid rgba(245, 241, 230, 0.35); background: transparent; color: var(--footer-text); font: inherit; }
       .footer-subscribe .thanks { font-size: 1.15rem; font-weight: 800; color: var(--gold); margin: 0; }
       .footer-subscribe .form-error { flex-basis: 100%; margin: 2px 0 0; color: #FFFFFF; font-weight: 700; }
+      .footer-subscribe .subscribe-note { flex-basis: 100%; margin: 2px 0 0; color: var(--footer-muted); font-size: 0.94rem; }
       @media (max-width: 760px) { .footer-subscribe { grid-template-columns: 1fr; } }
       @media (max-width: 760px) { .subscribe { grid-template-columns: 1fr; padding: 34px 24px; } .cta-band { padding: 34px 24px; } }
 
@@ -673,7 +674,7 @@
           <ul>
             <li><a href="#/" data-nav="/">Home</a></li>
             <li><a href="#/about-us" data-nav="/about-us">About Us</a></li>
-            <li><a href="#/take-action" data-nav="/take-action">Take Action</a></li>
+            <li><a href="#/take-action" data-nav="/take-action">Take Action</a></li><li><a href="#/take-action?anchor=faq" data-nav="/take-action">FAQ</a></li>
             <li><a href="#/our-programs" data-nav="/our-programs">Our Programs</a></li>
             <li><a href="#/our-team" data-nav="/our-team">Our Team</a></li>
             <li><a href="#/partners" data-nav="/partners">Partners</a></li>
@@ -699,7 +700,7 @@
           <ul>
             <li><a href="#/" data-nav="/">Home</a></li>
             <li><a href="#/about-us" data-nav="/about-us">About Us</a></li>
-            <li><a href="#/take-action" data-nav="/take-action">Take Action</a></li>
+            <li><a href="#/take-action" data-nav="/take-action">Take Action</a></li><li><a href="#/take-action?anchor=faq" data-nav="/take-action">FAQ</a></li>
             <li><a href="#/our-programs" data-nav="/our-programs">Our Programs</a></li>
             <li><a href="#/our-team" data-nav="/our-team">Our Team</a></li>
             <li><a href="#/partners" data-nav="/partners">Partners</a></li>
@@ -791,7 +792,7 @@
                   </div>
                   <div class="card">
                     <h3>Co-op &amp; Leadership</h3>
-                    <p>Co-op students join as Good Guide Ambassadors and build events of their own — résumé nights, bank-account sign-ups with local banks, and OSAP sessions that explain how student funding works.</p>
+                    <p>Co-op students join as Good Guide Ambassadors and build events of their own — practical sessions and community days, planned and run by the students themselves.</p>
                   </div>
                 </div>
               </div>
@@ -846,6 +847,7 @@
                   <input type="email" id="subscribeEmail" name="email" placeholder="Email Address" autocomplete="email" required aria-describedby="subscribeError" />
                   <button class="btn btn-gold" type="submit">Subscribe</button>
                   <p class="form-error" id="subscribeError" role="alert" hidden>Please enter a valid email address.</p>
+                  <p class="subscribe-note">The subscribe form opens in a new tab with your email already filled in — you just confirm it there.</p>
                 </form>
               </div>
             </div>
@@ -965,7 +967,7 @@
               <li><span class="yr">December 2021</span><p>Swabir was featured on Global News' 'Making A Difference,' interviewed by Susan Hay.</p></li>
               <li><span class="yr">2023</span><p>The Good Guides received the City of Toronto's Youth Violence Prevention Grant.</p></li>
               <li><span class="yr">April 2024</span><p>Swabir was inducted into the Scarborough Walk of Fame as a Rising Star.</p></li>
-              <li><span class="yr">May 2025</span><p>The Good Guides received a Toronto Community Champion Award (Honourable Mention) from the City of Toronto.</p></li>
+              <li><span class="yr">May 2025</span><p>Founder Swabir Shariff received a Toronto Community Champion Award (Honourable Mention) from the City of Toronto.</p></li>
               <li><span class="yr">October 2026</span><p>Swabir Shariff was named a QECT 100 Young Leaders Awardee for 2026 and received the award in London.</p></li>
             </ol>
           </div>
@@ -1005,7 +1007,7 @@
             <div class="cards-2">
               <article class="card action-card">
                 <h2>Donate</h2>
-                <p>The Good Guides is an incorporated non-profit in Ontario. We're not a registered charity, so we can't give you a tax receipt for your donation — see Good Questions below for the honest details.</p>
+                <p>We're an incorporated non-profit in Ontario — not a charity, so donations don't come with a tax receipt. Good Questions below has the full, honest picture.</p>
                 <p>Monthly donors keep the weekly work going.</p>
                 <a class="btn btn-gold" data-donate href="https://donorbox.org/good-guides-donations" target="_blank" rel="noopener">Donate</a>
               </article>
@@ -1024,7 +1026,7 @@
             </div>
           </div>
         </div>
-        <div class="band band-cream">
+        <div class="band band-cream" id="faq">
           <div class="wrap">
             <div class="section-head">
               <span class="kicker">Good Questions</span>
@@ -1048,7 +1050,7 @@
               <details class="faq-item">
                 <summary>Can I donate goods instead of money?</summary>
                 <div class="faq-a">
-                  <p>Yes — in-kind gifts go straight to work: food for the serving line, sports gear, backpacks and school supplies in September, and gifts and treat bags through the holidays. Goods come to us through the partnership route — start with the <a href="https://docs.google.com/forms/d/e/1FAIpQLSf4_fO1dhzDchVRbb4TYMU_iSWfSNtPjGg-PWY_yFbIHYlXQw/viewform" target="_blank" rel="noopener">partnership form</a>, or see <a href="#/partners">Partners</a> for the ways in. Money donations run through Donorbox — see "How do I donate?" above.</p>
+                  <p>Yes — food, sports gear, school supplies, and holiday gifts all go straight to work. Goods come to us through the partnership route — start with the <a href="https://docs.google.com/forms/d/e/1FAIpQLSf4_fO1dhzDchVRbb4TYMU_iSWfSNtPjGg-PWY_yFbIHYlXQw/viewform" target="_blank" rel="noopener">partnership form</a>, or see <a href="#/partners">Partners</a> for the ways in. Money donations run through Donorbox — see "How do I donate?" above.</p>
                 </div>
               </details>
               <details class="faq-item">
@@ -1125,7 +1127,7 @@
               <article class="core-card">
                 <span class="program-tag">Ages 11–18</span>
                 <h3>After-School Programming</h3>
-                <p>Mentoring for young people ages 11–18, after the school day ends, in the Scarborough neighbourhoods they call home — plus virtual hangouts between sessions.</p>
+                <p>After-school mentoring for ages 11–18 in the neighbourhoods our youth call home — with virtual hangouts in between.</p>
                 <p>New faces are welcome, and joining is free. Parents and youth: see "Want in?" below — tell us your neighbourhood, and we'll match you with what's running near you.</p>
               </article>
             </div>
@@ -1190,11 +1192,11 @@
                     </article>
                     <article class="card flow-card">
                       <h4>Events</h4>
-                      <p>Ambassadors created and hosted résumé nights — young people left with a finished résumé — bank-account sign-up events, where youth opened their own accounts, and OSAP sessions that explained how student funding works. With community partners, they also ran Funday With Cops and the Toronto Sports Festival, created Community Graduation 2K21, and helped at Woburn Basketball Day, which was organized by the Toronto Police Service.</p>
+                      <p>Ambassadors created and hosted résumé nights — young people left with a finished résumé — bank-account sign-up events, where youth opened their own accounts, and OSAP sessions that explained how student funding works. The big shared days — Funday With Cops, the Toronto Sports Festival, Community Graduation 2K21, Woburn Basketball Day — are each in the <a href="#/gallery">Gallery</a> record.</p>
                     </article>
                     <article class="card flow-card">
                       <h4>Trips &amp; excursions</h4>
-                      <p>Ambassadors don't just go on trips — they choose the destination, plan the day, and run it themselves. At Brooks Farms in Mount Albert (September 2020), youth spent a day on a working farm — hiking, zip-lining, and apple picking — while single parents got a day of relief back home. Ice fishing trips run the same way: chosen, planned, and led by Ambassadors.</p>
+                      <p>Ambassadors don't just go on trips — they choose the destination, plan the day, and run it themselves: farm days, ice fishing, and excursions across the region. Each trip is in the <a href="#/gallery">Gallery</a> record.</p>
                     </article>
                   </div>
                   <figure class="framed flow-photo">
@@ -1643,13 +1645,13 @@
               <article class="card news-card">
                 <span class="news-tag">November 2021 · Scarborough Mirror</span>
                 <h3>&lsquo;Open door&rsquo; for Scarborough youth</h3>
-                <p>&lsquo;Open door&rsquo; for Scarborough youth lets Good Guide Ambassadors choose how they want to help — a profile of the Ambassadors, young people deciding for themselves how they want to help their own neighbourhood. By Mike Adler.</p>
+                <p>Mike Adler profiles the Good Guide Ambassadors — young people deciding for themselves how they want to help their own neighbourhood.</p>
                 <p><a href="https://www.toronto.com/news/open-door-for-scarborough-youth-lets-good-guide-ambassadors-choose-how-they-want-to-help/article_d54b8927-e4e8-5ce3-aa45-68c9a3ec216b.html" target="_blank" rel="noopener">Read the article</a></p>
               </article>
               <article class="card news-card">
                 <span class="news-tag">November 2021 · CharityVillage</span>
-                <h3>CharityVillage Connects interview</h3>
-                <p>After Swabir Shariff wins CharityVillage's inaugural Best Individual Contribution to Youth Engagement award — chosen from more than 500 submissions — president Mary Barroll sits down with him to talk about the year and the work.</p>
+                <h3>CharityVillage's inaugural youth-engagement award</h3>
+                <p>Swabir Shariff wins CharityVillage's inaugural Best Individual Contribution to Youth Engagement award, chosen from more than 500 submissions. President Mary Barroll then sat down with him for a CharityVillage Connects interview — Episode 2, released December 2021.</p>
                 <p><a href="https://www.youtube.com/watch?v=3-9wJs6HJoI" target="_blank" rel="noopener">Listen to the interview</a></p>
               </article>
             </div>
@@ -1731,7 +1733,7 @@
             <ul class="footer-nav">
               <li><a href="#/" data-nav="/">Home</a></li>
               <li><a href="#/about-us" data-nav="/about-us">About Us</a></li>
-              <li><a href="#/take-action" data-nav="/take-action">Take Action</a></li>
+              <li><a href="#/take-action" data-nav="/take-action">Take Action</a></li><li><a href="#/take-action?anchor=faq" data-nav="/take-action">FAQ</a></li>
               <li><a href="#/our-programs" data-nav="/our-programs">Our Programs</a></li>
               <li><a href="#/our-team" data-nav="/our-team">Our Team</a></li>
               <li><a href="#/partners" data-nav="/partners">Partners</a></li>
@@ -1761,6 +1763,7 @@
               <input type="email" id="footerSubscribeEmail" name="email" placeholder="Email Address" autocomplete="email" required aria-describedby="footerSubscribeError" />
               <button class="btn btn-gold" type="submit">Subscribe</button>
               <p class="form-error" id="footerSubscribeError" role="alert" hidden>Please enter a valid email address.</p>
+              <p class="subscribe-note">The subscribe form opens in a new tab with your email already filled in — you just confirm it there.</p>
             </form>
           </div>
         </div>
@@ -1785,7 +1788,7 @@
         "/":            { view: "view-home",         title: "The Good Guides — Inner City Youth Mentoring",            description: "Youth-led mentoring in Scarborough, Toronto — The Good Guides puts young people in charge of change through co-op and after-school programming." },
         "/about-us":    { view: "view-about-us",     title: "About Us | The Good Guides",                               description: "Founded in Scarborough in 2020, The Good Guides is a grassroots, Black-led non-profit where young people lead the programs, run the events, and shape the help in their own neighbourhoods." },
         "/take-action": { view: "view-take-action",  title: "Take Action | The Good Guides",                            description: "Donate or volunteer with The Good Guides — and sign up to become a Good Guide today." },
-        "/our-programs":{ view: "view-our-programs", title: "Our Programs | The Good Guides",                           description: "Not just a chair at the table — the keys to the whole program. The Good Guides' core program runs through co-op placements and after-school programming, built and run by youth themselves." },
+        "/our-programs":{ view: "view-our-programs", title: "Our Programs | The Good Guides",                           description: "Co-op placements and after-school programming in Scarborough — The Good Guides' core program, built and run by youth themselves." },
         "/our-team":    { view: "view-our-team",     title: "Our Team | The Good Guides",                               description: "Our team is from Scarborough — the same streets, schools, and neighbourhoods as the youth they mentor." },
         "/partners":    { view: "view-partners",     title: "Partners | The Good Guides",                               description: "The Toronto Police Service, the Toronto District School Board, and the City of Toronto — the partners who stand alongside Scarborough youth with The Good Guides." },
         "/gallery":     { view: "view-gallery",      title: "Gallery | The Good Guides",                                description: "Events and initiatives from The Good Guides — youth playing sports, cleaning trails, celebrating graduations and giving back across Scarborough." },
@@ -2004,8 +2007,8 @@
             return;
           }
           if (error) error.hidden = true;
-          window.open("https://docs.google.com/forms/d/e/1FAIpQLSfQH7Me7mqL4xQEAt1yzsMiLyFNrIqe87RdvUiWCWIE7vlOpg/viewform", "_blank", "noopener");
-          document.getElementById("subscribeZone").innerHTML = '<p class="thanks" role="status">Opening the subscribe form\u2026</p>';
+          window.open("https://docs.google.com/forms/d/e/1FAIpQLSfQH7Me7mqL4xQEAt1yzsMiLyFNrIqe87RdvUiWCWIE7vlOpg/viewform?entry.459376361=" + encodeURIComponent(email.value.trim()), "_blank", "noopener");
+          document.getElementById("subscribeZone").innerHTML = '<p class="thanks" role="status">Opening the subscribe form with your email filled in — confirm it there and press Submit to finish.</p>';
         });
       }
 
@@ -2022,8 +2025,8 @@
             return;
           }
           if (error) error.hidden = true;
-          window.open("https://docs.google.com/forms/d/e/1FAIpQLSfQH7Me7mqL4xQEAt1yzsMiLyFNrIqe87RdvUiWCWIE7vlOpg/viewform", "_blank", "noopener");
-          document.getElementById("footerSubscribeZone").innerHTML = '<p class="thanks" role="status">Opening the subscribe form\u2026</p>';
+          window.open("https://docs.google.com/forms/d/e/1FAIpQLSfQH7Me7mqL4xQEAt1yzsMiLyFNrIqe87RdvUiWCWIE7vlOpg/viewform?entry.459376361=" + encodeURIComponent(email.value.trim()), "_blank", "noopener");
+          document.getElementById("footerSubscribeZone").innerHTML = '<p class="thanks" role="status">Opening the subscribe form with your email filled in — confirm it there and press Submit to finish.</p>';
         });
       }
 
