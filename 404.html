@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Page moved — The Good Guides</title>
+<title>Page not found — The Good Guides</title>
 <meta name="robots" content="noindex">
 <script>
 (function () {
@@ -17,6 +17,7 @@
     "/team": "/#/our-team",
     "/partners": "/#/partners",
     "/gallery": "/#/gallery",
+    "/media": "/#/media",
     "/contact-us": "/#/contact-us",
     "/contact": "/#/contact-us",
     "/home": "/#/",
@@ -29,19 +30,39 @@
     window.location.replace("https://donorbox.org/good-guides-donations");
     return;
   }
-  window.location.replace(routes[p] || "/#/");
+  if (routes[p]) {
+    window.location.replace(routes[p]);
+    return;
+  }
+  /* Genuinely unknown path: stay on this page. GitHub Pages serves this
+     file with a real 404 status, and the not-found content below is the
+     visitor's answer — no silent redirect to Home (audit G1). */
+  document.documentElement.className += " is-404";
 })();
 </script>
 <style>
   body { font-family: Georgia, serif; background: #F5F1E6; color: #1D1A15; margin: 0; display: flex; min-height: 100vh; align-items: center; justify-content: center; }
-  main { text-align: center; padding: 24px; }
-  a { color: #2D6B38; font-weight: bold; }
+  main { text-align: center; padding: 24px; max-width: 560px; }
+  .kicker { font-family: Helvetica, Arial, sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #2D6B38; margin: 0 0 10px; }
+  h1 { font-size: 2.2rem; margin: 0 0 12px; }
+  p { line-height: 1.55; }
+  nav { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+  nav a { font-family: Helvetica, Arial, sans-serif; font-weight: 700; text-decoration: none; padding: 11px 20px; border-radius: 999px; border: 2px solid #2D6B38; color: #2D6B38; }
+  nav a.home { background: #2D6B38; color: #FFFFFF; }
+  nav a.donate { background: #F5B921; border-color: #F5B921; color: #1D1A15; }
 </style>
 </head>
 <body>
 <main>
-  <p>This page has moved.</p>
-  <p>Taking you to <a href="/#/">thegoodguides.org</a> now…</p>
+  <p class="kicker">404</p>
+  <h1>Page not found</h1>
+  <p>The page you're looking for isn't here — it may have moved, or the link may be out of date. Everything on our site is one click away:</p>
+  <nav>
+    <a class="home" href="/#/">Home</a>
+    <a href="/#/our-programs">Our Programs</a>
+    <a href="/#/contact-us">Contact Us</a>
+    <a class="donate" href="https://donorbox.org/good-guides-donations" target="_blank" rel="noopener">Donate</a>
+  </nav>
 </main>
 </body>
 </html>

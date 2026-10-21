@@ -476,6 +476,11 @@
       .event .thanks b { color: var(--green); }
       .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 22px; }
       .photo-grid.four { grid-template-columns: repeat(4, 1fr); }
+      /* Sparse events fill their row (audit G3): a lone photo spans two of
+         the three columns; a pair gets a two-column grid. Spans only — the
+         photos themselves are never cropped differently. */
+      .photo-grid.solo figure { grid-column: span 2; }
+      .photo-grid.duo { grid-template-columns: repeat(2, 1fr); }
       .photo-grid figure { margin: 0; border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); }
       .photo-grid img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; aspect-ratio: 4 / 3; }
       /* One-tile poster treatment: the "Care for a Heart" poster (Community
@@ -487,7 +492,7 @@
       .photo-grid img.poster-fit { object-fit: contain; object-position: center; background: #FCFDFC; }
       .photo-grid figure:hover img.poster-fit { transform: none; }
       @media (max-width: 860px) { .photo-grid, .photo-grid.four { grid-template-columns: repeat(2, 1fr); } }
-      @media (max-width: 340px) { .photo-grid, .photo-grid.four { grid-template-columns: 1fr; } }
+      @media (max-width: 340px) { .photo-grid, .photo-grid.four { grid-template-columns: 1fr; } .photo-grid.solo figure { grid-column: auto; } }
 
       /* Contact */
       .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
@@ -1472,7 +1477,7 @@
           <article class="event">
             <div class="event-head"><h2>Guided by Giving</h2><span class="event-date">December 2024</span></div>
             <p>Good Guides team members and Toronto Police officers wrapped and handed out gifts with Santa in December 2024.</p>
-            <div class="photo-grid">
+            <div class="photo-grid duo">
               <figure><img src="assets/g-giving-1.webp" width="1280" height="1600" alt="Good Guides team members and Toronto Police officers posing with Santa at Guided by Giving" loading="lazy" /></figure>
               <figure><img src="assets/g-wrapping-1.webp" width="720" height="1280" alt="Two volunteers wrapping holiday gifts at a table during Guided by Giving" loading="lazy" /></figure>
             </div>
@@ -1481,42 +1486,42 @@
 
           <article class="event">
             <div class="event-head"><h2>Carnival at Willow Park Public School</h2></div>
-            <div class="photo-grid">
+            <div class="photo-grid solo">
               <figure><img src="assets/g-carnival-1.webp" width="1280" height="1599" alt="Children gathered around a superhero inflatable at an outdoor school carnival" loading="lazy" /></figure>
             </div>
           </article>
 
           <article class="event">
             <div class="event-head"><h2>Financial Literacy Workshop</h2><span class="event-date">December 2023</span></div>
-            <div class="photo-grid">
+            <div class="photo-grid solo">
               <figure><img src="assets/g-finlit-1.webp" width="1440" height="960" alt="Youth seated in a classroom watching a Financial Literacy 101 presentation" loading="lazy" /></figure>
             </div>
           </article>
 
           <article class="event">
             <div class="event-head"><h2>Back to School BBQ</h2><span class="event-date">September 2023</span></div>
-            <div class="photo-grid">
+            <div class="photo-grid solo">
               <figure><img src="assets/g-bbq-1.webp" width="1283" height="1600" alt="Families lined up at outdoor tables stacked with backpacks at the Back to School BBQ" loading="lazy" /></figure>
             </div>
           </article>
 
           <article class="event">
             <div class="event-head"><h2>Rookie League Baseball</h2><span class="event-date">Summer 2023</span></div>
-            <div class="photo-grid">
+            <div class="photo-grid solo">
               <figure><img src="assets/g-jayscare-1.webp" width="533" height="533" style="aspect-ratio: 1 / 1" alt="Three youth in Blue Jays shirts holding bats, posing with their coaches on a grass field" loading="lazy" /></figure>
             </div>
           </article>
 
           <article class="event">
             <div class="event-head"><h2>Sledding Day with Toronto Police Service Officers</h2><span class="event-date">March 2023</span></div>
-            <div class="photo-grid">
+            <div class="photo-grid solo">
               <figure><img src="assets/g-sledding-1.webp" width="720" height="900" alt="Children sledding down a snowy hill while community officers look on" loading="lazy" /></figure>
             </div>
           </article>
 
           <article class="event">
             <div class="event-head"><h2>Youth at Our First CPR Training Session</h2><span class="event-date">Winter 2022–23</span></div>
-            <div class="photo-grid">
+            <div class="photo-grid solo">
               <figure><img src="assets/g-cpr-1.webp" width="1280" height="1600" alt="Youth practising on CPR manikins at tables during a training session led by an instructor" loading="lazy" /></figure>
             </div>
           </article>
@@ -1586,7 +1591,7 @@
           <article class="event">
             <div class="event-head"><h2>Delivering Presents 2K20</h2><span class="event-date">November 29, 2020</span></div>
             <p>Our Project Manager Chaz spent the weekend handing out gifts and treat bags in the community.</p>
-            <div class="photo-grid">
+            <div class="photo-grid solo">
               <figure><img src="assets/g-presents-1.webp" width="1200" height="1600" alt="Project Manager Chaz handing out gifts and treat bags in the community" loading="lazy" /></figure>
             </div>
           </article>
@@ -1719,6 +1724,22 @@
           </div>
         </div>
       </section>
+
+      <section class="view" id="view-not-found" aria-label="Page not found">
+        <div class="page-hero">
+          <div class="wrap">
+            <span class="kicker">404</span>
+            <h1 tabindex="-1" data-focus>Page not found</h1>
+            <p>The page you're looking for isn't here — it may have moved, or the link may be out of date. Everything on our site is one click away:</p>
+            <p>
+              <a class="btn btn-outline-light" href="#/">Home</a>
+              <a class="btn btn-outline-light" href="#/our-programs">Our Programs</a>
+              <a class="btn btn-outline-light" href="#/contact-us">Contact Us</a>
+              <a class="btn btn-gold" data-donate href="https://donorbox.org/good-guides-donations" target="_blank" rel="noopener">Donate</a>
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
@@ -1816,10 +1837,11 @@
             }
           }
         }
-        if (!h || h === "/") return { path: "/", anchor: anchor };
+        if (!h || h === "/") return { path: "/", anchor: anchor, known: true };
         if (h.charAt(0) !== "/") h = "/" + h;
         if (h.length > 1 && h.charAt(h.length - 1) === "/") h = h.slice(0, -1);
-        return { path: ROUTES.hasOwnProperty(h) ? h : "/", anchor: anchor };
+        var known = ROUTES.hasOwnProperty(h);
+        return { path: known ? h : "/", anchor: anchor, known: known };
       }
 
       function currentPath() {
@@ -1938,7 +1960,12 @@
       function render() {
         var parsed = parseHash();
         var path = parsed.path;
-        var route = ROUTES[path];
+        /* An unknown hash gets the dedicated not-found view (audit G1),
+           not a silent render of Home. */
+        var route = parsed.known === false
+          ? { view: "view-not-found", title: "Page not found | The Good Guides", description: "The page you're looking for isn't here. Find The Good Guides' programs, team, and contact routes from the home page." }
+          : ROUTES[path];
+        var navPath = parsed.known === false ? "" : path;
         document.title = route.title;
         var meta = document.querySelector('meta[name="description"]');
         if (meta) meta.setAttribute("content", route.description);
@@ -1949,7 +1976,7 @@
         }
         var links = document.querySelectorAll("[data-nav]");
         for (var j = 0; j < links.length; j++) {
-          if (links[j].getAttribute("data-nav") === path) links[j].setAttribute("aria-current", "page");
+          if (links[j].getAttribute("data-nav") === navPath) links[j].setAttribute("aria-current", "page");
           else links[j].removeAttribute("aria-current");
         }
         closeMenu();
