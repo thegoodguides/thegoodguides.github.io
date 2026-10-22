@@ -582,6 +582,14 @@
       .flow-card h4 { margin-bottom: 8px; }
       .flow-card p { font-size: 1rem; }
       .flow-card p:last-child { margin-bottom: 0; }
+      /* Programs page: one solid card language — flow cards take the same
+         treatment as .card / .flow-step (white surface, border, shadow) on
+         every band, instead of the cream fill that washes out on cream bands. */
+      #view-our-programs .flow-card { background: var(--surface); box-shadow: var(--shadow); }
+      /* Two-card rows (the Weekly Rhythm) split the row evenly rather than
+         leaving a third, empty cell. */
+      #view-our-programs .flow-groups.cols-2 { grid-template-columns: repeat(2, 1fr); }
+      @media (max-width: 920px) { #view-our-programs .flow-groups.cols-2 { grid-template-columns: 1fr; } }
       .flow-photo { margin-top: 24px; }
       .flow-photo img { width: 100%; height: auto; max-height: 400px; object-fit: cover; aspect-ratio: 21 / 9; }
       @media (max-width: 920px) {
@@ -681,6 +689,250 @@
         *, *::before, *::after { transition-duration: 0.01ms !important; transition-delay: 0ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
         .btn:hover { transform: none; }
         .reveal, .view-enter-start, .view-leaving { opacity: 1 !important; transform: none !important; }
+      }
+
+      /* ================= Programs — Round 3 design elevation ("The Keyed House") =================
+         Every rule below is scoped to #view-our-programs and can match nothing
+         outside the Our Programs view. No global rule is altered. */
+      #view-our-programs {
+        --pg-tint: #FBF8EF;
+        --pg-card-shadow: 0 2px 6px rgba(29,26,21,.05), 0 14px 30px rgba(29,26,21,.07);
+        --pg-card-shadow-green: 0 2px 6px rgba(0,0,0,.18), 0 18px 38px rgba(0,0,0,.24);
+        --pg-radius: 18px;
+        --pg-body-dim: #454136;
+      }
+
+      /* ----- Band rhythm & section heads ----- */
+      #view-our-programs .band { padding: 84px 0; }
+      #view-our-programs .premise-hero { padding: 80px 0 34px; }
+      #view-our-programs .core-band { padding: 10px 0 84px; }
+      #view-our-programs .core-band .section-head { margin-bottom: 44px; }
+      #view-our-programs .section-head { margin-bottom: 44px; }
+      #view-our-programs h2 { font-size: clamp(2rem, 3.8vw, 2.72rem); line-height: 1.08; letter-spacing: -.02em; }
+      #view-our-programs h2::after { content: ""; display: block; width: 56px; height: 4px; border-radius: 2px; background: var(--gold); margin-top: 16px; }
+      #view-our-programs .lead { font-size: 1.22rem; line-height: 1.58; font-weight: 600; }
+
+      /* ----- Kicker: key-ring mark (CSS mask of the §3 SVG path) + letterspaced label ----- */
+      #view-our-programs .kicker {
+        font-size: .78rem; font-weight: 800; letter-spacing: .19em;
+        display: inline-flex; align-items: center; gap: 9px; margin-bottom: 14px;
+      }
+      #view-our-programs .kicker::before {
+        content: ""; flex: none; width: 15px; height: 15px; background: var(--gold-dark);
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%3E%3Ccircle%20cx='6'%20cy='12'%20r='4.2'%20stroke='black'%20stroke-width='2.4'/%3E%3Cpath%20d='M10.2%2012%20H21%20M17.4%2012%20V17.4%20M21%2012%20V15.4'%20stroke='black'%20stroke-width='2.4'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E");
+        mask-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%3E%3Ccircle%20cx='6'%20cy='12'%20r='4.2'%20stroke='black'%20stroke-width='2.4'/%3E%3Cpath%20d='M10.2%2012%20H21%20M17.4%2012%20V17.4%20M21%2012%20V15.4'%20stroke='black'%20stroke-width='2.4'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E");
+        -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+      }
+      #view-our-programs .premise-hero .kicker::before,
+      #view-our-programs .core-band .kicker::before { background: var(--gold-on-green); }
+      #view-our-programs .pg-keyring { flex: none; }
+
+      /* ----- Universal card skeleton (§4.0) ----- */
+      #view-our-programs .card, #view-our-programs .flow-card,
+      #view-our-programs .core-card, #view-our-programs .form-card,
+      #view-our-programs .record-card {
+        border-radius: var(--pg-radius);
+        border: 1px solid var(--card-line);
+        border-top: 4px solid var(--gold);
+        box-shadow: var(--pg-card-shadow);
+      }
+      /* Card fill rhythm: tint on white bands, white on cream bands */
+      #view-our-programs .card, #view-our-programs .form-card { background: var(--pg-tint); }
+      #view-our-programs .band-cream .card { background: var(--surface); }
+      #view-our-programs .flow-card { padding: 26px 26px 24px; }
+      #view-our-programs .core-card, #view-our-programs .record-card, #view-our-programs .form-card { padding: 30px 30px 28px; }
+      #view-our-programs .card h3, #view-our-programs .card h4, #view-our-programs .form-card h3 {
+        font-family: var(--font-display); font-weight: 700; letter-spacing: -.01em; color: var(--green-darkest);
+      }
+      #view-our-programs .card h3 { margin-bottom: 10px; }
+      #view-our-programs .flow-groups { gap: 20px; }
+      #view-our-programs .flow-card p { font-size: 1rem; line-height: 1.66; color: var(--pg-body-dim); }
+      #view-our-programs .flow-card a { text-underline-offset: 3px; }
+      #view-our-programs .flow-step .flow-body > p { font-size: 1rem; line-height: 1.66; color: var(--pg-body-dim); }
+      #view-our-programs .flow-step .flow-body > p.lead { font-size: 1.22rem; line-height: 1.58; font-weight: 600; color: var(--ink); }
+
+      /* ----- Flow-card title row: icon disc + title (§4.2) ----- */
+      #view-our-programs .pg-card-head { display: flex; gap: 12px; align-items: center; margin-bottom: 10px; }
+      #view-our-programs .pg-card-head h4 { margin: 0; font-size: 1.18rem; line-height: 1.25; }
+      #view-our-programs .pg-icon-disc {
+        flex: none; width: 40px; height: 40px; border-radius: 50%;
+        background: var(--cream); border: 1px solid var(--card-line);
+        display: flex; align-items: center; justify-content: center; color: var(--green-deep);
+      }
+      #view-our-programs .pg-icon-disc svg { width: 22px; height: 22px; display: block; }
+
+      /* ----- Core cards (§4.1) ----- */
+      #view-our-programs .core-card {
+        background: rgba(255,255,255,.08);
+        border: 1px solid rgba(255,255,255,.30);
+        border-top: 4px solid var(--gold);
+        box-shadow: var(--pg-card-shadow-green);
+      }
+      #view-our-programs .core-card .program-tag {
+        background: transparent; border: 1.5px solid var(--gold-on-green); color: var(--gold-on-green);
+        border-radius: 999px; padding: 6px 12px; font-size: .74rem; font-weight: 800; letter-spacing: .14em;
+      }
+      #view-our-programs .core-card h3 { font-size: 1.42rem; line-height: 1.22; color: #fff; }
+      #view-our-programs .core-card p { color: var(--on-green); font-size: 1.02rem; line-height: 1.66; }
+      #view-our-programs .core-grid .core-card:nth-child(2) p:last-child {
+        border-top: 1px solid rgba(255,255,255,.22); padding-top: 14px; margin-top: 2px;
+      }
+
+      /* ----- Join band (§6, §4.5) ----- */
+      #view-our-programs #join .split > div:first-child { border-left: 4px solid var(--gold); padding-left: 26px; }
+      #view-our-programs .form-card h3 { font-size: 1.3rem; }
+      #view-our-programs .form-card p { line-height: 1.66; color: var(--pg-body-dim); }
+      #view-our-programs .form-card .contact-list { border-top: 1px solid var(--line); padding-top: 16px; }
+
+      /* ----- Outcomes ledger tiles (§4.3) ----- */
+      #view-our-programs .route-item {
+        background: var(--surface); border: 1px solid var(--card-line); border-top: 4px solid var(--green);
+        border-radius: var(--pg-radius); padding: 24px 24px 22px; box-shadow: var(--pg-card-shadow);
+      }
+      #view-our-programs .route-item .pg-tally { display: block; width: 34px; height: 22px; margin-bottom: 12px; }
+      #view-our-programs .route-item h3 { font-size: 1.16rem; color: var(--green-darkest); }
+      #view-our-programs .route-item p { font-size: .98rem; line-height: 1.62; color: var(--muted); }
+      #view-our-programs .pg-count-close {
+        background: var(--cream); border: 1px dashed var(--gold-dark); border-radius: var(--pg-radius);
+        display: flex; align-items: center; justify-content: center; min-height: 120px;
+      }
+      #view-our-programs .pg-count-close .pg-keyring { width: 54px; height: 54px; color: var(--gold-text); opacity: .55; }
+      #view-our-programs .pg-figure {
+        font-family: var(--font-display); font-weight: 800; font-size: 1.32em;
+        color: var(--gold-text); letter-spacing: -.01em; white-space: nowrap;
+      }
+
+      /* ----- The Ladder (§5) ----- */
+      #view-our-programs .pg-ladder .flow-step {
+        position: relative; background: var(--surface);
+        border: 1px solid var(--card-line); border-top: 4px solid var(--gold);
+        border-radius: var(--pg-radius); box-shadow: var(--pg-card-shadow);
+        padding: 32px 34px;
+      }
+      #view-our-programs .pg-ladder .flow-num {
+        width: 64px; height: 64px; border-radius: 50%;
+        background: var(--surface); color: var(--green-deep);
+        border: 2.5px solid var(--green);
+        box-shadow: inset 0 0 0 4px var(--surface), inset 0 0 0 6.5px var(--gold), var(--pg-card-shadow);
+        font-family: var(--font-display); font-weight: 800; font-size: 1.5rem;
+      }
+      /* Per-step rail connectors (steps 1–3); step 3's turns gold into the closing panel */
+      #view-our-programs .pg-ladder .flow-step:nth-child(1)::before,
+      #view-our-programs .pg-ladder .flow-step:nth-child(2)::before,
+      #view-our-programs .pg-ladder .flow-step:nth-child(3)::before {
+        content: ""; position: absolute; left: 65.5px; bottom: -28px; height: 28px; width: 3px;
+        border-radius: 2px; background: var(--green);
+      }
+      #view-our-programs .pg-ladder .flow-step:nth-child(3)::before { background: var(--gold-dark); }
+      @media (min-width: 921px) {
+        #view-our-programs .pg-ladder .flow-step:nth-child(1) { margin-left: 0; }
+        #view-our-programs .pg-ladder .flow-step:nth-child(2) { margin-left: 32px; }
+        #view-our-programs .pg-ladder .flow-step:nth-child(3) { margin-left: 64px; }
+        #view-our-programs .pg-ladder .flow-step:nth-child(4) { margin-left: 96px; }
+      }
+      /* Step 4 — the cycle closes: the page's one solid closing panel */
+      #view-our-programs .pg-ladder .flow-step:last-child {
+        background: var(--green-deep); border: 1px solid var(--green-darkest);
+        border-top: 4px solid var(--gold); box-shadow: var(--pg-card-shadow-green);
+        border-radius: var(--pg-radius);
+      }
+      #view-our-programs .pg-ladder .flow-step:last-child .flow-num {
+        background: var(--gold); border-color: var(--gold-dark); color: var(--green-darkest);
+        box-shadow: inset 0 0 0 4px var(--gold), inset 0 0 0 6.5px var(--green-deep), var(--pg-card-shadow-green);
+      }
+      #view-our-programs .pg-ladder .flow-step:last-child h3 { color: #fff; font-size: 1.5rem; }
+      #view-our-programs .pg-ladder .flow-step:last-child .flow-body > p.lead { color: var(--gold-on-green); font-weight: 600; }
+      #view-our-programs .pg-ladder .flow-step:last-child .flow-body > p { color: var(--on-green); }
+      #view-our-programs .pg-ladder .flow-step:last-child :focus-visible { outline-color: var(--gold); }
+      #view-our-programs .pg-close-ring {
+        position: absolute; top: 22px; right: 26px; width: 92px; height: 92px;
+        color: var(--gold-on-green); opacity: .28; pointer-events: none;
+      }
+      /* Step-4 text column clears the watermark ring (released at ≤640px, §9) */
+      #view-our-programs .pg-ladder .flow-step:last-child .flow-body { padding-right: 96px; }
+      /* How It Works numbers: same medallion language at 58px, no rail, no offsets (§5.4) */
+      #view-our-programs .flow:not(.pg-ladder) .flow-num {
+        background: var(--surface); color: var(--green-deep);
+        border: 2.5px solid var(--green);
+        box-shadow: inset 0 0 0 4px var(--surface), inset 0 0 0 6.5px var(--gold), var(--pg-card-shadow);
+      }
+
+      /* ----- Wider Record (§4.4) ----- */
+      #view-our-programs .record-card .kicker {
+        display: inline-block; background: var(--cream); border: 1.5px solid var(--gold-dark); color: var(--gold-text);
+        border-radius: 999px; padding: 6px 12px; font-size: .74rem; font-weight: 800; letter-spacing: .14em;
+      }
+      #view-our-programs .record-card .kicker::before { display: none; }
+      #view-our-programs .record-card .record-lead { font-size: 1.18rem; line-height: 1.58; }
+      #view-our-programs .record-card p { line-height: 1.66; color: var(--pg-body-dim); }
+      #view-our-programs .record-card .record-lead { color: var(--ink); }
+      #view-our-programs .program-block > div:first-child { border-left: 4px solid var(--gold); padding-left: 26px; }
+      #view-our-programs .roster li { gap: 9px; box-shadow: 0 2px 8px rgba(29,26,21,.05); }
+      #view-our-programs .roster li::before {
+        content: ""; flex: none; width: 7px; height: 7px; border-radius: 50%;
+        background: var(--gold); border: 1px solid var(--gold-dark);
+      }
+
+      /* ----- Photo frames (§8) ----- */
+      #view-our-programs .framed, #view-our-programs .program-media {
+        border: 6px solid #fff; outline: 1px solid var(--card-line); border-radius: 20px;
+        box-shadow: 18px 18px 0 -6px var(--cream), 18px 18px 0 -4px var(--gold-dark), var(--pg-card-shadow);
+      }
+      #view-our-programs .core-band .framed {
+        border: 6px solid rgba(255,255,255,.92);
+        box-shadow: 18px 18px 0 -6px var(--green-darkest), 18px 18px 0 -4px var(--gold);
+      }
+      #view-our-programs .flow-step .framed { border-width: 5px; border-radius: 16px; }
+
+      /* ----- Donate CTA (§6) ----- */
+      #view-our-programs .cta-band {
+        border-top: 6px solid var(--gold);
+        box-shadow: inset 0 0 0 1px rgba(255,211,77,.45), var(--pg-card-shadow-green);
+      }
+      #view-our-programs .cta-band .pg-keyring {
+        display: block; width: 30px; height: 30px; margin: 0 auto 12px; color: var(--gold-on-green);
+      }
+
+      /* ----- Mobile (§9) ----- */
+      @media (max-width: 920px) {
+        #view-our-programs .pg-ladder .flow-step { margin-left: 0; padding: 28px 24px; }
+        #view-our-programs .pg-ladder .flow-num { width: 52px; height: 52px; font-size: 1.3rem; box-shadow: inset 0 0 0 3px var(--surface), inset 0 0 0 5.5px var(--gold), var(--pg-card-shadow); }
+        #view-our-programs .pg-ladder .flow-step:last-child .flow-num { box-shadow: inset 0 0 0 3px var(--gold), inset 0 0 0 5.5px var(--green-deep), var(--pg-card-shadow-green); }
+        #view-our-programs .flow:not(.pg-ladder) .flow-num { width: 52px; height: 52px; font-size: 1.3rem; box-shadow: inset 0 0 0 3px var(--surface), inset 0 0 0 5.5px var(--gold), var(--pg-card-shadow); }
+        #view-our-programs .pg-ladder .flow-step:nth-child(1)::before,
+        #view-our-programs .pg-ladder .flow-step:nth-child(2)::before,
+        #view-our-programs .pg-ladder .flow-step:nth-child(3)::before { left: calc(24px + 27px - 1.5px); }
+      }
+      @media (max-width: 860px) {
+        #view-our-programs #join .split > div:first-child,
+        #view-our-programs .program-block > div:first-child { border-left: none; padding-left: 0; }
+      }
+      @media (max-width: 640px) {
+        #view-our-programs .band { padding: 56px 0; }
+        #view-our-programs .premise-hero { padding: 56px 0 34px; }
+        #view-our-programs .core-band { padding: 8px 0 56px; }
+        #view-our-programs h2 { font-size: 1.95rem; line-height: 1.12; }
+        #view-our-programs h2::after { width: 48px; height: 4px; }
+        #view-our-programs .lead { font-size: 1.13rem; line-height: 1.6; }
+        #view-our-programs .flow-step .flow-body > p.lead { font-size: 1.13rem; line-height: 1.6; }
+        #view-our-programs .record-card .record-lead { font-size: 1.13rem; line-height: 1.6; }
+        #view-our-programs .card, #view-our-programs .flow-card,
+        #view-our-programs .core-card, #view-our-programs .form-card,
+        #view-our-programs .record-card { padding: 24px 22px 22px; }
+        #view-our-programs .pg-icon-disc { width: 36px; height: 36px; }
+        #view-our-programs .pg-icon-disc svg { width: 20px; height: 20px; }
+        #view-our-programs .pg-count-close { display: none; }
+        #view-our-programs .framed, #view-our-programs .program-media {
+          border-width: 4px;
+          box-shadow: 10px 10px 0 -4px var(--cream), 10px 10px 0 -2px var(--gold-dark), var(--pg-card-shadow);
+        }
+        #view-our-programs .core-band .framed {
+          border-width: 4px;
+          box-shadow: 10px 10px 0 -4px var(--green-darkest), 10px 10px 0 -2px var(--gold);
+        }
+        #view-our-programs .pg-close-ring { width: 64px; height: 64px; top: 16px; right: 16px; }
+        #view-our-programs .pg-ladder .flow-step:last-child .flow-body { padding-right: 0; }
+        #view-our-programs .cta-band .pg-keyring { width: 26px; height: 26px; }
       }
     </style>
   <script data-goatcounter="https://thegoodguides.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
@@ -821,11 +1073,11 @@
               </div>
             </div>
             <div class="card" style="margin-top:28px; display:flex; flex-wrap:wrap; gap:14px 22px; align-items:center; justify-content:space-between">
-              <p style="margin:0"><strong>For youth &amp; parents:</strong> joining is free for youth ages 11–18. Get in touch, tell us your neighbourhood, and we'll point you to a program near you.</p>
+              <p style="margin:0"><strong>For youth &amp; parents:</strong> young people ages 11–18 join through their school cohort. Families can ask their school about joining.</p>
               <a class="btn btn-outline-green" href="#/our-programs?anchor=join">How to Join</a>
             </div>
             <div class="card" style="margin-top:16px; display:flex; flex-wrap:wrap; gap:14px 22px; align-items:center; justify-content:space-between">
-              <p style="margin:0"><strong>Programs at a glance:</strong> after-school mentoring and co-op placements for ages 11–18, with virtual hangouts between sessions — free for youth, in neighbourhoods across Scarborough.</p>
+              <p style="margin:0"><strong>Programs at a glance:</strong> after-school mentoring and co-op placements for ages 11–18, in neighbourhoods across Scarborough.</p>
               <a class="btn btn-outline-green" href="#/our-programs">See Our Programs</a>
             </div>
           </div>
@@ -1061,7 +1313,7 @@
                 <summary>Are you a registered charity? Can I get a tax receipt for my donation?</summary>
                 <div class="faq-a">
                   <p>We're an incorporated non-profit in Ontario — not a registered charity — so we can't give you a tax receipt for your donation.</p>
-                  <p>Your contribution still goes straight into the weekly work: after-school mentoring and virtual hangouts, violence prevention workshops, hot meals delivered to neighbours, and excursion days for youth.</p>
+                  <p>Your contribution still goes straight into the weekly work: after-school mentoring, violence prevention workshops, hot meals delivered to neighbours, and excursion days for youth.</p>
                 </div>
               </details>
               <details class="faq-item">
@@ -1087,13 +1339,13 @@
               <details class="faq-item">
                 <summary>What ages do you work with?</summary>
                 <div class="faq-a">
-                  <p>Our programs are for young people ages 11–18, after the school day ends, in the Scarborough neighbourhoods they call home — plus virtual hangouts between sessions. There is no long application; joining starts with a conversation.</p>
+                  <p>Our programs are for young people ages 11–18, after the school day ends, in the Scarborough neighbourhoods they call home. Young people join through their school cohort.</p>
                 </div>
               </details>
               <details class="faq-item">
                 <summary>How do I refer a young person?</summary>
                 <div class="faq-a">
-                  <p>Teachers, family members, and workers can all refer a young person. Start through our <a href="#/contact-us">Contact page</a> — it routes parents, students, and teachers to the right person — and tell us the young person's neighbourhood. There is no long referral form; joining starts with a conversation.</p>
+                  <p>Teachers, family members, and workers can point a young person to their school — young people join through their school cohort. Schools can reach us through our <a href="#/contact-us">Contact page</a>.</p>
                 </div>
               </details>
               <details class="faq-item">
@@ -1140,19 +1392,19 @@
             <div class="section-head">
               <span class="kicker">The Core Program</span>
               <h2>Co-op &amp; after-school: where every Ambassador starts</h2>
-              <p class="lead">Our core program runs two ways: co-op placements for students, and after-school programming for young people. Every event, workshop, and community help project on this page starts here.</p>
+              <p class="lead">Our core program runs two ways: co-op placements for students, and after-school programming for young people. Every event, workshop, and community help project on this page starts here — and Ambassadors, our trained youth leaders ages 16–18, are the ones who run it.</p>
             </div>
             <div class="core-grid">
               <article class="core-card">
                 <span class="program-tag">Co-op Placements</span>
                 <h3>Co-op Placements — Good Guide Ambassadors</h3>
-                <p>We take co-op students from high schools and post-secondary schools. They join the team as Good Guide Ambassadors, earn credits toward graduation, and plan and run the workshops, events, and community help projects below — in their own neighbourhoods. If you're a student, or a teacher placing one, get in touch.</p>
+                <p>We take co-op students from high schools and post-secondary schools. They join the team as Good Guide Ambassadors, earn credits toward graduation, and do the work below in their own neighbourhoods. If you're a student, or a teacher placing one, get in touch.</p>
               </article>
               <article class="core-card">
                 <span class="program-tag">Ages 11–18</span>
                 <h3>After-School Programming</h3>
-                <p>After-school mentoring for ages 11–18 in the neighbourhoods our youth call home — with virtual hangouts in between.</p>
-                <p>New faces are welcome, and joining is free. Parents and youth: see "Want in?" below — tell us your neighbourhood, and we'll match you with what's running near you.</p>
+                <p>After-school mentoring for ages 11–18, in the neighbourhoods our youth call home.</p>
+                <p>Students join through partner schools and set cohorts — see "How youth join" below for how it works.</p>
               </article>
             </div>
             <figure class="framed flow-photo" style="margin-top:26px">
@@ -1169,14 +1421,14 @@
           <div class="wrap">
             <div class="split">
               <div>
-                <span class="kicker">For Youth &amp; Parents</span>
-                <h2>Want in? Joining is free.</h2>
-                <p class="lead">After-school mentoring and programming are free for youth ages 11–18. There is no long application — joining starts with a conversation.</p>
-                <p>Parents and youth: reach out and tell us your neighbourhood. We'll find what's running closest to you and talk through the details together.</p>
+                <span class="kicker">For Schools, Teachers &amp; Families</span>
+                <h2>How youth join: through a school cohort</h2>
+                <p class="lead">Students join The Good Guides through a school cohort or a co-op placement.</p>
+                <p>Teachers, guidance staff, and community partners: reach out about a cohort or a placement. Families: write to us and we'll confirm whether your school is a partner — and if it isn't yet, that conversation is how new partnerships start. Funding limits how many young people we can take on at once, which is why we work with set cohorts rather than open drop-in enrolment.</p>
               </div>
               <div class="form-card">
                 <h3 style="margin-bottom:10px">Start with a message</h3>
-                <p>Use the contact form or email — whichever is easiest. Parents and youth: choose General Inquiries.</p>
+                <p>Use the contact form or email — whichever is easiest. Schools, partners, and families: choose General Inquiries.</p>
                 <p><a class="btn btn-green" href="https://docs.google.com/forms/d/e/1FAIpQLSesdMDa_zVWDmYiz4SykFRYnBSest8HbVTFtaQMrp6MVkC4Pw/viewform" target="_blank" rel="noopener">Send Us a Message</a></p>
                 <p class="mail-note">Every message goes to our team, and every one gets an answer.</p>
                 <ul class="contact-list" style="margin-top:22px">
@@ -1191,9 +1443,27 @@
         <div class="band band-cream">
           <div class="wrap">
             <div class="section-head">
+              <span class="kicker">The Weekly Rhythm</span>
+              <h2>A week at The Good Guides</h2>
+            </div>
+            <div class="flow-groups cols-2">
+              <article class="card flow-card">
+                <div class="pg-card-head"><span class="pg-icon-disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.8h17M8 3v4M16 3v4"/><circle cx="12" cy="15" r="2.6"/></svg></span><h4>Weekly sessions</h4></div>
+                <p>After-school sessions run every week with your cohort, in your own neighbourhood — the same mentors, week in and week out.</p>
+              </article>
+              <article class="card flow-card">
+                <div class="pg-card-head"><span class="pg-icon-disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5" stroke-dasharray="46 8"/><circle cx="12" cy="3.5" r="1.9" fill="currentColor" stroke="none"/><circle cx="4.6" cy="16.3" r="1.9" fill="currentColor" stroke="none"/><circle cx="19.4" cy="16.3" r="1.9" fill="currentColor" stroke="none"/></svg></span><h4>The mentoring circle</h4></div>
+                <p>Sessions are built around a mentoring circle: time to check in, talk honestly, and plan what the group builds next. Mentorship isn't an add-on here — it's the centre of the work.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="band">
+          <div class="wrap">
+            <div class="section-head">
               <span class="kicker">How It Works</span>
               <h2>It starts with listening</h2>
-              <p class="lead">Everything starts with working with the youth to hear their needs and wants. And we go from there.</p>
             </div>
             <ol class="flow">
               <li class="flow-step text-step">
@@ -1208,18 +1478,18 @@
                 <span class="flow-num" aria-hidden="true">2</span>
                 <div class="flow-body">
                   <h3>The youth build from there</h3>
-                  <p class="lead">Ambassadors plan and run what the listening produces — with experienced mentors and the full backing of the organization behind them.</p>
+                  <p class="lead">Ambassadors plan and run what the listening produces.</p>
                   <div class="flow-groups">
                     <article class="card flow-card">
-                      <h4>Programs &amp; workshops</h4>
-                      <p>Ambassadors created the virtual hangouts that keep young people in touch with their mentors between sessions — and they run them. This step also carries our workshops on preventing violence and settling conflict, delivered across Scarborough. Young people pick up résumé writing, financial literacy, CPR &amp; first aid, and job prep through the work itself.</p>
+                      <div class="pg-card-head"><span class="pg-icon-disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3.2 19 5.6v5.6c0 4.4-2.9 7.4-7 9.6-4.1-2.2-7-5.2-7-9.6V5.6Z"/><path d="m9 11.6 2.1 2.1 3.9-4.2"/></svg></span><h4>Programs &amp; workshops</h4></div>
+                      <p>Our workshops on preventing violence and settling conflict are delivered across Scarborough. Young people pick up résumé writing, financial literacy, CPR &amp; first aid, and job prep through the work itself.</p>
                     </article>
                     <article class="card flow-card">
-                      <h4>Events</h4>
+                      <div class="pg-card-head"><span class="pg-icon-disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 21V4"/><path d="M6 4.8c3-1.9 6 1.9 9.5.2v6.2c-3.5 1.7-6.5-2.1-9.5-.2"/><path d="M3.8 21h4.4"/></svg></span><h4>Events</h4></div>
                       <p>Ambassadors created and hosted résumé nights — young people left with a finished résumé — bank-account sign-up events, where youth opened their own accounts, and OSAP sessions that explained how student funding works. The big shared days — Funday With Cops, the Toronto Sports Festival, Community Graduation 2K21, Woburn Basketball Day — are each in the <a href="#/gallery">Gallery</a> record.</p>
                     </article>
                     <article class="card flow-card">
-                      <h4>Trips &amp; excursions</h4>
+                      <div class="pg-card-head"><span class="pg-icon-disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M15.6 8.4 13.4 13.4 8.4 15.6 10.6 10.6Z"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/></svg></span><h4>Trips &amp; excursions</h4></div>
                       <p>Ambassadors don't just go on trips — they choose the destination, plan the day, and run it themselves: farm days, ice fishing, and excursions across the region. Each trip is in the <a href="#/gallery">Gallery</a> record.</p>
                     </article>
                   </div>
@@ -1233,10 +1503,125 @@
                 <div class="flow-body">
                   <h3>The wider community feels it</h3>
                   <p class="lead">The work doesn't stop at the youth in the room — neighbours, families, and schools feel it where they live.</p>
-                  <p>Ambassadors do this work for the whole community, not just the youth in the room: hot meals carried to neighbours living in encampments, gifts and treat bags handed out close to home, a day of relief for single parents on excursion days, and a Community Resource Fair connecting families to services in their own neighbourhoods.</p>
+                  <p>Hot meals carried to neighbours living in encampments, gifts and treat bags handed out close to home, a day of relief for single parents on excursion days, and a Community Resource Fair connecting families to services in their own neighbourhoods.</p>
                   <figure class="framed flow-photo">
                     <img src="assets/programs-community.webp" width="1290" height="825" alt="Neighbours and young people gathered around a serving table at a Good Guides community barbecue in Scarborough" loading="lazy" />
                   </figure>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="band band-cream">
+          <div class="wrap">
+            <div class="section-head">
+              <span class="kicker">Certifications</span>
+              <h2>Leave with real certifications</h2>
+              <p class="lead">We helped build Community Connect with the Toronto Police Service — a program that connects young people with their neighbourhood community officers. Through it, our youth earn practical certifications in workshops run with those officers.</p>
+            </div>
+            <div class="flow-groups">
+              <article class="card flow-card">
+                <div class="pg-card-head"><span class="pg-icon-disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20.2S4.6 15.9 3.2 11.6C2.2 8.6 4.1 5.9 6.8 5.9c1.9 0 3.6 1.1 5.2 3 1.6-1.9 3.3-3 5.2-3 2.7 0 4.6 2.7 3.6 5.7C19.4 15.9 12 20.2 12 20.2Z"/><path d="M6.8 12h2.7l1.4-2.6 2 4 1.4-1.4h2.9"/></svg></span><h4>CPR &amp; first aid</h4></div>
+                <p>Training to step in when someone is hurt — at a session, at a first job, anywhere.</p>
+              </article>
+              <article class="card flow-card">
+                <div class="pg-card-head"><span class="pg-icon-disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.5 16.8a7.5 7.5 0 0 1 15 0"/><path d="M2.8 16.8h18.4M3.5 20.2h17"/><path d="M12 8.5v1"/><circle cx="12" cy="7.2" r="1.3" fill="currentColor" stroke="none"/></svg></span><h4>Food handling</h4></div>
+                <p>Certified food-handler training, practised in community work like our meal deliveries — and the certification food-service employers ask for.</p>
+              </article>
+              <article class="card flow-card">
+                <div class="pg-card-head"><span class="pg-icon-disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3.2 19 5.6v5.6c0 4.4-2.9 7.4-7 9.6-4.1-2.2-7-5.2-7-9.6V5.6Z"/><path d="M12 16.4s-3.4-2-4.3-3.9c-.5-1.2.2-2.6 1.5-2.6.7 0 1.3.4 1.8 1 .5-.6 1.1-1 1.8-1 1.3 0 2 1.4 1.5 2.6-.9 1.9-4.3 3.9-4.3 3.9Z" fill="currentColor" stroke="none"/></svg></span><h4>Babysitting</h4></div>
+                <p>Babysitting certification, and the skills to be trusted with someone's kids — often a young person's first paid work.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="band">
+          <div class="wrap">
+            <div class="section-head">
+              <span class="kicker">Outcomes</span>
+              <h2>What we count</h2>
+              <p class="lead">Since 2020, we have mentored <span class="pg-figure">10,000+</span> young people across Scarborough. We count the tangible results — and whether a young person shows up differently. Both go back to our funders.</p>
+            </div>
+            <div class="route-grid">
+              <div class="route-item">
+                <svg class="pg-tally" viewBox="0 0 34 22" fill="none" aria-hidden="true" focusable="false"><path d="M5 3v16M12 3v16M19 3v16M26 3v16" stroke="#2D6B38" stroke-width="2.4" stroke-linecap="round"/><path d="M3 18.5 31 3.5" stroke="#D99E0B" stroke-width="2.4" stroke-linecap="round"/></svg>
+                <h3>Attendance</h3>
+                <p>Sign-ins at every session. We know who shows up — and we notice who stops.</p>
+              </div>
+              <div class="route-item">
+                <svg class="pg-tally" viewBox="0 0 34 22" fill="none" aria-hidden="true" focusable="false"><path d="M5 3v16M12 3v16M19 3v16M26 3v16" stroke="#2D6B38" stroke-width="2.4" stroke-linecap="round"/><path d="M3 18.5 31 3.5" stroke="#D99E0B" stroke-width="2.4" stroke-linecap="round"/></svg>
+                <h3>Certifications earned</h3>
+                <p>Practical certifications, counted as our youth complete them.</p>
+              </div>
+              <div class="route-item">
+                <svg class="pg-tally" viewBox="0 0 34 22" fill="none" aria-hidden="true" focusable="false"><path d="M5 3v16M12 3v16M19 3v16M26 3v16" stroke="#2D6B38" stroke-width="2.4" stroke-linecap="round"/><path d="M3 18.5 31 3.5" stroke="#D99E0B" stroke-width="2.4" stroke-linecap="round"/></svg>
+                <h3>Placements completed</h3>
+                <p>Co-op placements finished, and the credits students earn toward graduation.</p>
+              </div>
+              <div class="route-item">
+                <svg class="pg-tally" viewBox="0 0 34 22" fill="none" aria-hidden="true" focusable="false"><path d="M5 3v16M12 3v16M19 3v16M26 3v16" stroke="#2D6B38" stroke-width="2.4" stroke-linecap="round"/><path d="M3 18.5 31 3.5" stroke="#D99E0B" stroke-width="2.4" stroke-linecap="round"/></svg>
+                <h3>Confidence &amp; belonging</h3>
+                <p>What young people tell us about themselves — gathered in surveys and check-ins as they go, not just at the end.</p>
+              </div>
+              <div class="route-item">
+                <svg class="pg-tally" viewBox="0 0 34 22" fill="none" aria-hidden="true" focusable="false"><path d="M5 3v16M12 3v16M19 3v16M26 3v16" stroke="#2D6B38" stroke-width="2.4" stroke-linecap="round"/><path d="M3 18.5 31 3.5" stroke="#D99E0B" stroke-width="2.4" stroke-linecap="round"/></svg>
+                <h3>Return rate</h3>
+                <p>The share of participants who come back as Ambassadors or mentors, counted cohort by cohort.</p>
+              </div>
+              <div class="pg-count-close" aria-hidden="true">
+                <svg class="pg-keyring" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                <circle cx="6" cy="12" r="4.2" stroke="currentColor" stroke-width="2.4"/>
+                <path d="M10.2 12 H21 M17.4 12 V17.4 M21 12 V15.4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band band-cream">
+          <div class="wrap">
+            <div class="section-head">
+              <span class="kicker">Your Path Here</span>
+              <h2>The mentored become the mentors</h2>
+              <p class="lead">There is a ladder in this house, and every young person in our cohorts can climb it — from participant, to leader, to the mentor someone else looks up to.</p>
+            </div>
+            <ol class="flow pg-ladder">
+              <li class="flow-step text-step">
+                <span class="flow-num" aria-hidden="true">1</span>
+                <div class="flow-body">
+                  <h3>Show up</h3>
+                  <p class="lead">Join after-school mentoring through your school.</p>
+                  <p>Your mentors come from your own neighbourhood — people who know your streets and your schools.</p>
+                </div>
+              </li>
+              <li class="flow-step text-step">
+                <span class="flow-num" aria-hidden="true">2</span>
+                <div class="flow-body">
+                  <h3>Step up</h3>
+                  <p class="lead">Take on jobs in the work you helped design.</p>
+                  <p>Running a résumé night. Hosting a community day. Planning a trip the whole group takes. The work matters, the community is counting on it — and young people rise to it.</p>
+                </div>
+              </li>
+              <li class="flow-step text-step">
+                <span class="flow-num" aria-hidden="true">3</span>
+                <div class="flow-body">
+                  <h3>Lead</h3>
+                  <p class="lead">Become a Good Guide Ambassador.</p>
+                  <p>However they arrived — a co-op placement, or climbing from the circle — Ambassadors plan and run the programs, sit on the planning team, and lead sessions alongside staff mentors. They earn practical certifications along the way, and students can earn co-op credits doing it.</p>
+                </div>
+              </li>
+              <li class="flow-step text-step">
+                <span class="flow-num" aria-hidden="true">4</span>
+                <svg class="pg-keyring pg-close-ring" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                  <circle cx="6" cy="12" r="4.2" stroke="currentColor" stroke-width="2.4"/>
+                  <path d="M10.2 12 H21 M17.4 12 V17.4 M21 12 V15.4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="flow-body">
+                  <h3>Come back as a mentor</h3>
+                  <p class="lead">Stand behind the next group.</p>
+                  <p>This program renews itself: many of today's mentors started in the circle. That is how the house stays youth-led, year after year.</p>
                 </div>
               </li>
             </ol>
@@ -1247,8 +1632,8 @@
           <div class="wrap">
             <div class="section-head">
               <span class="kicker">The Wider Record</span>
-              <h2>The wider record</h2>
-              <p class="lead">Built on the co-op and after-school core: City-funded violence prevention and community engagement.</p>
+              <h2>What it adds up to</h2>
+              <p class="lead">Built on the co-op and after-school core: City-funded violence prevention and community engagement across Scarborough.</p>
             </div>
 
             <article class="card record-card">
@@ -1283,6 +1668,10 @@
 
             <div class="programs-cta">
               <div class="cta-band">
+                <svg class="pg-keyring" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                  <circle cx="6" cy="12" r="4.2" stroke="currentColor" stroke-width="2.4"/>
+                  <path d="M10.2 12 H21 M17.4 12 V17.4 M21 12 V15.4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
                 <p class="cta-title">Our youth are hard at work</p>
                 <p>Running the co-op and after-school programs at the heart of this page. Donations put more days like these on the calendar.</p>
                 <a class="btn btn-gold" data-donate href="https://donorbox.org/good-guides-donations" target="_blank" rel="noopener">Donate</a>
