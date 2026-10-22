@@ -816,40 +816,43 @@
         box-shadow: inset 0 0 0 4px var(--surface), inset 0 0 0 6.5px var(--gold), var(--pg-card-shadow);
         font-family: var(--font-display); font-weight: 800; font-size: 1.5rem;
       }
-      /* Per-step rail connectors (steps 1–3); step 3's turns gold into the closing panel */
+      /* Per-step rail connectors (steps 1–4); steps 3–4 turn gold into the closing panels */
       #view-our-programs .pg-ladder .flow-step:nth-child(1)::before,
       #view-our-programs .pg-ladder .flow-step:nth-child(2)::before,
-      #view-our-programs .pg-ladder .flow-step:nth-child(3)::before {
+      #view-our-programs .pg-ladder .flow-step:nth-child(3)::before,
+      #view-our-programs .pg-ladder .flow-step:nth-child(4)::before {
         content: ""; position: absolute; left: 65.5px; bottom: -28px; height: 28px; width: 3px;
         border-radius: 2px; background: var(--green);
       }
       #view-our-programs .pg-ladder .flow-step:nth-child(3)::before { background: var(--gold-dark); }
+      #view-our-programs .pg-ladder .flow-step:nth-child(4)::before { background: var(--gold-dark); }
       @media (min-width: 921px) {
         #view-our-programs .pg-ladder .flow-step:nth-child(1) { margin-left: 0; }
         #view-our-programs .pg-ladder .flow-step:nth-child(2) { margin-left: 32px; }
         #view-our-programs .pg-ladder .flow-step:nth-child(3) { margin-left: 64px; }
         #view-our-programs .pg-ladder .flow-step:nth-child(4) { margin-left: 96px; }
+        #view-our-programs .pg-ladder .flow-step:nth-child(5) { margin-left: 128px; }
       }
-      /* Step 4 — the cycle closes: the page's one solid closing panel */
-      #view-our-programs .pg-ladder .flow-step:last-child {
+      /* Steps 4–5 — the cycle closes: the ladder's solid dark-green closing panels */
+      #view-our-programs .pg-ladder .flow-step:nth-child(n+4) {
         background: var(--green-deep); border: 1px solid var(--green-darkest);
         border-top: 4px solid var(--gold); box-shadow: var(--pg-card-shadow-green);
         border-radius: var(--pg-radius);
       }
-      #view-our-programs .pg-ladder .flow-step:last-child .flow-num {
+      #view-our-programs .pg-ladder .flow-step:nth-child(n+4) .flow-num {
         background: var(--gold); border-color: var(--gold-dark); color: var(--green-darkest);
         box-shadow: inset 0 0 0 4px var(--gold), inset 0 0 0 6.5px var(--green-deep), var(--pg-card-shadow-green);
       }
-      #view-our-programs .pg-ladder .flow-step:last-child h3 { color: #fff; font-size: 1.5rem; }
-      #view-our-programs .pg-ladder .flow-step:last-child .flow-body > p.lead { color: var(--gold-on-green); font-weight: 600; }
-      #view-our-programs .pg-ladder .flow-step:last-child .flow-body > p { color: var(--on-green); }
-      #view-our-programs .pg-ladder .flow-step:last-child :focus-visible { outline-color: var(--gold); }
+      #view-our-programs .pg-ladder .flow-step:nth-child(n+4) h3 { color: #fff; font-size: 1.5rem; }
+      #view-our-programs .pg-ladder .flow-step:nth-child(n+4) .flow-body > p.lead { color: var(--gold-on-green); font-weight: 600; }
+      #view-our-programs .pg-ladder .flow-step:nth-child(n+4) .flow-body > p { color: var(--on-green); }
+      #view-our-programs .pg-ladder .flow-step:nth-child(n+4) :focus-visible { outline-color: var(--gold); }
       #view-our-programs .pg-close-ring {
         position: absolute; top: 22px; right: 26px; width: 92px; height: 92px;
         color: var(--gold-on-green); opacity: .28; pointer-events: none;
       }
-      /* Step-4 text column clears the watermark ring (released at ≤640px, §9) */
-      #view-our-programs .pg-ladder .flow-step:last-child .flow-body { padding-right: 96px; }
+      /* Steps 4–5 text column clears the watermark ring (released at ≤640px, §9) */
+      #view-our-programs .pg-ladder .flow-step:nth-child(n+4) .flow-body { padding-right: 96px; }
       /* How It Works numbers: same medallion language at 58px, no rail, no offsets (§5.4) */
       #view-our-programs .flow:not(.pg-ladder) .flow-num {
         background: var(--surface); color: var(--green-deep);
@@ -897,11 +900,12 @@
       @media (max-width: 920px) {
         #view-our-programs .pg-ladder .flow-step { margin-left: 0; padding: 28px 24px; }
         #view-our-programs .pg-ladder .flow-num { width: 52px; height: 52px; font-size: 1.3rem; box-shadow: inset 0 0 0 3px var(--surface), inset 0 0 0 5.5px var(--gold), var(--pg-card-shadow); }
-        #view-our-programs .pg-ladder .flow-step:last-child .flow-num { box-shadow: inset 0 0 0 3px var(--gold), inset 0 0 0 5.5px var(--green-deep), var(--pg-card-shadow-green); }
+        #view-our-programs .pg-ladder .flow-step:nth-child(n+4) .flow-num { box-shadow: inset 0 0 0 3px var(--gold), inset 0 0 0 5.5px var(--green-deep), var(--pg-card-shadow-green); }
         #view-our-programs .flow:not(.pg-ladder) .flow-num { width: 52px; height: 52px; font-size: 1.3rem; box-shadow: inset 0 0 0 3px var(--surface), inset 0 0 0 5.5px var(--gold), var(--pg-card-shadow); }
         #view-our-programs .pg-ladder .flow-step:nth-child(1)::before,
         #view-our-programs .pg-ladder .flow-step:nth-child(2)::before,
-        #view-our-programs .pg-ladder .flow-step:nth-child(3)::before { left: calc(24px + 27px - 1.5px); }
+        #view-our-programs .pg-ladder .flow-step:nth-child(3)::before,
+        #view-our-programs .pg-ladder .flow-step:nth-child(4)::before { left: calc(24px + 27px - 1.5px); }
       }
       @media (max-width: 860px) {
         #view-our-programs #join .split > div:first-child,
@@ -931,7 +935,7 @@
           box-shadow: 10px 10px 0 -4px var(--green-darkest), 10px 10px 0 -2px var(--gold);
         }
         #view-our-programs .pg-close-ring { width: 64px; height: 64px; top: 16px; right: 16px; }
-        #view-our-programs .pg-ladder .flow-step:last-child .flow-body { padding-right: 0; }
+        #view-our-programs .pg-ladder .flow-step:nth-child(n+4) .flow-body { padding-right: 0; }
         #view-our-programs .cta-band .pg-keyring { width: 26px; height: 26px; }
       }
     </style>
@@ -1518,7 +1522,7 @@
             <div class="section-head">
               <span class="kicker">Certifications</span>
               <h2>Leave with real certifications</h2>
-              <p class="lead">We were running certification workshops before Community Connect existed — and we run them beyond it. We lent our skills to help build Community Connect with the Toronto Police Service, a program that connects young people with their neighbourhood community officers. And our young people come out of those workshops with certifications they can put straight to work.</p>
+              <p class="lead">Our own mentors run these workshops — practical training, practised in real community work. And our young people come out of them with certifications they can put straight to work.</p>
             </div>
             <div class="flow-groups">
               <article class="card flow-card">
@@ -1594,11 +1598,10 @@
                 <h3>Return rate</h3>
                 <p>The share of participants who come back as Ambassadors or mentors, counted cohort by cohort.</p>
               </div>
-              <div class="pg-count-close" aria-hidden="true">
-                <svg class="pg-keyring" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-                <circle cx="6" cy="12" r="4.2" stroke="currentColor" stroke-width="2.4"/>
-                <path d="M10.2 12 H21 M17.4 12 V17.4 M21 12 V15.4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+              <div class="route-item">
+                <svg class="pg-tally" viewBox="0 0 34 22" fill="none" aria-hidden="true" focusable="false"><path d="M5 3v16M12 3v16M19 3v16M26 3v16" stroke="#2D6B38" stroke-width="2.4" stroke-linecap="round"/><path d="M3 18.5 31 3.5" stroke="#D99E0B" stroke-width="2.4" stroke-linecap="round"/></svg>
+                <h3>Hired as staff</h3>
+                <p>Mentors now on the staff team — hired from this house, and counted as they join it.</p>
               </div>
             </div>
           </div>
@@ -1648,6 +1651,18 @@
                   <p>This program renews itself: many of today's mentors started in the circle. That is how the house stays youth-led, year after year.</p>
                 </div>
               </li>
+              <li class="flow-step text-step">
+                <span class="flow-num" aria-hidden="true">5</span>
+                <svg class="pg-keyring pg-close-ring" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                  <circle cx="6" cy="12" r="4.2" stroke="currentColor" stroke-width="2.4"/>
+                  <path d="M10.2 12 H21 M17.4 12 V17.4 M21 12 V15.4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="flow-body">
+                  <h3>Join the staff team</h3>
+                  <p class="lead">The path can end in a job here.</p>
+                  <p>The strongest mentors are hired as staff — running sessions, leading programs. This house is staffed by people who grew up in it.</p>
+                </div>
+              </li>
             </ol>
           </div>
         </div>
@@ -1657,14 +1672,8 @@
             <div class="section-head">
               <span class="kicker">The Wider Record</span>
               <h2>What it adds up to</h2>
-              <p class="lead">Built on the co-op and after-school core: City-funded violence prevention and community engagement in the neighbourhoods our youth call home.</p>
+              <p class="lead">Built on the co-op and after-school core: violence prevention and community engagement in the neighbourhoods our youth call home.</p>
             </div>
-
-            <article class="card record-card">
-              <span class="kicker">City of Toronto Grant Recipient</span>
-              <h3>Youth Violence Prevention</h3>
-              <p class="lead record-lead">In 2023, the City of Toronto awarded The Good Guides its Youth Violence Prevention Grant, which supports workshops on preventing violence and settling conflict for youth in our neighbourhoods.</p>
-            </article>
 
             <div class="program-block flip">
               <div>
