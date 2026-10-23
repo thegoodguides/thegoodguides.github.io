@@ -1347,10 +1347,10 @@
                 </div>
               </article>
               <article class="member">
-                <div class="photo"><img src="assets/team-alex.webp" width="386" height="353" alt="Alex Ionita, Marketing Specialist" loading="lazy" /></div>
+                <div class="photo"><img src="assets/team-alex.webp" width="386" height="353" alt="Alex Ionita, Youth Mentor" loading="lazy" /></div>
                 <div class="body">
                   <h3>Alex Ionita</h3>
-                  <span class="title">Marketing Specialist</span>
+                  <span class="title">Youth Mentor</span>
                   <p class="bio">Alex is a University of Toronto graduate with a Bachelor's degree in Business Administration. Through basketball and other sports, he helps youth build confidence and life skills that carry off the court.</p>
                   <div class="contact-line">
                     <a href="mailto:alex.ionita@thegoodguides.org">alex.ionita@thegoodguides.org</a>
@@ -1568,7 +1568,13 @@
               <details class="faq-item">
                 <summary>What ages do you work with?</summary>
                 <div class="faq-a">
-                  <p>Our programs are for young people ages 11–18, after the school day ends, in the neighbourhoods they call home. Young people join through their school cohort.</p>
+                  <p>Our programs are for young people ages 11–18, after the school day ends, in the neighbourhoods they call home. Young people join through their school cohort. Programs are free for participating youth.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>How are young people supervised?</summary>
+                <div class="faq-a">
+                  <p>Every program runs with experienced adult staff and mentors alongside the youth leaders. Safety has a named lead: Sabrina Shariff, our Development &amp; Safety Coordinator and a Public Health Nurse. Parents and guardians can email us at <a href="mailto:service@thegoodguides.org">service@thegoodguides.org</a>.</p>
                 </div>
               </details>
               <details class="faq-item">
@@ -1899,6 +1905,7 @@
                 <h2>How you get in</h2>
                 <p class="lead">There are two ways in, and both run through your school: a set cohort, or a co-op placement.</p>
                 <p>Start by asking a teacher or guidance staff member whether your school is a partner. Your family can also write to us, and we'll confirm. If your school isn't a partner yet, don't count yourself out — that conversation is how new partnerships start. Places run in set cohorts, not drop-ins, because funding limits how many young people we can take on at once.</p>
+                <p><strong>Cost and supervision:</strong> Programs are free for youth. Every program runs with experienced adult staff and mentors alongside the youth leaders. Safety has a named lead: Sabrina Shariff, our Development &amp; Safety Coordinator and a Public Health Nurse.</p>
               </div>
               <div class="form-card">
                 <h3 style="margin-bottom:10px">Start with a message</h3>
@@ -1999,6 +2006,9 @@
                 <h2>Joining through your school</h2>
                 <p class="lead">Both routes run through a school: a set cohort, or a co-op placement.</p>
                 <p>Teachers, guidance staff, and community partners: reach out about a cohort or a placement. Families: write to us, and we will confirm whether your school is a partner — if it is not yet, that conversation is how new partnerships start. Funding limits the number of young people we can take on at once, so we work in set cohorts rather than open drop-in enrolment.</p>
+                <h3>Safety, supervision, and cost</h3>
+                <p>Programs are free for youth. Every program runs with experienced adult staff and mentors alongside the youth leaders. Safety has a named lead: Sabrina Shariff, our Development &amp; Safety Coordinator and a Public Health Nurse.</p>
+                <p>For a co-op placement, the student's teacher stays in the loop from the first day to the final evaluation. Parents and guardians can send questions to <a href="mailto:service@thegoodguides.org">service@thegoodguides.org</a>.</p>
               </div>
               <div class="form-card">
                 <h3 style="margin-bottom:10px">Start with a message</h3>
@@ -2645,6 +2655,31 @@
     </nav>
 
     <script>
+      /* Legacy bare-query links (for example /?anchor=join) put the section
+         target in location.search, where this hash router cannot see it.
+         Translate the site's known section anchors into the equivalent hash
+         route before the first render; other query parameters are kept. */
+      (function () {
+        if (!window.location.search || window.location.hash) return;
+        var routes = {
+          "join": "/our-programs",
+          "join-youth": "/our-programs",
+          "story": "/about-us",
+          "team": "/about-us",
+          "partners": "/about-us",
+          "faq": "/take-action",
+          "gallery": "/media",
+          "role-contacts": "/contact-us"
+        };
+        var params = new URLSearchParams(window.location.search);
+        var anchor = params.get("anchor");
+        if (!anchor || !routes[anchor]) return;
+        params.delete("anchor");
+        var query = params.toString();
+        var url = window.location.pathname + (query ? "?" + query : "") + "#" + routes[anchor] + "?anchor=" + encodeURIComponent(anchor);
+        window.history.replaceState(null, "", url);
+      })();
+
       var DONATE_URL = "https://donorbox.org/good-guides-donations";
 
       var ALIAS_NAV = { "/our-team": "/about-us", "/partners": "/about-us", "/gallery": "/media" };
