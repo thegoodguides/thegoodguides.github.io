@@ -903,6 +903,38 @@
         display: block; width: 30px; height: 30px; margin: 0 auto 12px; color: var(--gold-on-green);
       }
 
+
+      /* ----- Dual-view switch (Programs dual-view preview) ----- */
+      #view-our-programs .pg-switch-wrap { background: var(--green-deep); padding: 24px 0 30px; }
+      #view-our-programs .pg-switch {
+        display: flex; gap: 6px; padding: 6px; border-radius: 999px;
+        background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.4);
+      }
+      #view-our-programs .pg-switch-btn {
+        flex: 1 1 0; appearance: none; cursor: pointer; min-height: 54px;
+        border: 2px solid transparent; border-radius: 999px; background: transparent;
+        color: #fff; font: inherit; font-weight: 700; font-size: 1.05rem; line-height: 1.25;
+        padding: 14px 18px;
+      }
+      #view-our-programs .pg-switch-btn[aria-selected="true"] {
+        background: var(--gold); border-color: var(--gold); color: var(--green-darkest);
+      }
+      #view-our-programs .pg-switch-btn:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+      #view-our-programs .pg-switch-note {
+        color: rgba(255,255,255,.92); text-align: center; margin: 14px auto 0;
+        max-width: 660px; font-size: 1rem; line-height: 1.55;
+      }
+      #view-our-programs #join-youth .split > div:first-child { border-left: 4px solid var(--gold); padding-left: 26px; }
+      #view-our-programs .cta-band p a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+      #view-our-programs [hidden] { display: none !important; }
+      @media (max-width: 860px) {
+        #view-our-programs #join-youth .split > div:first-child { border-left: none; padding-left: 0; }
+      }
+      @media (max-width: 640px) {
+        #view-our-programs .pg-switch { flex-direction: column; border-radius: 24px; }
+        #view-our-programs .pg-switch-btn { width: 100%; padding: 16px 18px; }
+        #view-our-programs .pg-switch-wrap { padding: 20px 0 24px; }
+      }
       /* ----- Mobile (§9) ----- */
       @media (max-width: 920px) {
         #view-our-programs .pg-ladder .flow-step { margin-left: 0; padding: 28px 24px; }
@@ -1584,58 +1616,47 @@
           </div>
         </div>
 
+        <div class="pg-switch-wrap">
+          <div class="wrap">
+            <div class="pg-switch" role="tablist" aria-label="Choose your view of our programs">
+              <button type="button" class="pg-switch-btn" role="tab" id="pg-tab-youth" aria-selected="true" aria-controls="programs-youth" data-programs-view="youth">For youth</button>
+              <button type="button" class="pg-switch-btn" role="tab" id="pg-tab-partners" aria-selected="false" aria-controls="programs-adults" data-programs-view="partners" tabindex="-1">For teachers, partners &amp; funders</button>
+            </div>
+            <p class="pg-switch-note" id="pg-youth-note">Written for young people — what the programs are like, what you walk out with, and how you get in.</p>
+            <p class="pg-switch-note" id="pg-partners-note" hidden>Written for teachers, partners &amp; funders — the structure, the delivery model, what we count, and who to contact.</p>
+          </div>
+        </div>
+
+        <div id="programs-youth" role="tabpanel" aria-labelledby="pg-tab-youth">
         <div class="band core-band">
           <div class="wrap">
             <div class="section-head">
               <span class="kicker">The Core Program</span>
-              <h2>Everything starts here</h2>
-              <p class="lead">Our core program runs two ways: co-op placements for students, and after-school programming for young people. Every event, workshop, and community help project on this page starts here. Ambassadors, our trained youth leaders ages 16–21, are the ones who run it.</p>
+              <h2>Two ways in</h2>
+              <p class="lead">You come in one of two ways: a co-op placement through your school, or after-school programming in your own neighbourhood. Everything else on this page — every event, workshop, and community project — starts here. And it is run by Ambassadors: trained youth leaders ages 16–21 who started where you are.</p>
             </div>
             <div class="core-grid">
               <article class="core-card">
                 <span class="program-tag">Co-op Placements</span>
                 <h3>Co-op placements — Good Guide Ambassadors</h3>
-                <p>We take co-op students from high schools and post-secondary schools. They join the team as Good Guide Ambassadors, earn credits toward graduation, and do the work below in their own neighbourhoods. If you're a student, or a teacher placing one, get in touch.</p>
+                <p>We take co-op students from high schools and post-secondary schools. If your school places you with us, you join the team as a Good Guide Ambassador, earn credits toward graduation, and do real work in your own neighbourhood — the work on the rest of this page.</p>
               </article>
               <article class="core-card">
                 <span class="program-tag">Ages 11–18</span>
                 <h3>After-school programming</h3>
-                <p>After-school mentoring for ages 11–18, in the neighbourhoods our youth call home.</p>
-                <p>Students join through partner schools and set cohorts — see “Joining through your school” below for how it works.</p>
+                <p>After-school mentoring for ages 11–18, in the neighbourhood you call home.</p>
+                <p>You join through your school, in a set cohort — see “How you get in” below for how it works.</p>
               </article>
             </div>
             <figure class="framed flow-photo" style="margin-top:26px">
               <img src="assets/programs-core-v2.webp" width="1290" height="968" alt="Young people practising infant CPR on training manikins at a table during a first aid training session" loading="lazy" />
             </figure>
             <div class="core-actions">
-              <a class="btn btn-gold" href="#/contact-us?anchor=role-contacts">Contact us about a placement</a>
+              <a class="btn btn-gold" href="#/our-programs/for-youth?anchor=join-youth">See how you get in</a>
               <a class="btn btn-outline-light" href="#/gallery">See Ambassador events in the Gallery</a>
             </div>
           </div>
         </div>
-
-        <div class="band" id="join">
-          <div class="wrap">
-            <div class="split">
-              <div>
-                <span class="kicker">For Schools, Teachers &amp; Families</span>
-                <h2>Joining through your school</h2>
-                <p class="lead">There are two routes in: a school cohort, or a co-op placement.</p>
-                <p>Teachers, guidance staff, and community partners can reach out about a cohort or a placement. Families can write to us, and we will confirm whether their school is a partner. If it is not yet, that conversation is how new partnerships start. Funding limits the number of young people we can take on at once, so we work in set cohorts rather than open drop-in enrolment.</p>
-              </div>
-              <div class="form-card">
-                <h3 style="margin-bottom:10px">Start with a message</h3>
-                <p>Use the contact form or email — whichever is easiest. Schools, partners, and families: in the form, choose Programs under “What’s this about?”</p>
-                <p><a class="btn btn-green" href="https://docs.google.com/forms/d/e/1FAIpQLSesdMDa_zVWDmYiz4SykFRYnBSest8HbVTFtaQMrp6MVkC4Pw/viewform" target="_blank" rel="noopener">Send us a message<span class="sr-only"> (opens in new tab)</span></a></p>
-                <p class="mail-note">Every message goes to our team, and every one gets an answer.</p>
-                <ul class="contact-list" style="margin-top:22px">
-                  <li><span class="role">General Enquiries</span><a href="mailto:service@thegoodguides.org">service@thegoodguides.org</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
 
         <div class="band band-cream">
           <div class="wrap">
@@ -1660,6 +1681,361 @@
           <div class="wrap">
             <div class="section-head">
               <span class="kicker">How It Works</span>
+              <h2>It starts with listening</h2>
+            </div>
+            <ol class="flow">
+              <li class="flow-step text-step">
+                <span class="flow-num" aria-hidden="true">1</span>
+                <div class="flow-body">
+                  <h3>Listen first</h3>
+                  <p class="lead">Before anything is planned, we work with you to hear your needs and wants.</p>
+                  <p>You know your streets, your schools, and your life — so what gets built begins with what you say you need. Nothing here is designed somewhere else and handed down to you.</p>
+                </div>
+              </li>
+              <li class="flow-step">
+                <span class="flow-num" aria-hidden="true">2</span>
+                <div class="flow-body">
+                  <h3>You build from there</h3>
+                  <p class="lead">Ambassadors plan and run what the listening produces.</p>
+                  <div class="flow-groups">
+                    <article class="card flow-card">
+                      <div class="pg-card-head"><span class="pg-icon-disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3.2 19 5.6v5.6c0 4.4-2.9 7.4-7 9.6-4.1-2.2-7-5.2-7-9.6V5.6Z"/><path d="m9 11.6 2.1 2.1 3.9-4.2"/></svg></span><h4>Programs &amp; workshops</h4></div>
+                      <p>Our workshops on preventing violence and settling conflict run in the neighbourhood you call home. You pick up résumé writing, financial literacy, CPR &amp; first aid, and job prep through the work itself.</p>
+                    </article>
+                    <article class="card flow-card">
+                      <div class="pg-card-head"><span class="pg-icon-disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 21V4"/><path d="M6 4.8c3-1.9 6 1.9 9.5.2v6.2c-3.5 1.7-6.5-2.1-9.5-.2"/><path d="M3.8 21h4.4"/></svg></span><h4>Events</h4></div>
+                      <p>Ambassadors created and hosted résumé nights — young people left with a finished résumé — bank-account sign-up events, where youth opened their own accounts, and OSAP sessions that explained how student funding works. The big shared days — Funday With Cops, the Toronto Sports Festival, Community Graduation 2K21, Woburn Basketball Day — are each in the <a href="#/gallery">Gallery</a> record.</p>
+                    </article>
+                    <article class="card flow-card">
+                      <div class="pg-card-head"><span class="pg-icon-disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M15.6 8.4 13.4 13.4 8.4 15.6 10.6 10.6Z"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/></svg></span><h4>Trips &amp; excursions</h4></div>
+                      <p>Ambassadors don't just go on trips — they choose the destination, plan the day, and run it themselves: farm days, ice fishing, and excursions across the region. Each trip is in the <a href="#/gallery">Gallery</a> record.</p>
+                    </article>
+                  </div>
+                  <figure class="framed flow-photo">
+                    <img src="assets/programs-excursions.webp" width="1600" height="1067" alt="Good Guides youth Ambassadors apple-picking at Brooks Farms in Mount Albert" loading="lazy" />
+                  </figure>
+                </div>
+              </li>
+              <li class="flow-step text-step">
+                <span class="flow-num" aria-hidden="true">3</span>
+                <div class="flow-body">
+                  <h3>The wider community feels it</h3>
+                  <p class="lead">The work doesn't stop in the room — neighbours, families, and schools feel it where they live.</p>
+                  <p>Hot meals carried to neighbours living in encampments, gifts and treat bags handed out close to home, a day of relief for single parents on excursion days, and a Community Resource Fair connecting families to services in their own neighbourhoods.</p>
+                  <figure class="framed flow-photo">
+                    <img src="assets/programs-community.webp" width="1290" height="825" alt="Neighbours and young people gathered around a serving table at a Good Guides community barbecue" loading="lazy" />
+                  </figure>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="band band-cream">
+          <div class="wrap">
+            <div class="section-head">
+              <span class="kicker">Certifications</span>
+              <h2>What you walk out with</h2>
+              <p class="lead">Our own mentors run these workshops — practical training, practised in real community work — and you come out with certifications you can put straight to work. Some of these workshops — CPR, food handling, and babysitting — are delivered through Community Connect, a Toronto Police Service program we helped create, which connects you with your local neighbourhood community officers through practical certification workshops.</p>
+            </div>
+            <div class="flow-groups">
+              <article class="card flow-card">
+                <div class="pg-card-head"><span class="pg-icon-disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20.2S4.6 15.9 3.2 11.6C2.2 8.6 4.1 5.9 6.8 5.9c1.9 0 3.6 1.1 5.2 3 1.6-1.9 3.3-3 5.2-3 2.7 0 4.6 2.7 3.6 5.7C19.4 15.9 12 20.2 12 20.2Z"/><path d="M6.8 12h2.7l1.4-2.6 2 4 1.4-1.4h2.9"/></svg></span><h4>CPR &amp; first aid</h4></div>
+                <p>Training to step in when someone is hurt — at a session, at a first job, anywhere.</p>
+              </article>
+              <article class="card flow-card">
+                <div class="pg-card-head"><span class="pg-icon-disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.5 16.8a7.5 7.5 0 0 1 15 0"/><path d="M2.8 16.8h18.4M3.5 20.2h17"/><path d="M12 8.5v1"/><circle cx="12" cy="7.2" r="1.3" fill="currentColor" stroke="none"/></svg></span><h4>Food handling</h4></div>
+                <p>Certified food-handler training, practised in community work like our meal deliveries — and the certification food-service employers ask for.</p>
+              </article>
+              <article class="card flow-card">
+                <div class="pg-card-head"><span class="pg-icon-disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3.2 19 5.6v5.6c0 4.4-2.9 7.4-7 9.6-4.1-2.2-7-5.2-7-9.6V5.6Z"/><path d="M12 16.4s-3.4-2-4.3-3.9c-.5-1.2.2-2.6 1.5-2.6.7 0 1.3.4 1.8 1 .5-.6 1.1-1 1.8-1 1.3 0 2 1.4 1.5 2.6-.9 1.9-4.3 3.9-4.3 3.9Z" fill="currentColor" stroke="none"/></svg></span><h4>Babysitting</h4></div>
+                <p>Babysitting certification, and the skills to be trusted with someone's kids — often a young person's first paid work.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="band">
+          <div class="wrap">
+            <div class="section-head">
+              <span class="kicker">Practical Support</span>
+              <h2>And the practical stuff, handled</h2>
+              <p class="lead">Certifications are only part of it. Our mentors sit with you through the paperwork of growing up — the accounts, applications, and funding that open the next door.</p>
+            </div>
+            <div class="flow-groups">
+              <article class="card flow-card">
+                <div class="pg-card-head"><span class="pg-icon-disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 9.7 12 4.3l9 5.4"/><path d="M5.2 9.7v7.6M9.8 9.7v7.6M14.2 9.7v7.6M18.8 9.7v7.6"/><path d="M3.8 17.3h16.4M3 20.4h18"/></svg></span><h4>First bank account</h4></div>
+                <p>Help opening a first bank account — the ID, the paperwork, and what to ask — so a first paycheque has somewhere to land.</p>
+              </article>
+              <article class="card flow-card">
+                <div class="pg-card-head"><span class="pg-icon-disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.2"/><path d="M12 6.8v10.4M15.2 9.4c-.7-1-1.8-1.5-3.2-1.5-1.8 0-3.1.9-3.1 2.1 0 2.9 6.3 1.5 6.3 4 0 1.2-1.4 2.1-3.2 2.1-1.4 0-2.6-.6-3.3-1.5"/></svg></span><h4>OSAP funding</h4></div>
+                <p>Help applying for OSAP funding for college and university, so money isn't the reason you don't go.</p>
+              </article>
+              <article class="card flow-card">
+                <div class="pg-card-head"><span class="pg-icon-disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5 2.8 9.3 12 13.6l9.2-4.3Z"/><path d="M6.5 11.3v4.2c0 1.2 2.5 2.7 5.5 2.7s5.5-1.5 5.5-2.7v-4.2"/><path d="M21.2 9.3v4.9"/></svg></span><h4>Post-secondary applications</h4></div>
+                <p>Support with college and university applications — choosing programs, meeting deadlines, and finishing the forms.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="band">
+          <div class="wrap">
+            <div class="section-head">
+              <span class="kicker">Outcomes</span>
+              <h2>What we count</h2>
+              <p class="lead">Since 2020, we have mentored <span class="pg-figure">10,000+</span> young people. We count what changes for you along the way: whether you stay, whether your mentor match holds, and how you're engaging at school — and the concrete stuff too: the sessions you attend, the certifications you earn, the placements you complete, and whether you come back to lead the next group.</p>
+            </div>
+            <div class="route-grid">
+              <div class="route-item">
+                <svg class="pg-tally" viewBox="0 0 34 22" fill="none" aria-hidden="true" focusable="false"><path d="M5 3v16M12 3v16M19 3v16M26 3v16" stroke="#2D6B38" stroke-width="2.4" stroke-linecap="round"/><path d="M3 18.5 31 3.5" stroke="#D99E0B" stroke-width="2.4" stroke-linecap="round"/></svg>
+                <h3>Attendance</h3>
+                <p>Sign-ins at every session. We notice when you show up — and when you stop, we notice that too.</p>
+              </div>
+              <div class="route-item">
+                <svg class="pg-tally" viewBox="0 0 34 22" fill="none" aria-hidden="true" focusable="false"><path d="M5 3v16M12 3v16M19 3v16M26 3v16" stroke="#2D6B38" stroke-width="2.4" stroke-linecap="round"/><path d="M3 18.5 31 3.5" stroke="#D99E0B" stroke-width="2.4" stroke-linecap="round"/></svg>
+                <h3>Certifications earned</h3>
+                <p>Practical certifications, counted as you complete them.</p>
+              </div>
+              <div class="route-item">
+                <svg class="pg-tally" viewBox="0 0 34 22" fill="none" aria-hidden="true" focusable="false"><path d="M5 3v16M12 3v16M19 3v16M26 3v16" stroke="#2D6B38" stroke-width="2.4" stroke-linecap="round"/><path d="M3 18.5 31 3.5" stroke="#D99E0B" stroke-width="2.4" stroke-linecap="round"/></svg>
+                <h3>Placements completed</h3>
+                <p>Co-op placements you finish, and the credits you earn toward graduation.</p>
+              </div>
+              <div class="route-item">
+                <svg class="pg-tally" viewBox="0 0 34 22" fill="none" aria-hidden="true" focusable="false"><path d="M5 3v16M12 3v16M19 3v16M26 3v16" stroke="#2D6B38" stroke-width="2.4" stroke-linecap="round"/><path d="M3 18.5 31 3.5" stroke="#D99E0B" stroke-width="2.4" stroke-linecap="round"/></svg>
+                <h3>Confidence &amp; belonging</h3>
+                <p>What you tell us about yourself — gathered in surveys and check-ins as you go, not just at the end.</p>
+              </div>
+              <div class="route-item">
+                <svg class="pg-tally" viewBox="0 0 34 22" fill="none" aria-hidden="true" focusable="false"><path d="M5 3v16M12 3v16M19 3v16M26 3v16" stroke="#2D6B38" stroke-width="2.4" stroke-linecap="round"/><path d="M3 18.5 31 3.5" stroke="#D99E0B" stroke-width="2.4" stroke-linecap="round"/></svg>
+                <h3>Who comes back to lead</h3>
+                <p>The share who come back as Ambassadors or mentors, counted cohort by cohort.</p>
+              </div>
+              <div class="route-item">
+                <svg class="pg-tally" viewBox="0 0 34 22" fill="none" aria-hidden="true" focusable="false"><path d="M5 3v16M12 3v16M19 3v16M26 3v16" stroke="#2D6B38" stroke-width="2.4" stroke-linecap="round"/><path d="M3 18.5 31 3.5" stroke="#D99E0B" stroke-width="2.4" stroke-linecap="round"/></svg>
+                <h3>Hired — here and beyond</h3>
+                <p>Mentors hired onto our staff team, and young people placed into jobs beyond this house — counted as each one starts.</p>
+              </div>
+              <div class="route-item">
+                <svg class="pg-tally" viewBox="0 0 34 22" fill="none" aria-hidden="true" focusable="false"><path d="M5 3v16M12 3v16M19 3v16M26 3v16" stroke="#2D6B38" stroke-width="2.4" stroke-linecap="round"/><path d="M3 18.5 31 3.5" stroke="#D99E0B" stroke-width="2.4" stroke-linecap="round"/></svg>
+                <h3>Mentor matches that hold</h3>
+                <p>Who you're matched with — and how long the match holds, cohort by cohort.</p>
+              </div>
+              <div class="route-item">
+                <svg class="pg-tally" viewBox="0 0 34 22" fill="none" aria-hidden="true" focusable="false"><path d="M5 3v16M12 3v16M19 3v16M26 3v16" stroke="#2D6B38" stroke-width="2.4" stroke-linecap="round"/><path d="M3 18.5 31 3.5" stroke="#D99E0B" stroke-width="2.4" stroke-linecap="round"/></svg>
+                <h3>School engagement</h3>
+                <p>How you're engaging at school, tracked through mentor check-ins and your feedback.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band band-cream">
+          <div class="wrap">
+            <div class="section-head">
+              <span class="kicker">Your Path Here</span>
+              <h2>The mentored become the mentors</h2>
+              <p class="lead">There is a ladder in this house, and every young person in our cohorts can climb it — from participant, to junior leader, to Ambassador, to mentor, to staff.</p>
+            </div>
+            <ol class="flow pg-ladder">
+              <li class="flow-step text-step">
+                <span class="flow-num" aria-hidden="true">1</span>
+                <div class="flow-body">
+                  <h3>Show up</h3>
+                  <p class="lead">Join after-school mentoring through your school.</p>
+                  <p>Your mentors come from your own neighbourhood — people who know your streets and your schools.</p>
+                </div>
+              </li>
+              <li class="flow-step text-step">
+                <span class="flow-num" aria-hidden="true">2</span>
+                <div class="flow-body">
+                  <h3>Step up as a junior leader</h3>
+                  <p class="lead">Take on junior-leader jobs in the work you helped design.</p>
+                  <p>Running a résumé night. Hosting a community day. Planning a trip the whole group takes. The work matters, the community is counting on it — and you rise to it.</p>
+                </div>
+              </li>
+              <li class="flow-step text-step">
+                <span class="flow-num" aria-hidden="true">3</span>
+                <div class="flow-body">
+                  <h3>Lead</h3>
+                  <p class="lead">Become a Good Guide Ambassador.</p>
+                  <p>However you arrived — a co-op placement, or climbing from the circle — you plan and run the programs, sit on the planning team, and lead sessions alongside staff mentors. You earn practical certifications along the way, and if you're a student, you can earn co-op credits doing it.</p>
+                </div>
+              </li>
+              <li class="flow-step text-step">
+                <span class="flow-num" aria-hidden="true">4</span>
+                <svg class="pg-keyring pg-close-ring" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                  <circle cx="6" cy="12" r="4.2" stroke="currentColor" stroke-width="2.4"/>
+                  <path d="M10.2 12 H21 M17.4 12 V17.4 M21 12 V15.4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="flow-body">
+                  <h3>Come back as a mentor</h3>
+                  <p class="lead">Stand behind the next group.</p>
+                  <p>This program renews itself: many of today's mentors started in the circle. That is how the house stays youth-led, year after year.</p>
+                </div>
+              </li>
+              <li class="flow-step text-step">
+                <span class="flow-num" aria-hidden="true">5</span>
+                <svg class="pg-keyring pg-close-ring" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                  <circle cx="6" cy="12" r="4.2" stroke="currentColor" stroke-width="2.4"/>
+                  <path d="M10.2 12 H21 M17.4 12 V17.4 M21 12 V15.4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="flow-body">
+                  <h3>Join the staff team</h3>
+                  <p class="lead">The path can end in a job here.</p>
+                  <p>The strongest mentors are hired as staff — running sessions, leading programs. This house is staffed by people who grew up in it.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="band" id="join-youth">
+          <div class="wrap">
+            <div class="split">
+              <div>
+                <span class="kicker">Getting In</span>
+                <h2>How you get in</h2>
+                <p class="lead">There are two ways in, and both run through your school: a set cohort, or a co-op placement.</p>
+                <p>Start by asking a teacher or guidance staff member whether your school is a partner. Your family can also write to us, and we'll confirm. If your school isn't a partner yet, don't count yourself out — that conversation is how new partnerships start. Places run in set cohorts, not drop-ins, because funding limits how many young people we can take on at once.</p>
+              </div>
+              <div class="form-card">
+                <h3 style="margin-bottom:10px">Start with a message</h3>
+                <p>Use the contact form or email — whichever is easiest. In the form, choose Programs under “What’s this about?”</p>
+                <p><a class="btn btn-green" href="https://docs.google.com/forms/d/e/1FAIpQLSesdMDa_zVWDmYiz4SykFRYnBSest8HbVTFtaQMrp6MVkC4Pw/viewform" target="_blank" rel="noopener">Send us a message<span class="sr-only"> (opens in new tab)</span></a></p>
+                <p class="mail-note">Every message goes to our team, and every one gets an answer.</p>
+                <ul class="contact-list" style="margin-top:22px">
+                  <li><span class="role">General Enquiries</span><a href="mailto:service@thegoodguides.org">service@thegoodguides.org</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band">
+          <div class="wrap">
+            <div class="section-head">
+              <span class="kicker">The Wider Record</span>
+              <h2>What it adds up to</h2>
+              <p class="lead">Built on the co-op and after-school core: violence prevention and community engagement in the neighbourhood you call home.</p>
+            </div>
+
+            <div class="program-block flip">
+              <div>
+                <h2>Community engagement</h2>
+                <p>Good Guides youth show up where their neighbours are: sports days alongside neighbourhood officers, graduations for students of every grade, and meals delivered to neighbours living in encampments. With the Toronto Police Service and more than 25 community volunteers, they also cleared a truckload of garbage from the Doris McCarthy Trail. Showing up the same way, week after week, is how trust gets built here.</p>
+                <a class="btn btn-outline-green" href="#/contact-us">Contact</a>
+              </div>
+              <figure class="program-media">
+                <img src="assets/event-mounted.webp" width="1290" height="921" alt="Children meeting Toronto Police Service mounted unit officers and their horses at an outdoor community event" loading="lazy" />
+              </figure>
+            </div>
+
+            <div class="roster-block">
+              <h3>More initiatives</h3>
+              <p>Also in the Ambassadors' record:</p>
+              <ul class="roster">
+                <li>Toronto Sports Festival</li>
+                <li>Back to School BBQ</li>
+                <li>Guided by Giving</li>
+                <li>Community Graduation 2K21</li>
+                <li>Encampment Meal Deliveries</li>
+                <li>Waterfront Cleanup</li>
+              </ul>
+            </div>
+
+            <div class="programs-cta">
+              <div class="cta-band">
+                <svg class="pg-keyring" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                  <circle cx="6" cy="12" r="4.2" stroke="currentColor" stroke-width="2.4"/>
+                  <path d="M10.2 12 H21 M17.4 12 V17.4 M21 12 V15.4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <p class="cta-title">Our youth are hard at work</p>
+                <p>Running the co-op and after-school programs at the heart of this page. Donations put more days like these on the calendar.</p>
+                <a class="btn btn-gold" data-donate href="https://donorbox.org/good-guides-donations" target="_blank" rel="noopener">Donate<span class="sr-only"> (opens in new tab)</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div id="programs-adults" role="tabpanel" aria-labelledby="pg-tab-partners" hidden>
+        <div class="band core-band">
+          <div class="wrap">
+            <div class="section-head">
+              <span class="kicker">The Core Program</span>
+              <h2>One core program, two routes in</h2>
+              <p class="lead">The core program runs two ways: co-op placements for students, and after-school programming for young people ages 11–18. Every event, workshop, and community help project on this page starts here. Ambassadors — our trained youth leaders ages 16–21 — run it day to day, with experienced mentors and the full backing of the organisation behind them.</p>
+            </div>
+            <div class="core-grid">
+              <article class="core-card">
+                <span class="program-tag">Co-op Placements</span>
+                <h3>Co-op placements — Good Guide Ambassadors</h3>
+                <p>We take co-op students from high schools and post-secondary schools. They join the team as Good Guide Ambassadors, earn credits toward graduation, and deliver the work below in their own neighbourhoods. Teachers and guidance staff placing a student: see “Joining through your school,” directly below.</p>
+              </article>
+              <article class="core-card">
+                <span class="program-tag">Ages 11–18</span>
+                <h3>After-school programming</h3>
+                <p>After-school mentoring for ages 11–18, in the Scarborough neighbourhoods our youth call home.</p>
+                <p>Students join through partner schools, in set cohorts — funding limits cohort size, and there is no open enrolment.</p>
+              </article>
+            </div>
+            <figure class="framed flow-photo" style="margin-top:26px">
+              <img src="assets/programs-core-v2.webp" width="1290" height="968" alt="Young people practising infant CPR on training manikins at a table during a first aid training session" loading="lazy" />
+            </figure>
+            <div class="core-actions">
+              <a class="btn btn-gold" href="#/contact-us?anchor=role-contacts">Contact us about a placement</a>
+              <a class="btn btn-outline-light" href="#/gallery">See Ambassador events in the Gallery</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="band" id="join">
+          <div class="wrap">
+            <div class="split">
+              <div>
+                <span class="kicker">For Schools, Teachers &amp; Families</span>
+                <h2>Joining through your school</h2>
+                <p class="lead">Both routes run through a school: a set cohort, or a co-op placement.</p>
+                <p>Teachers, guidance staff, and community partners: reach out about a cohort or a placement. Families: write to us, and we will confirm whether your school is a partner — if it is not yet, that conversation is how new partnerships start. Funding limits the number of young people we can take on at once, so we work in set cohorts rather than open drop-in enrolment.</p>
+              </div>
+              <div class="form-card">
+                <h3 style="margin-bottom:10px">Start with a message</h3>
+                <p>Schools, partners, and families: use the contact form or email — in the form, choose Programs under “What’s this about?”</p>
+                <p><a class="btn btn-green" href="https://docs.google.com/forms/d/e/1FAIpQLSesdMDa_zVWDmYiz4SykFRYnBSest8HbVTFtaQMrp6MVkC4Pw/viewform" target="_blank" rel="noopener">Send us a message<span class="sr-only"> (opens in new tab)</span></a></p>
+                <p class="mail-note">Every message goes to our team, and every one gets an answer.</p>
+                <ul class="contact-list" style="margin-top:22px">
+                  <li><span class="role">General Enquiries</span><a href="mailto:service@thegoodguides.org">service@thegoodguides.org</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band band-cream">
+          <div class="wrap">
+            <div class="section-head">
+              <span class="kicker">The Weekly Rhythm</span>
+              <h2>How the week runs</h2>
+            </div>
+            <div class="flow-groups cols-2">
+              <article class="card flow-card">
+                <div class="pg-card-head"><span class="pg-icon-disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.8h17M8 3v4M16 3v4"/><circle cx="12" cy="15" r="2.6"/></svg></span><h4>Weekly sessions</h4></div>
+                <p>After-school sessions run every week with each cohort, in the young people's own neighbourhoods — the same mentors, week in and week out.</p>
+              </article>
+              <article class="card flow-card">
+                <div class="pg-card-head"><span class="pg-icon-disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5" stroke-dasharray="46 8"/><circle cx="12" cy="3.5" r="1.9" fill="currentColor" stroke="none"/><circle cx="4.6" cy="16.3" r="1.9" fill="currentColor" stroke="none"/><circle cx="19.4" cy="16.3" r="1.9" fill="currentColor" stroke="none"/></svg></span><h4>The mentoring circle</h4></div>
+                <p>Sessions are built around a mentoring circle: time to check in, talk honestly, and plan what the group builds next. Mentorship isn't an add-on here — it's the centre of the work.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="band">
+          <div class="wrap">
+            <div class="section-head">
+              <span class="kicker">The Delivery Model</span>
               <h2>It starts with listening</h2>
             </div>
             <ol class="flow">
@@ -1713,9 +2089,9 @@
         <div class="band band-cream">
           <div class="wrap">
             <div class="section-head">
-              <span class="kicker">Certifications</span>
+              <span class="kicker">Certifications &amp; Employability</span>
               <h2>Leave with real certifications</h2>
-              <p class="lead">Our own mentors run these workshops — practical training, practised in real community work. And our young people come out of them with certifications they can put straight to work.</p>
+              <p class="lead">Our own mentors run these workshops — practical training, practised in real community work — and participants complete them with certifications they can put straight to work. Some workshops are delivered through Community Connect, a Toronto Police Service program connecting youth with their local neighbourhood community officers through practical certification workshops — CPR, food handling, and babysitting — which The Good Guides helped create.</p>
             </div>
             <div class="flow-groups">
               <article class="card flow-card">
@@ -1737,33 +2113,9 @@
         <div class="band">
           <div class="wrap">
             <div class="section-head">
-              <span class="kicker">Practical Support</span>
-              <h2>And the practical stuff, handled</h2>
-              <p class="lead">Certifications are only part of it. Our mentors sit with young people through the paperwork of growing up — the accounts, applications, and funding that open the next door.</p>
-            </div>
-            <div class="flow-groups">
-              <article class="card flow-card">
-                <div class="pg-card-head"><span class="pg-icon-disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 9.7 12 4.3l9 5.4"/><path d="M5.2 9.7v7.6M9.8 9.7v7.6M14.2 9.7v7.6M18.8 9.7v7.6"/><path d="M3.8 17.3h16.4M3 20.4h18"/></svg></span><h4>First bank account</h4></div>
-                <p>Help opening a first bank account — the ID, the paperwork, and what to ask — so a first paycheque has somewhere to land.</p>
-              </article>
-              <article class="card flow-card">
-                <div class="pg-card-head"><span class="pg-icon-disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.2"/><path d="M12 6.8v10.4M15.2 9.4c-.7-1-1.8-1.5-3.2-1.5-1.8 0-3.1.9-3.1 2.1 0 2.9 6.3 1.5 6.3 4 0 1.2-1.4 2.1-3.2 2.1-1.4 0-2.6-.6-3.3-1.5"/></svg></span><h4>OSAP funding</h4></div>
-                <p>Help applying for OSAP funding for college and university, so money is not the reason a young person does not go.</p>
-              </article>
-              <article class="card flow-card">
-                <div class="pg-card-head"><span class="pg-icon-disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5 2.8 9.3 12 13.6l9.2-4.3Z"/><path d="M6.5 11.3v4.2c0 1.2 2.5 2.7 5.5 2.7s5.5-1.5 5.5-2.7v-4.2"/><path d="M21.2 9.3v4.9"/></svg></span><h4>Post-secondary applications</h4></div>
-                <p>Support with college and university applications — choosing programs, meeting deadlines, and finishing the forms.</p>
-              </article>
-            </div>
-          </div>
-        </div>
-
-        <div class="band">
-          <div class="wrap">
-            <div class="section-head">
-              <span class="kicker">Outcomes</span>
+              <span class="kicker">Outcomes &amp; Measurement</span>
               <h2>What we count</h2>
-              <p class="lead">Since 2020, we have mentored <span class="pg-figure">10,000+</span> young people. We count the tangible results — and whether a young person shows up differently. Both go back to our funders.</p>
+              <p class="lead">Since 2020, we have mentored <span class="pg-figure">10,000+</span> young people. We count the tangible results — attendance and retention, mentor matches and how long they hold, co-op placements completed, certifications earned — and the holistic ones: confidence, belonging, and school engagement, tracked through mentor check-ins and participant feedback. Both go back to our funders — including the outcome this house is built on: mentees who return as mentors.</p>
             </div>
             <div class="route-grid">
               <div class="route-item">
@@ -1795,6 +2147,17 @@
                 <svg class="pg-tally" viewBox="0 0 34 22" fill="none" aria-hidden="true" focusable="false"><path d="M5 3v16M12 3v16M19 3v16M26 3v16" stroke="#2D6B38" stroke-width="2.4" stroke-linecap="round"/><path d="M3 18.5 31 3.5" stroke="#D99E0B" stroke-width="2.4" stroke-linecap="round"/></svg>
                 <h3>Hired — here and beyond</h3>
                 <p>Mentors hired onto our staff team, and young people placed into jobs beyond this house — counted as each one starts.</p>
+
+              <div class="route-item">
+                <svg class="pg-tally" viewBox="0 0 34 22" fill="none" aria-hidden="true" focusable="false"><path d="M5 3v16M12 3v16M19 3v16M26 3v16" stroke="#2D6B38" stroke-width="2.4" stroke-linecap="round"/><path d="M3 18.5 31 3.5" stroke="#D99E0B" stroke-width="2.4" stroke-linecap="round"/></svg>
+                <h3>Mentor matches that hold</h3>
+                <p>Who is matched with whom — and how long the match holds, cohort by cohort.</p>
+              </div>
+              <div class="route-item">
+                <svg class="pg-tally" viewBox="0 0 34 22" fill="none" aria-hidden="true" focusable="false"><path d="M5 3v16M12 3v16M19 3v16M26 3v16" stroke="#2D6B38" stroke-width="2.4" stroke-linecap="round"/><path d="M3 18.5 31 3.5" stroke="#D99E0B" stroke-width="2.4" stroke-linecap="round"/></svg>
+                <h3>School engagement</h3>
+                <p>How participants are engaging at school, tracked through mentor check-ins and participant feedback.</p>
+              </div>
               </div>
             </div>
           </div>
@@ -1803,24 +2166,24 @@
         <div class="band band-cream">
           <div class="wrap">
             <div class="section-head">
-              <span class="kicker">Your Path Here</span>
+              <span class="kicker">The Progression Pipeline</span>
               <h2>The mentored become the mentors</h2>
-              <p class="lead">There is a ladder in this house, and every young person in our cohorts can climb it — from participant, to leader, to the mentor someone else looks up to.</p>
+              <p class="lead">There is a ladder in this house, and every young person in our cohorts can climb it — participant, to junior leader, to Ambassador, to mentor, to staff. It is the pipeline that keeps the program youth-led.</p>
             </div>
             <ol class="flow pg-ladder">
               <li class="flow-step text-step">
                 <span class="flow-num" aria-hidden="true">1</span>
                 <div class="flow-body">
                   <h3>Show up</h3>
-                  <p class="lead">Join after-school mentoring through your school.</p>
-                  <p>Your mentors come from your own neighbourhood — people who know your streets and your schools.</p>
+                  <p class="lead">Participants join after-school mentoring through their school.</p>
+                  <p>Their mentors come from their own neighbourhoods — people who know their streets and their schools.</p>
                 </div>
               </li>
               <li class="flow-step text-step">
                 <span class="flow-num" aria-hidden="true">2</span>
                 <div class="flow-body">
                   <h3>Step up</h3>
-                  <p class="lead">Take on jobs in the work you helped design.</p>
+                  <p class="lead">Take on junior-leader jobs in the work they helped design.</p>
                   <p>Running a résumé night. Hosting a community day. Planning a trip the whole group takes. The work matters, the community is counting on it — and young people rise to it.</p>
                 </div>
               </li>
@@ -1828,7 +2191,7 @@
                 <span class="flow-num" aria-hidden="true">3</span>
                 <div class="flow-body">
                   <h3>Lead</h3>
-                  <p class="lead">Become a Good Guide Ambassador.</p>
+                  <p class="lead">Become Good Guide Ambassadors.</p>
                   <p>However they arrived — a co-op placement, or climbing from the circle — Ambassadors plan and run the programs, sit on the planning team, and lead sessions alongside staff mentors. They earn practical certifications along the way, and students can earn co-op credits doing it.</p>
                 </div>
               </li>
@@ -1840,7 +2203,7 @@
                 </svg>
                 <div class="flow-body">
                   <h3>Come back as a mentor</h3>
-                  <p class="lead">Stand behind the next group.</p>
+                  <p class="lead">Return as mentors, standing behind the next group.</p>
                   <p>This program renews itself: many of today's mentors started in the circle. That is how the house stays youth-led, year after year.</p>
                 </div>
               </li>
@@ -1857,6 +2220,30 @@
                 </div>
               </li>
             </ol>
+          </div>
+        </div>
+
+        <div class="band">
+          <div class="wrap">
+            <div class="section-head">
+              <span class="kicker">Wraparound Support</span>
+              <h2>The practical side, handled with a mentor</h2>
+              <p class="lead">Certifications are only part of the support wrapped around each participant. Our mentors sit with young people through the paperwork of growing up — the accounts, applications, and funding that open the next door.</p>
+            </div>
+            <div class="flow-groups">
+              <article class="card flow-card">
+                <div class="pg-card-head"><span class="pg-icon-disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 9.7 12 4.3l9 5.4"/><path d="M5.2 9.7v7.6M9.8 9.7v7.6M14.2 9.7v7.6M18.8 9.7v7.6"/><path d="M3.8 17.3h16.4M3 20.4h18"/></svg></span><h4>First bank account</h4></div>
+                <p>Help opening a first bank account — the ID, the paperwork, and what to ask — so a first paycheque has somewhere to land.</p>
+              </article>
+              <article class="card flow-card">
+                <div class="pg-card-head"><span class="pg-icon-disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.2"/><path d="M12 6.8v10.4M15.2 9.4c-.7-1-1.8-1.5-3.2-1.5-1.8 0-3.1.9-3.1 2.1 0 2.9 6.3 1.5 6.3 4 0 1.2-1.4 2.1-3.2 2.1-1.4 0-2.6-.6-3.3-1.5"/></svg></span><h4>OSAP funding</h4></div>
+                <p>Help applying for OSAP funding for college and university, so money is not the reason a young person does not go.</p>
+              </article>
+              <article class="card flow-card">
+                <div class="pg-card-head"><span class="pg-icon-disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5 2.8 9.3 12 13.6l9.2-4.3Z"/><path d="M6.5 11.3v4.2c0 1.2 2.5 2.7 5.5 2.7s5.5-1.5 5.5-2.7v-4.2"/><path d="M21.2 9.3v4.9"/></svg></span><h4>Post-secondary applications</h4></div>
+                <p>Support with college and university applications — choosing programs, meeting deadlines, and finishing the forms.</p>
+              </article>
+            </div>
           </div>
         </div>
 
@@ -1898,12 +2285,14 @@
                   <circle cx="6" cy="12" r="4.2" stroke="currentColor" stroke-width="2.4"/>
                   <path d="M10.2 12 H21 M17.4 12 V17.4 M21 12 V15.4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <p class="cta-title">Our youth are hard at work</p>
-                <p>Running the co-op and after-school programs at the heart of this page. Donations put more days like these on the calendar.</p>
+                <p class="cta-title">Put your school or organisation behind this record</p>
+                <p>Cohorts and co-op placements are arranged through partner schools — start with the “Start with a message” card at the top of this view, or write to us at <a href="mailto:service@thegoodguides.org">service@thegoodguides.org</a> (General Enquiries). Donations put more days like these on the calendar.</p>
                 <a class="btn btn-gold" data-donate href="https://donorbox.org/good-guides-donations" target="_blank" rel="noopener">Donate<span class="sr-only"> (opens in new tab)</span></a>
+                <a class="btn btn-outline-light" href="#/contact-us">Contact</a>
               </div>
             </div>
           </div>
+        </div>
         </div>
       </section>
 
@@ -2265,6 +2654,8 @@
         "/about-us":    { view: "view-about-us",     title: "About | The Good Guides",                               description: "Founded in Scarborough in 2020, The Good Guides is a grassroots, Black-led non-profit where young people lead the programs, run the events, and shape the help in their own neighbourhoods." },
         "/take-action": { view: "view-take-action",  title: "Take Action | The Good Guides",                            description: "Donate or volunteer with The Good Guides — and back the work young people are already leading." },
         "/our-programs":{ view: "view-our-programs", title: "Programs | The Good Guides",                           description: "Co-op placements and after-school programming for ages 11–18 — The Good Guides' core program, built and run by youth themselves." },
+        "/our-programs/for-youth": { view: "view-our-programs", programsView: "youth", title: "Programs | The Good Guides", description: "Co-op placements and after-school programming for ages 11–18 — The Good Guides' core program, built and run by youth themselves." },
+        "/our-programs/for-partners": { view: "view-our-programs", programsView: "partners", title: "Programs | The Good Guides", description: "Co-op placements and after-school programming for ages 11–18 — The Good Guides' core program, built and run by youth themselves." },
         "/our-team":    { view: "view-about-us", anchor: "team",     title: "Our Team | The Good Guides",                               description: "Our team comes from the same streets, schools, and neighbourhoods as the youth they mentor." },
         "/partners":    { view: "view-about-us", anchor: "partners",     title: "Partners | The Good Guides",                               description: "The Toronto Police Service, the Toronto District School Board, and the City of Toronto — the partners who stand alongside our youth with The Good Guides." },
         "/gallery":     { view: "view-media", anchor: "gallery",      title: "Gallery | The Good Guides",                                description: "Events and initiatives from The Good Guides — youth playing sports, cleaning trails, celebrating graduations and giving back across the community." },
@@ -2307,6 +2698,7 @@
         if (!active) return;
         var target = active.querySelector('[id="' + anchor + '"]');
         if (!target) return;
+        if (target.closest && target.closest("[hidden]")) return;
         var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
       }
@@ -2410,6 +2802,60 @@
         }, 340));
       }
 
+
+      /* ---------- Programs dual view (preview) ---------- */
+      function applyProgramsView(mode) {
+        var youthPanel = document.getElementById("programs-youth");
+        var adultsPanel = document.getElementById("programs-adults");
+        if (!youthPanel || !adultsPanel) return;
+        var isYouth = mode !== "partners";
+        youthPanel.hidden = !isYouth;
+        adultsPanel.hidden = isYouth;
+        var tabY = document.getElementById("pg-tab-youth");
+        var tabP = document.getElementById("pg-tab-partners");
+        if (tabY && tabP) {
+          tabY.setAttribute("aria-selected", isYouth ? "true" : "false");
+          tabP.setAttribute("aria-selected", isYouth ? "false" : "true");
+          tabY.tabIndex = isYouth ? 0 : -1;
+          tabP.tabIndex = isYouth ? -1 : 0;
+        }
+        var noteY = document.getElementById("pg-youth-note");
+        var noteP = document.getElementById("pg-partners-note");
+        if (noteY) noteY.hidden = !isYouth;
+        if (noteP) noteP.hidden = isYouth;
+      }
+
+      function programsHash(mode) {
+        return mode === "partners" ? "#/our-programs/for-partners" : "#/our-programs/for-youth";
+      }
+
+      var pgSwitch = document.querySelector(".pg-switch");
+      if (pgSwitch) {
+        var pgTabs = pgSwitch.querySelectorAll("[data-programs-view]");
+        for (var t = 0; t < pgTabs.length; t++) {
+          pgTabs[t].addEventListener("click", function () {
+            var target = programsHash(this.getAttribute("data-programs-view"));
+            if (window.location.hash === target) { applyProgramsView(this.getAttribute("data-programs-view")); return; }
+            window.location.hash = target;
+          });
+        }
+        pgSwitch.addEventListener("keydown", function (e) {
+          var key = e.key;
+          if (key !== "ArrowRight" && key !== "ArrowLeft" && key !== "Home" && key !== "End") return;
+          var tabs = Array.prototype.slice.call(pgSwitch.querySelectorAll("[data-programs-view]"));
+          var idx = tabs.indexOf(document.activeElement);
+          if (idx === -1) return;
+          e.preventDefault();
+          var next = idx;
+          if (key === "ArrowRight") next = (idx + 1) % tabs.length;
+          if (key === "ArrowLeft") next = (idx - 1 + tabs.length) % tabs.length;
+          if (key === "Home") next = 0;
+          if (key === "End") next = tabs.length - 1;
+          tabs[next].focus();
+          window.location.hash = programsHash(tabs[next].getAttribute("data-programs-view"));
+        });
+      }
+
       function render() {
         var parsed = parseHash();
         var path = parsed.path;
@@ -2419,7 +2865,7 @@
           ? { view: "view-not-found", title: "Page not found | The Good Guides", description: "The page you're looking for isn't here. Find The Good Guides' programs, team, and contact routes from the home page." }
           : ROUTES[path];
         if (!parsed.anchor && route.anchor) { parsed.anchor = route.anchor; }
-        var navPath = parsed.known === false ? "" : (ALIAS_NAV[path] || path);
+        var navPath = parsed.known === false ? "" : (ALIAS_NAV[path] || (path.indexOf("/our-programs") === 0 ? "/our-programs" : path));
         document.title = route.title;
         var meta = document.querySelector('meta[name="description"]');
         if (meta) meta.setAttribute("content", route.description);
@@ -2437,6 +2883,27 @@
         var newView = document.getElementById(route.view);
         var oldView = currentView;
         currentView = newView;
+        if (route.view === "view-our-programs") {
+          var pgMode = route.programsView || "youth";
+          if (parsed.anchor === "join") pgMode = "partners";
+          if (parsed.anchor === "join-youth") pgMode = "youth";
+          applyProgramsView(pgMode);
+          if (oldView === newView && !firstRender) {
+            /* Same-view sub-route change (the view switch): panels are
+               already swapped above — no crossfade, no focus steal. */
+            if (parsed.anchor) {
+              scrollToAnchor(parsed.anchor);
+              window.setTimeout(function () { scrollToAnchor(parsed.anchor); }, 450);
+            } else {
+              var rootEl2 = document.documentElement;
+              var prevBehavior2 = rootEl2.style.scrollBehavior;
+              rootEl2.style.scrollBehavior = "auto";
+              window.scrollTo(0, 0);
+              rootEl2.style.scrollBehavior = prevBehavior2;
+            }
+            return;
+          }
+        }
         var isFirst = firstRender;
         firstRender = false;
         if (reduceMotion || isFirst || !oldView || oldView === newView) {
